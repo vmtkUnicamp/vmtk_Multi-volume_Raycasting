@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['quaternion',['Quaternion',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_quaternion.html#a348ab8225bed9509307c291bfd576408',1,'VMATH_NAMESPACE::Quaternion::Quaternion()'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_quaternion.html#ac00d7ebf14581ce9a51772d33b00c3e3',1,'VMATH_NAMESPACE::Quaternion::Quaternion(const Quaternion&lt; T &gt; &amp;q)'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_quaternion.html#acd4b686e1f8114818d68236bc8b0e163',1,'VMATH_NAMESPACE::Quaternion::Quaternion(const Quaternion&lt; FromT &gt; &amp;q)'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_quaternion.html#a4562d4ca1f5302995181718c3ef1af07',1,'VMATH_NAMESPACE::Quaternion::Quaternion(T w_, const Vector3&lt; T &gt; &amp;v_)'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_quaternion.html#a1480f284a234935eec62e0fcea29867c',1,'VMATH_NAMESPACE::Quaternion::Quaternion(T w_, T x, T y, T z)']]]
+];

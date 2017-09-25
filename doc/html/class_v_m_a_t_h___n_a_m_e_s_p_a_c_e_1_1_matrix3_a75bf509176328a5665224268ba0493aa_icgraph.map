@@ -1,0 +1,11 @@
+<map id="VMATH_NAMESPACE::Matrix3::at" name="VMATH_NAMESPACE::Matrix3::at">
+<area shape="rect" id="node2" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#af99ed25df9cbd07b1ef5a2b04e25bf3c" title="vectorProductMatrix: Multiplication function " alt="" coords="290,5,498,47"/>
+<area shape="rect" id="node3" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#ad8fce81c9e605d19b349fb321325c557" title="VMATH_NAMESPACE::Matrix3\l::createRotationAroundAxis" alt="" coords="290,71,498,112"/>
+<area shape="rect" id="node4" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a43dcc404560794438cc609d6f19ac07f" title="VMATH_NAMESPACE::Matrix3\l::fromOde" alt="" coords="290,136,498,177"/>
+<area shape="rect" id="node5" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a82b502a5dfab5b5271b6a0554bd34bac" title="VMATH_NAMESPACE::Matrix3\l::operator*" alt="" coords="290,201,498,243"/>
+<area shape="rect" id="node6" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a493f31041f801b06eaafe48ce9f5f068" title="VMATH_NAMESPACE::Matrix3\l::transpose" alt="" coords="290,267,498,308"/>
+<area shape="rect" id="node7" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a9e395138cf435759ca01e6c2d93abfd2" title="VMATH_NAMESPACE::Matrix3\l::inverse" alt="" coords="290,332,498,373"/>
+<area shape="rect" id="node8" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix4.html#a38fe1889016ae5feb4cbcafa25fe6b1d" title="createMat4FromMat3 Creates 4x4 Matrix from 3x3 Matrix (Homogeneous Matrix). " alt="" coords="290,397,498,439"/>
+<area shape="rect" id="node9" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix4.html#ad70efac9d2609f0a0a329d1f6ed9bbb2" title="VMATH_NAMESPACE::Matrix4\l::setRotation" alt="" coords="290,463,498,504"/>
+<area shape="rect" id="node10" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_quaternion.html#a8590e061ae4678de620763101c7ce90a" title="VMATH_NAMESPACE::Quaternion\l::rotMatrix" alt="" coords="280,528,508,569"/>
+</map>
