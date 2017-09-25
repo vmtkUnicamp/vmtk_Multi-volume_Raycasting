@@ -152,7 +152,7 @@ inline T radians(T angleInRadians)
 }
 
 inline bool closeEnough( float a,  float b, float eps = epsilon) {
-    return (eps > abs(a - b));
+    return (eps > std::abs(a - b));
 }
 
 
@@ -1312,6 +1312,15 @@ public:
     {
     }
 
+    /**
+     * Creates and sets to (x,y,z)
+     * @param v[3] vector of data, where x=v[0], y=v[1] and z=v[2].
+     */
+    Vector4(const T v[4]) //add
+            : x(v[0]), y(v[1]), z(v[2]), w(v[3])
+    {
+    }
+
 	/**
 	 * Copy constructor.
 	 * @param src Source of data for new created Vector4 instance.
@@ -1900,7 +1909,7 @@ public:
 
             //choose one solution to return
             //for example the "shortest" rotation
-            if ((abs(x1) + abs(y1) + abs(z1)) <= (abs(x2) + abs(y2) + abs(z2))) {
+            if ((std::abs(x1) + std::abs(y1) + std::abs(z1)) <= (std::abs(x2) + std::abs(y2) + std::abs(z2))) {
                 return Vector3<T>(x1, y1, z1);
             } else {
                 return Vector3<T>(x2, y2, z2);
@@ -2523,7 +2532,7 @@ public:
 
             //choose one solution to return
             //for example the "shortest" rotation
-            if ((abs(x1) + abs(y1) + abs(z1)) <= (abs(x2) + abs(y2) + abs(z2))) {
+            if ((std::abs(x1) + std::abs(y1) + std::abs(z1)) <= (std::abs(x2) + std::abs(y2) + std::abs(z2))) {
                 return Vector3<T>(x1, y1, z1);
             } else {
                 return Vector3<T>(x2, y2, z2);

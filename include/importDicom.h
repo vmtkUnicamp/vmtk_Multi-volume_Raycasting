@@ -1,5 +1,5 @@
-/*  
- *  importDicom.h 
+/*
+ *  importDicom.h
  *
  *  Copyright (C) 2013  Wu Shin-Ting, FEEC, Unicamp
  *
@@ -43,7 +43,7 @@
 #include "gdcmAttribute.h"
 
 class Import {
- public: 
+ public:
   typedef struct ImgFormat
   {
     unsigned short dims[3];  // dims[0]: nrows; dims[1]: ncols; dims[2]: nplanes
@@ -66,32 +66,39 @@ class Import {
     ===========================================================*/
   Import() {};  ///< Constructor
   ~Import() {}; ///< Destructor
- 
+
   int DICOMImage (std::string &filename, ImgFormat *imgformat);
 
   /*==========================================================
     Private Methods
     ===========================================================*/
- private: 
+ private:
   bool LPS_ReorientImageVolume (ImgFormat *volData);
   bool ReadPixelData(const gdcm::Image &image, const gdcm::DataSet &ds,
-		     const gdcm::PixelFormat::ScalarType & stype, 
-		     unsigned short nbitsalloc, unsigned short nbitsstored,
-		     float slope, float intercept,
-		     unsigned int *len, char **buf, 
-		     int *umin, int *umax);
-  int ProcessOneFile( std::string const & filename, 
-		      gdcm::Defs const & defs ,
-		      std::string *series_desc_str,
-		      std::string *patient_name_str,
-		      std::string *patient_code_str,
-		      std::string *scalar, 
-		      gdcm::PixelFormat::ScalarType *stype,
-		      ImgFormat *volData);
-  bool ValidateMediaStorageIsImage (std::string const & filename, 
-				    gdcm::Defs const & defs );
-  int ImportFile(std::string &filename, const gdcm::Defs &defs, 
-		 ImgFormat *volData);
+             const gdcm::PixelFormat::ScalarType & stype,
+             unsigned short nbitsalloc, unsigned short nbitsstored,
+             float slope, float intercept,
+             unsigned int *len, char **buf,
+             int *umin, int *umax);
+  int ProcessOneFile( std::string const & filename,
+              gdcm::Defs const & defs ,
+              std::string *series_desc_str,
+              std::string *patient_name_str,
+              std::string *patient_code_str,
+              std::string *scalar,
+              gdcm::PixelFormat::ScalarType *stype,
+              ImgFormat *volData);
+  bool ValidateMediaStorageIsImage (std::string const & filename,
+                    gdcm::Defs const & defs );
+  int ImportFile(std::string &filename, const gdcm::Defs &defs,
+         ImgFormat *volData);
+  int ImportDirectory(std::string &filename, const gdcm::Defs &defs,
+          ImgFormat *imgformat);
+  static bool sortFunc(gdcm::DataSet const &ds1, gdcm::DataSet const &ds2);
+  bool ValidateMediaStorageIsImage(gdcm::Defs const & defs,
+          std::string filename);
+  char *realloc_mem(const gdcm::PixelFormat::ScalarType & stype,
+          char * buf, unsigned int old_len, unsigned int new_len);
 };
 
 

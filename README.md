@@ -75,3 +75,8 @@ n: increase floating volume
 
 o: browse sagittal slices from left to right
 p: browse sagittal slices from right to left
+
+### Multiplanar reformatting
+
+1: Enable
+2: Disable

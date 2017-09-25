@@ -1,51 +1,66 @@
 #include "vmtkRender3D.h"
 
+static int m_pos_activate=-1;
+
 vmtkRender3D::vmtkRender3D()
 {
 	m_bInitialized = false;
-	m_refThreshold = 0.0f;
+    m_Threshold.push_back(0.0f);
 	m_blender=0.5f;
     m_rotationMatrix.identity();
-	m_mapRef=0;
-    m_mapFloat=0;
+
+    m_idTexture.clear();
+    m_enableMPR=false;
 }
 
-void vmtkRender3D::setAcquisition(Import::ImgFormat *acq1, Import::ImgFormat *acq2)
+
+
+void vmtkRender3D::volumeRealDimension(Import::ImgFormat * data, float vrd[]){
+    for(int i = 0; i < 3; i++) { vrd[i] = data->dims[i] * data->space[i]; }
+}
+
+float vmtkRender3D::maximumDimension(float vrd[]){
+    return std::max(std::max(vrd[0], vrd[1]), vrd[2]);
+}
+
+void vmtkRender3D::scaleFactors(float vrd[], float maxDim , extraDataVolume &edv){
+    for (int i = 0; i < 3; i++){ edv.scaleFactor[i] = vrd[i] / maxDim;
+    }
+    edv.scaleFactor[3]=1.0;
+}
+
+vmath::Vector4f vmtkRender3D::phyDimension(Import::ImgFormat * data){
+    float phyDimensions[4];
+    for (int i = 0; i < 3; i++){ phyDimensions[i] = data->dims[i];
+        std::cout<<"phyDimensions[i]: "<<phyDimensions[i]<<std::endl;
+    }
+    phyDimensions[3]=1.0;
+    return vmath::Vector4<float>(phyDimensions);
+}
+
+int vmtkRender3D::currentActivateTexture(){
+    GLint nn;
+    glGetIntegerv(GL_ACTIVE_TEXTURE, &nn);
+//    std::cout<<"current activate texture: "<<nn-GL_TEXTURE0<<std::endl;
+    return nn-GL_TEXTURE0;
+}
+
+void vmtkRender3D::setAcquisition(std::vector<Import::ImgFormat*> acqVector)
 {
-	m_RefData = acq1;
-    float volume_real_dimension[3];
-	
-	m_maxSliceLeft =  m_RefData->dims[0];
-    for(int i = 0; i < 3; i++)
-        volume_real_dimension[i] = m_RefData->dims[i] * m_RefData->space[i];
-	
-	float maxDimension = std::max(std::max(volume_real_dimension[0], volume_real_dimension[1]), volume_real_dimension[2]);
-	
-	for (int i = 0; i < 3; i++) {
-        m_refScaleFactors[i] = volume_real_dimension[i] / maxDimension;
+    float vrd[3];
+    float maxDim;
+    m_phyDimensions = new vmath::Vector4f[acqVector.size()];
+    for (int i = 0; i < acqVector.size(); i++) {
+        extraDataVolume edv;
+        m_data.push_back(acqVector[i]);
+        volumeRealDimension( m_data[i], vrd );
+        maxDim = maximumDimension(vrd);
+        scaleFactors(vrd, maxDim,  edv);
+        m_phyDimensions[i] = phyDimension(m_data[i]);
+        m_extraDataVolume.push_back(edv);
     }
-    m_refScaleFactors[3] = 1.0;
+    m_maxSliceLeft =  m_data[0]->dims[0];
 
-	
-    m_FloatData = acq2;
-	for(int i = 0; i < 3; i++)
-        volume_real_dimension[i] = m_FloatData->dims[i] * m_FloatData->space[i];
-
-    maxDimension = std::max(std::max(volume_real_dimension[0], volume_real_dimension[1]), volume_real_dimension[2]);
-    for (int i = 0; i < 3; i++) {
-        m_floatScaleFactors[i] = volume_real_dimension[i] / maxDimension;
-    }
-    m_floatScaleFactors[3] = 1.0;
-	
-	for (int i = 0; i < 3; i++) {
-		m_refPhyDimensions[i] = m_RefData->dims[i];
-    }
-    m_refPhyDimensions[3] = 1.0;
-	
-	for (int i = 0; i < 3; i++) {
-		m_floatPhyDimensions[i] = m_FloatData->dims[i];
-    }
-    m_floatPhyDimensions[3] = 1.0;
 }
 
 void vmtkRender3D::setRotation(float ax, float ay, float az)
@@ -55,7 +70,8 @@ void vmtkRender3D::setRotation(float ax, float ay, float az)
 
 void vmtkRender3D::setThreshold(int threshold)
 {
-    m_refThreshold = m_mapRef[(unsigned short)(threshold)] / (pow(2, m_RefData->nbitsalloc) - 1);
+    m_Threshold[0] = m_map[0][(unsigned short)(threshold)] / (pow(2, m_data[0]->nbitsalloc) - 1);
+    std::cout<<"Threshold: "<< m_Threshold[0] <<std::endl;
 }
 
 void vmtkRender3D::setBlender(float blender)
@@ -81,16 +97,16 @@ void vmtkRender3D::initialize(int width, int height)
 	m_fClipZBack = 1.0f;
 	m_fClipZFront = -1.0f;
 	
-	m_ColorShader = sh.carregueShaders("./shaders/position_is_color.vert", "./shaders/position_is_color.frag");
-    m_RaytraceShader = sh.carregueShaders("./shaders/raytrace.vert", "./shaders/castregister_with_planar_clipping.frag");
+    m_ColorShader = sh.carregueShaders("../../shaders/position_is_color.vert", "../../shaders/position_is_color.frag");
+    m_RaytraceShader = sh.carregueShaders("../../shaders/raytrace.vert", "../../shaders/castregister_with_planar_clipping.frag");
 	
-	loadVolumetoTexture();
-	loadTransferFtoTexture();
+    loadVolumesToTextures();
+    loadTransferFunctionsToTexture();
 	
 	createVectorPlanes();
 	createBuffers();
 	initDrawCube();
-	initRenderPlane();
+    initRenderPlane();
 	m_bInitialized = true;
 }
 
@@ -106,138 +122,112 @@ void vmtkRender3D::createVectorPlanes()
     vt4=vmath::Vector2f(0.0f,1.0f);
 }
 
-void vmtkRender3D::loadVolumetoTexture()
-{
-	int threshold = 23;
-	Equalize eq;
 
-	int intensidade, di, iz, iy, ix, volSize; 
-	unsigned short *texbuffer;
-	
-	// Gera nomes de 1 textura
-	glActiveTexture(GL_TEXTURE0);
-	glGenTextures(1, &m_refTexture);
-	// Define a unidade de alinhamento nos acessos
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	
-	//Reference
-	
-	// Equaliza o histograma para aumentar a escala dinamica das intensidades
-	// como uma forma de contornar a perda de resolucao durante normalizacao 
-	// feita pelas unidades de textura
-	eq.EqualizeHistogram (m_RefData->dims[0], m_RefData->dims[1], m_RefData->dims[2], 
-			(reinterpret_cast<unsigned short*>(m_RefData->buffer)), 
-						m_RefData->nbitsalloc, m_RefData->umax, &m_mapRef);
-						
-	volSize = m_RefData->dims[0]*m_RefData->dims[1]*m_RefData->dims[2];
-	texbuffer = new unsigned short[volSize];
-	memset(texbuffer, 0x00, volSize*sizeof(unsigned short));
-
-	for (di=0, iz = 0; iz < m_RefData->dims[2]; iz++) {
-		for (iy =0; iy < m_RefData->dims[1]; iy++) {
-		  for (ix =0; ix < m_RefData->dims[0]; ix++) {
-			intensidade = (int)((reinterpret_cast<unsigned short*>(m_RefData->buffer))[iz*m_RefData->dims[0]*m_RefData->dims[1]+iy*m_RefData->dims[0]+ix]);
-			texbuffer[di++] = (unsigned short)(m_mapRef[intensidade]);
-		  }
-		}
-	}
-	
-	 m_refThreshold = m_mapRef[(unsigned short)(threshold)] / (pow(2, m_RefData->nbitsalloc) - 1);
-	//Carrega o volume equalizado como textura 3D
-	glBindTexture(GL_TEXTURE_3D, m_refTexture);
-	glTexImage3D(GL_TEXTURE_3D, 0, GL_LUMINANCE, m_RefData->dims[0],
-		   m_RefData->dims[1], m_RefData->dims[2], 0, GL_LUMINANCE,
-		   GL_UNSIGNED_SHORT, texbuffer);
-
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-	delete [] texbuffer;
-	
-	//Floating
-	eq.EqualizeHistogram (m_FloatData->dims[0], m_FloatData->dims[1], m_FloatData->dims[2], 
-			(reinterpret_cast<unsigned short*>(m_FloatData->buffer)), 
-						m_FloatData->nbitsalloc, m_FloatData->umax, &m_mapFloat);
-						
-	volSize = m_FloatData->dims[0]*m_FloatData->dims[1]*m_FloatData->dims[2];
-	texbuffer = new unsigned short[volSize];
-	memset(texbuffer, 0x00, volSize*sizeof(unsigned short));
-
-	for (di=0, iz = 0; iz < m_FloatData->dims[2]; iz++) {
-		for (iy =0; iy < m_FloatData->dims[1]; iy++) {
-		  for (ix =0; ix < m_FloatData->dims[0]; ix++) {
-			intensidade = (int)((reinterpret_cast<unsigned short*>(m_FloatData->buffer))[iz*m_FloatData->dims[0]*m_FloatData->dims[1]+iy*m_FloatData->dims[0]+ix]);
-			texbuffer[di++] = (unsigned short)(m_mapFloat[intensidade]);
-		  }
-		}
-	}
-	
-	glActiveTexture(GL_TEXTURE1);
-	glGenTextures(1, &m_floatTexture);
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	
-	//Carrega o volume equalizado como textura 3D
-	glBindTexture(GL_TEXTURE_3D, m_floatTexture);
-	glTexImage3D(GL_TEXTURE_3D, 0, GL_LUMINANCE, m_FloatData->dims[0],
-		   m_FloatData->dims[1], m_FloatData->dims[2], 0, GL_LUMINANCE,
-		   GL_UNSIGNED_SHORT, texbuffer);
-
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	
-	delete [] texbuffer;
+void vmtkRender3D::mapEqualizeHistogramVolume(Import::ImgFormat* data, unsigned int * &map){
+    Equalize eq;
+    // Equaliza o histograma para aumentar a escala dinamica das intensidades
+    // como uma forma de contornar a perda de resolucao durante normalizacao
+    // feita pelas unidades de textura
+    eq.EqualizeHistogram (data->dims[0], data->dims[1], data->dims[2],
+            (reinterpret_cast<unsigned short*>(data->buffer)),
+                        data->nbitsalloc, data->umax, &map);
 }
 
-void vmtkRender3D::loadTransferFtoTexture()
-{
-	int dim;
-	unsigned char *tf;
-	TransferFunction tfunc;
-	 
-	//Reference
-	tfunc.GetGrayScaleTF (4, 0, pow(2,m_RefData->nbitsalloc), &dim, &tf, m_RefData->nbitsalloc);
-	
-	glActiveTexture(GL_TEXTURE2);
-	glGenTextures(1, &m_refTF);
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	// Carrega a funcao de transferencia como textura 1D
-	glBindTexture(GL_TEXTURE_1D, m_refTF);
-	glTexImage1D(GL_TEXTURE_1D, 0, GL_LUMINANCE, dim, 0, GL_LUMINANCE,
-		   GL_UNSIGNED_BYTE, tf);
+void vmtkRender3D::volumeEqualizer(Import::ImgFormat* data, unsigned int *map, unsigned short * &texbuffer){
+    int intensidade, di, iz, iy, ix, volSize;
+    volSize = data->dims[0]*data->dims[1]*data->dims[2];
+    texbuffer = new unsigned short[volSize];
+    memset(texbuffer, 0x00, volSize*sizeof(unsigned short));
 
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	
-	//Float
-	tfunc.GetGrayScaleTF (4, 0, pow(2,m_FloatData->nbitsalloc), &dim, &tf, m_FloatData->nbitsalloc);
-	
-	glActiveTexture(GL_TEXTURE3);
-	glGenTextures(1, &m_floatTF);
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	// Carrega a funcao de transferencia como textura 1D
-	glBindTexture(GL_TEXTURE_1D, m_floatTF);
-	glTexImage1D(GL_TEXTURE_1D, 0, GL_LUMINANCE, dim, 0, GL_LUMINANCE,
-		   GL_UNSIGNED_BYTE, tf);
-
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    for (di=0, iz = 0; iz < data->dims[2]; iz++) {
+        for (iy =0; iy < data->dims[1]; iy++) {
+          for (ix =0; ix < data->dims[0]; ix++) {
+            intensidade = (int)((reinterpret_cast<unsigned short*>(data->buffer))[iz*data->dims[0]*data->dims[1]+iy*data->dims[0]+ix]);
+            texbuffer[di++] = (unsigned short)(map[intensidade]);
+          }
+        }
+    }
 }
+
+void vmtkRender3D::texture3DFromVolume(Import::ImgFormat* data, unsigned short * texbuffer, GLuint &idTex){
+    GLuint idTexture;
+    glGenTextures(1, &idTexture);
+    // Define a unidade de alinhamento nos acessos
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    glBindTexture(GL_TEXTURE_3D, idTexture);
+    glTexImage3D(GL_TEXTURE_3D, 0, GL_RGBA, data->dims[0],
+           data->dims[1], data->dims[2], 0, GL_RED,
+           GL_UNSIGNED_SHORT, texbuffer);
+
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    idTex = idTexture;
+}
+
+void vmtkRender3D::loadVolumesToTextures()
+{
+    int threshold = 23;
+    m_pos_activate = 0;
+    for (int i = 0; i< m_data.size(); i++){
+        unsigned short *texbuffer;
+        unsigned int *map=0;
+        mapEqualizeHistogramVolume(m_data[i],map);
+        m_map.push_back(map);
+        volumeEqualizer(m_data[i],m_map[i],texbuffer);
+        GLuint idTexture;
+        glActiveTexture(GL_TEXTURE0+m_pos_activate);
+        m_pos_activate = currentActivateTexture()+1;
+        texture3DFromVolume(m_data[i],texbuffer,idTexture);
+        m_idTexture.push_back(idTexture);
+        delete [] texbuffer;
+        delete [] map;
+    }
+    m_Threshold[0] = m_map[0][(unsigned short)(threshold)] / (pow(2, m_data[0]->nbitsalloc) - 1);
+}
+
+void vmtkRender3D::generateTransferFunction( Import::ImgFormat* data, int &dim, unsigned char* &tf){
+    TransferFunction tfunc;
+    tfunc.GetGrayScaleTF (4, 0, pow(2,data->nbitsalloc), &dim, &tf, data->nbitsalloc);
+}
+
+void vmtkRender3D::texture1DFromTransferFunction(int dim, unsigned char *tf, GLuint &idTF){
+    GLuint idTransferFunction;
+    glGenTextures(1, &idTransferFunction);
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    // Carrega a funcao de transferencia como textura 1D
+    glBindTexture(GL_TEXTURE_1D, idTransferFunction);
+    glTexImage1D(GL_TEXTURE_1D, 0, GL_RGBA, dim, 0, GL_RED,
+           GL_UNSIGNED_BYTE, tf);
+
+    glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    idTF = idTransferFunction;
+}
+
+void vmtkRender3D::loadTransferFunctionsToTexture()
+{
+    std::cout<<"m_pos_activate: "<<m_pos_activate<<std::endl;
+    for(int i = 0;i <m_data.size();i++){
+        int dim;
+        unsigned char *tf;
+        generateTransferFunction(m_data[i],dim,tf);
+        GLuint idTransferFunction;
+        glActiveTexture(GL_TEXTURE0+m_pos_activate);
+        m_pos_activate = currentActivateTexture()+1;
+        texture1DFromTransferFunction(dim,tf,idTransferFunction);
+        m_idTF.push_back(idTransferFunction);
+        delete [] tf;
+    }
+}
+
 
 void vmtkRender3D::createBuffers()
 {
@@ -290,7 +280,7 @@ void vmtkRender3D::render()
 	mvp = m_projectionMatrix * m_modelViewMatrix;
 	
 	preRender(mvp);
-	raycasting();
+    raycastingMultiVolume();
 }
 
 void vmtkRender3D::preRender(vmath::Matrix4f mvp)
@@ -316,62 +306,78 @@ void vmtkRender3D::preRender(vmath::Matrix4f mvp)
     this->m_FrontFBO->releasing();
 }
 
-void vmtkRender3D::raycasting()
+
+void vmtkRender3D::raycastingMultiVolume()
 {
     glClearColor(0.,0.,0.,1.);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);      //clear buffers
     glViewport(0,0,m_iWidth,m_iHeight);
-	
-	glUseProgram(m_RaytraceShader);
-	
-	glUniform1i(glGetUniformLocation(m_RaytraceShader,"width"),  m_RefData->dims[0]);
-    glUniform1i(glGetUniformLocation(m_RaytraceShader,"height"), m_RefData->dims[1]);
-    glUniform1i(glGetUniformLocation(m_RaytraceShader,"depth"),  m_RefData->dims[2]);
-	
-	glUniform1i(glGetUniformLocation(m_RaytraceShader,"steps_mode"), 300);
-	
-	/*Volumes*/
-	glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_3D, m_refTexture);
-    glTexParameteri(GL_TEXTURE_3D,GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_3D,GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glUniform1i(glGetUniformLocation(m_RaytraceShader, "ref_volumetexture"),0);
-	
-	glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_3D, m_floatTexture);
-    glTexParameteri(GL_TEXTURE_3D,GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_3D,GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glUniform1i(glGetUniformLocation(m_RaytraceShader, "float_volumetexture"),1);
-	
-	/*Transfer Function*/
-	glActiveTexture(GL_TEXTURE2);
-    glBindTexture(GL_TEXTURE_1D, m_refTF);
-	glUniform1i(glGetUniformLocation(m_RaytraceShader, "ref_transferfunction"),2);
-	
-	glActiveTexture(GL_TEXTURE3);
-    glBindTexture(GL_TEXTURE_1D, m_floatTF);
-    glUniform1i(glGetUniformLocation(m_RaytraceShader, "float_transferfunction"),3);
-	
-	/*Front-Back face*/
-	glActiveTexture(GL_TEXTURE4);
-    glBindTexture(GL_TEXTURE_2D, this->m_BackFBO->getTexture());
-    glUniform1i(glGetUniformLocation(m_RaytraceShader,"backface_fbo"), 4);
 
-    glActiveTexture(GL_TEXTURE5);
-    glBindTexture(GL_TEXTURE_2D, this->m_FrontFBO->getTexture());
-    glUniform1i(glGetUniformLocation(m_RaytraceShader,"frontface_fbo"), 5);
-	
-	//register matrix
-	glUniformMatrix4fv(glGetUniformLocation(m_RaytraceShader,"inv_registration_matrix"), 1, GL_TRUE , m_registration_matrix_inv);
-	
-	glUniform4fv(glGetUniformLocation(m_RaytraceShader,"ref_phyDimensions"), 1, m_refPhyDimensions);
-	glUniform4fv(glGetUniformLocation(m_RaytraceShader,"float_phyDimensions"), 1, m_floatPhyDimensions);
-	
-	glUniform1f(glGetUniformLocation(m_RaytraceShader,"noise_threshold"), m_refThreshold);
+    glUseProgram(m_RaytraceShader);
+
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"width"),  m_data[0]->dims[0]);
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"height"), m_data[0]->dims[1]);
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"depth"),  m_data[0]->dims[2]);
+
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"steps_mode"), 300);
+
+
+
+    /*Volumes*/
+    m_pos_activate = 0;
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"nVolumes"), m_data.size());
+    /*volumes 3D */
+    for(int i = 0; i<m_data.size(); i++){
+        glActiveTexture(GL_TEXTURE0+m_pos_activate);
+        glBindTexture(GL_TEXTURE_3D, m_idTexture[i]);
+        glTexParameteri(GL_TEXTURE_3D,GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_3D,GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        std::string nameVolume = "vTexture"+NumberToString(i);
+        glUniform1i(glGetUniformLocation(m_RaytraceShader, nameVolume.c_str() ), m_pos_activate );
+        m_pos_activate = currentActivateTexture()+1;
+    }
+
+
+    /*Transfer Function*/
+    for(int i = 0; i<m_data.size(); i++){
+        glActiveTexture(GL_TEXTURE0+m_pos_activate);
+        glBindTexture(GL_TEXTURE_1D, m_idTF[i]);
+        std::string nameTF = "vTF"+NumberToString(i);
+        glUniform1i(glGetUniformLocation(m_RaytraceShader, nameTF.c_str()),m_pos_activate);
+        m_pos_activate = currentActivateTexture()+1;
+    }
+
+
+    glUniform4fv(glGetUniformLocation(m_RaytraceShader,"phyDimensions"), m_data.size(), (const GLfloat*)m_phyDimensions);
+
+    //register matrix
+    glUniformMatrix4fv(glGetUniformLocation(m_RaytraceShader,"inv_registration_matrix"), m_data.size()-1, GL_TRUE , (const GLfloat*) m_invRegMatrix);
+
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"enableMPR"), m_enableMPR);
+    if(m_enableMPR){
+        glUniform4fv(glGetUniformLocation(m_RaytraceShader,"clipping_plane"), 1, m_equationPlane);
+    }
+
+
+
+
+    glUniform1f(glGetUniformLocation(m_RaytraceShader,"noise_threshold"), m_Threshold[0]);
     glUniform1f(glGetUniformLocation(m_RaytraceShader,"blending_factor"), m_blender);
-	
-	drawPlaneRayTraced();
-	glUseProgram(0);
+
+    /*Front-Back face*/
+    glActiveTexture(GL_TEXTURE0+m_pos_activate);
+    glBindTexture(GL_TEXTURE_2D, this->m_BackFBO->getTexture());
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"backface_fbo"), m_pos_activate);
+    m_pos_activate = currentActivateTexture()+1;
+
+    glActiveTexture(GL_TEXTURE0+m_pos_activate);
+    glBindTexture(GL_TEXTURE_2D, this->m_FrontFBO->getTexture());
+    glUniform1i(glGetUniformLocation(m_RaytraceShader,"frontface_fbo"), m_pos_activate);
+//    m_pos_activate = currentActivateTexture()+1;
+
+
+    drawPlaneRayTraced();
+    glUseProgram(0);
 }
 
 void vmtkRender3D::drawPlaneRayTraced()
@@ -400,13 +406,13 @@ void vmtkRender3D::resize(int width, int height)
 void vmtkRender3D::itlDrawColorCube(vmath::Matrix4f mvp)
 {
 	
-	initDrawCube();
+//	initDrawCube();
 	
 	glUseProgram(m_ColorShader);
 	GLuint id = glGetUniformLocation(m_ColorShader,"mvp_matrix");
     glUniformMatrix4fv(id, 1, GL_FALSE, mvp);
 
-    glUniform4fv(glGetUniformLocation(m_ColorShader,"scaleFactors"), 1, m_refScaleFactors);
+    glUniform4fv(glGetUniformLocation(m_ColorShader,"scaleFactors"), 1, m_extraDataVolume[0].scaleFactor);
 	drawCube();
 	glUseProgram(0);
 }
@@ -494,17 +500,18 @@ void vmtkRender3D::initDrawCube(){
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 24 * sizeof(GLushort), indices, GL_DYNAMIC_DRAW);
 }
 
-bool vmtkRender3D::readMatrix(const char *s)
+bool vmtkRender3D::readMatrix(const char *s, vmath::Matrix4f& invRM)
 {
 	int k = 0;
-	float x;
+    float x;
+    vmath::Matrix4f registrationMatrix;
 	std::ifstream file(s);
 	if(file.is_open())
 	{
 		while(file)
 		{
 			file >> x;
-			m_registration_matrix.data[k] = x;
+            registrationMatrix.data[k] = x;
 			k++;
 		}
 		
@@ -512,11 +519,11 @@ bool vmtkRender3D::readMatrix(const char *s)
 		for (int i = 0; i < 4; i++)
 		{
 			for (int j = 0; j < 4; j++)
-				std::cout << m_registration_matrix.at(i,j) << " ";
+                std::cout << registrationMatrix.at(i,j) << " ";
 			std::cout << std::endl;
 		}
-		file.close();
-		m_registration_matrix_inv = m_registration_matrix.inverse();
+        file.close();
+        invRM = registrationMatrix.inverse();
 		return true;
 	}
 	else
@@ -524,21 +531,70 @@ bool vmtkRender3D::readMatrix(const char *s)
 	return false;
 }
 
+
+bool vmtkRender3D::readPlane(const char *s,vmath::Vector4f& eqp)
+{
+    int k = 0;
+    float x;
+    std::ifstream file(s);
+    float t[4];
+    if(file.is_open())
+    {
+        while(file)
+        {
+            file >> x;
+            t[k] = x;
+            k++;
+        }
+        vmath::Vector4f eqPlane(t);
+
+        std::cout << "Equation Plane" << std::endl;
+        for (int i = 0; i < 4; i++)
+        {
+            std::cout << eqPlane[i] << std::endl;
+        }
+        file.close();
+        eqp = eqPlane;
+        return true;
+    }
+    else
+        std::cerr << "Equation plane not found!" << std::endl;
+    return false;
+}
+
+void vmtkRender3D::setEnableMPR(bool enableMPR){
+    m_enableMPR = enableMPR;
+}
+
+void vmtkRender3D::setVectorInvMatrixReg(std::vector<vmath::Matrix4f> imr){
+    m_invRegMatrix = new vmath::Matrix4f[imr.size()];
+    for(int i = 0; i<imr.size();i++){
+        m_invRegMatrix[i] = imr[i];
+    }
+}
+
+void vmtkRender3D::setMPR(vmath::Vector4f eqp){
+    m_equationPlane = eqp;
+}
+
 void vmtkRender3D::setClipLeftX(float left_x)
 {
-	m_fClipXLeft = (left_x/m_RefData->dims[0])*2-1;
+    m_fClipXLeft = (left_x/m_data[0]->dims[0])*2-1;
+    initDrawCube();
 }
 
 void vmtkRender3D::drawCube()
 {
     glBindVertexArray(vaosCube);
-    glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_SHORT, 0);
-    glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_SHORT, (const GLvoid *)(sizeof(GLushort)*4));
-    glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_SHORT, (const GLvoid *)(sizeof(GLushort)*8));
-    glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_SHORT, (const GLvoid *)(sizeof(GLushort)*12));
-    glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_SHORT, (const GLvoid *)(sizeof(GLushort)*16));
-    glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_SHORT, (const GLvoid *)(sizeof(GLushort)*20));
+    GLsizei count [] = {4, 4, 4, 4, 4, 4};
+    const GLvoid *indices[] = {0,
+                               (const GLvoid *)(sizeof(GLushort) * 4),
+                               (const GLvoid *)(sizeof(GLushort) * 8),
+                               (const GLvoid *)(sizeof(GLushort) * 12),
+                               (const GLvoid *)(sizeof(GLushort) * 16),
+                               (const GLvoid *)(sizeof(GLushort) * 20)};
 
+    glMultiDrawElements(GL_TRIANGLE_FAN, count, GL_UNSIGNED_SHORT, indices, 6);
     glBindVertexArray(0);
 }
 

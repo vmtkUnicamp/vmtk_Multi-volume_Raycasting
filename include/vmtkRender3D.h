@@ -9,21 +9,47 @@
 #include "equalize.h"
 
 #include<fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
 
+template <typename T>
+std::string NumberToString ( T Number )
+{
+    std::ostringstream ss;
+    ss << Number;
+    return ss.str();
+}
+#define STRCAT(A, B) A B
+static int m_idActiveTex;
 class vmtkRender3D
 {
+    struct extraDataVolume {
+        float scaleFactor[4];
+        float phyDimensions[4];
+    };
+
 	public:
-	
+
 	    /**
 		* @brief vmtkRenderer3D constructor
 		*/
 		vmtkRender3D();
-		/**
-		 * @brief sets the volumes to be registered
-		 * @param[in] volume 1 (reference)
-		 * @param[in] volume 2 (float)
-		 */
-		void setAcquisition(Import::ImgFormat *acq1, Import::ImgFormat *acq2);
+
+//		/**
+//		 * @brief sets the volumes to be registered
+//		 * @param[in] volume 1 (reference)
+//		 * @param[in] volume 2 (float)
+//		 */
+//		void setAcquisition(Import::ImgFormat *acq1, Import::ImgFormat *acq2);
+
+
+        /**
+         * @brief sets the volumes to be registered
+         * @param[in] acqVector: vector of the volumes (first is reference)
+         */
+        void setAcquisition(std::vector<Import::ImgFormat*> acqVector);
+
 		/**
 		* @brief initializes 3D volume rendering
 		*/
@@ -70,11 +96,22 @@ class vmtkRender3D
 		*/
 		void initDrawCube();
 		
-		/**
-		* @brief reads the co-register matrix.
-		* @param[in] co-register matrix file
-		*/
-		bool readMatrix(const char *s);
+
+        /**
+         * @brief reads the co-register matrix.
+         * @param [in] s: co-register matrix file name.
+         * @param [in] invRM: inverse matrix.
+         * @return
+         */
+        bool readMatrix(const char *s, vmath::Matrix4f& invRM);
+
+        /**
+         * @brief readPlane
+         * @param [in] s: string file name.
+         * @param [in] eqp: Equation of the plane for multiplanar reformation.
+         * @return
+         */
+        bool readPlane(const char *s, vmath::Vector4f &eqp);
 		
 		/**
 		* @brief sets the clipping plane.
@@ -86,18 +123,67 @@ class vmtkRender3D
 		* @brief gets the maximum number of the slices from the axis X.
 		*/
 		int getMaxSliceLeft();
-	
-	private:
-	
+        /**
+         * @brief volumeRealDimension
+         * @param [in] data: volume information's.
+         * @param [in] vrd: real Dimension of the volume.
+         */
+        void volumeRealDimension(Import::ImgFormat *data, float vrd[]);
+
+        /**
+         * @brief maximumDimension
+         * @param vrd (real Dimension of the volume).
+         * @return Maximum dimension of the volume.
+         */
+        float maximumDimension(float vrd[]);
+
+        /**
+         * @brief scaleFactors
+         * @param [in] vrd: real Dimension of the volume.
+         * @param [in ]maxDim: Maximum dimension of the volume.
+         * @param [in]  edv: addicional information for structure (Scale factors).
+         */
+        void scaleFactors(float vrd[], float maxDim, extraDataVolume &edv);
+
+
+        /**
+         * @brief phyDimension
+         * @param [in] data: volume information's.
+         * @return Physical dimension.
+         */
+        vmath::Vector4f phyDimension(Import::ImgFormat *data);
+
+
+        int currentActivateTexture();
+
+        void mapEqualizeHistogramVolume(Import::ImgFormat *data, unsigned int *&map);
+        void volumeEqualizer(Import::ImgFormat *data, unsigned int *map, unsigned short *&texbuffer);
+        void texture3DFromVolume(Import::ImgFormat *data, unsigned short *texbuffer, GLuint &refTexture);
+        void generateTransferFunction(Import::ImgFormat *data, int &dim, unsigned char *&tf);
+        void texture1DFromTransferFunction(int dim, unsigned char *tf, GLuint &idTF);
+
+
+        void setMPR(vmath::Vector4f eqp);
+        void setEnableMPR(bool enableMPR);
+
+        void setVectorInvMatrixReg(std::vector<vmath::Matrix4f> imr);
+
+        void phyDimension(Import::ImgFormat *data, extraDataVolume &edv);
+private:
+
 		int m_maxSliceLeft;
-		vmath::Matrix4f m_registration_matrix, m_registration_matrix_inv;
+//		vmath::Matrix4f m_registration_matrix, m_registration_matrix_inv;
+        vmath::Matrix4f *m_invRegMatrix;
+
 		float m_refThreshold, m_blender;
-		unsigned int *m_mapRef, *m_mapFloat;
-		Import::ImgFormat *m_RefData, *m_FloatData;
-		GLuint m_refTexture;
-		GLuint m_floatTexture;
-		GLuint m_refTF;
-		GLuint m_floatTF;
+        std::vector<unsigned int *> m_map;
+        std::vector<float> m_Threshold;
+        std::vector<Import::ImgFormat*> m_data;
+        std::vector<GLuint>m_idTexture, m_idTF;
+
+        vmath::Vector4f m_equationPlane;
+        bool m_enableMPR;
+
 	    GLuint m_ColorShader;    /**< pre-processing shader to get front and back planes */
 		GLuint m_RaytraceShader; /**< raycast shader */
 	
@@ -158,9 +244,11 @@ class vmtkRender3D
 		vmath::Matrix4f m_translationMatrix; /**< traslationMatrix transformation matrix */
 		
 		float m_refScaleFactors[4];               /**< scale factor for compensating distortions on the reference texture volume */
-		float m_floatScaleFactors[4];             /**< scale factor for compensating distortions on the floating texture volume */
-		float m_refPhyDimensions[4];            /**< physical dimensions of reference volume */
-		float m_floatPhyDimensions[4];
+
+        std::vector<extraDataVolume> m_extraDataVolume;
+		float m_floatScaleFactors[4];             /**< scale factor for compensating distortions on the floating texture volume */  
+
+        vmath::Vector4f *m_phyDimensions;       /**< physical dimensions of volumes */
 		
 		vmtkFrameBufferObject *m_FrontFBO;      /**< framebuffer object for front side */
 		vmtkFrameBufferObject *m_BackFBO;       /**< framebuffer object for back side */
@@ -173,14 +261,25 @@ class vmtkRender3D
 		*/
 		void createVectorPlanes();
 		
-		/**
-		* @brief loads volume to texture.
-		*/
-		void loadVolumetoTexture();
-		/**
-		* @brief loads transfer function to texture.
-		*/
-		void loadTransferFtoTexture();
+//		/**
+//		* @brief loads volume to texture.
+//		*/
+//		void loadVolumetoTexture();
+
+        /**
+         * @brief loads volumes to textures 3D.
+         */
+        void loadVolumesToTextures();
+
+//		/**
+//		* @brief loads transfer function to texture.
+//		*/
+//		void loadTransferFtoTexture();
+
+        /**
+         * @brief Loads transfer Functions to textures 1D.
+         */
+        void loadTransferFunctionsToTexture();
 		
 		/**
 		* @brief creates vertex arrays and their buffer data.
@@ -195,15 +294,22 @@ class vmtkRender3D
 		* @brief draws a cube.
 		*/
 		void drawCube();
-		/**
-		* @brief raycasts through the color cube.
-		*/
-		void raycasting();
+
+//		/**
+//		* @brief raycasts through the color cube.
+//		*/
+//		void raycasting();
+
+        /**
+        * @brief raycasts through the color cube.
+        */
+        void raycastingMultiVolume();
 		
 		/**
 		* @brief draws the plane from pre-render shader.
 		*/
-		void drawPlaneRayTraced();
+        void drawPlaneRayTraced();
+
 };
 
 #endif // VMTKRENDER3D_H

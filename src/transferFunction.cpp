@@ -104,9 +104,9 @@ void TransferFunction::GetGrayScaleTFD (int min, int max, int *elemSize, unsigne
 
   for (int i = 0 ; i < node1; i++) 
     (*ptr)[i] = 0;
-  for (int i = node1 ; i < node2+1; i++) 
+  for (int i = node1 ; i < node2; i++)
     (*ptr)[i] = (unsigned char)((1.0*(i-node1))/(node2-node1)*255);
-  for (int i = node2+1; i < *elemSize; i++)  
+  for (int i = node2; i < *elemSize; i++)
     (*ptr)[i] = 0;
 }
 
