@@ -13,7 +13,8 @@ Running the executable file you should be attentive to the system requirements (
 
 The raycasting algorithm was based in the work presented here: https://www.cg.tuwien.ac.at/courses/Visualisierung/2010-2011/Beispiel1/Moellinger_Ludwig/
 
-The co-register matrix and two [volumes](http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads/volumes.zip), MRI-T1 and MRI-FLAIR, are provided for the test.
+The co-register matrix, the plane equation (for multiplanar reformatting) and six [volumes](http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads/volumes.zip) : 
+MT1-FLAIR, T1-T2, T1-PET, T1-SPECT/ICTAL abd T1-SPECT/INTERICTAL are provided for the test.
 
 ## This code was compiled using the follow specifications:
 
@@ -40,12 +41,22 @@ http://freeglut.sourceforge.net/index.php#download
 
 ## Usage
 
-executable inputVolume1  inputVolume2 registeredMatrix
+executable inputVolume1 inputVolume2 inputVolume3 inputFolderVolume4 inputVolume5 inputVolume6 
+registeredMatrix_V1-V2 registeredMatrix_V1-V3 registeredMatrix_V1-V4 registeredMatrix_V1-V5 registeredMatrix_V1-V6 equationMPR
 
 executable: name of the executable  
 inputVolume1: reference volume  
 inputVolume2: float volume  
-registeredMatrix: co-register matrix  
+inputVolume3: float volume  
+inputVolume4: float volume  
+inputVolume5: float volume  
+inputVolume6: float volume  
+registeredMatrix_V1-V2: co-register matrix for inputVolume1 and inputVolume2  
+registeredMatrix_V1-V3: co-register matrix for inputVolume1 and inputVolume3  
+registeredMatrix_V1-V4: co-register matrix for inputVolume1 and inputVolume4  
+registeredMatrix_V1-V5: co-register matrix for inputVolume1 and inputVolume5  
+registeredMatrix_V1-V6: co-register matrix for inputVolume1 and inputVolume6  
+equationMPR: plane equation for multiplanar reformatting (optional parameter)  
 
 The volumes and the co-register matrix are provided. 
 They are in the folder. The shader folder should be in the same directory of the executable.
