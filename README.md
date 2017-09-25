@@ -1,4 +1,4 @@
-##VMTK: Multi-volume Raycasting
+## VMTK: Multi-volume Raycasting
 
 Developers
 
@@ -13,7 +13,7 @@ Running the executable file you should be attentive to the system requirements (
 
 The raycasting algorithm was based in the work presented here: https://www.cg.tuwien.ac.at/courses/Visualisierung/2010-2011/Beispiel1/Moellinger_Ludwig/
 
-##This code was compiled using the follow specifications:
+## This code was compiled using the follow specifications:
 
 1) g++ version: 5.3
 2) cmake version: 3.6
@@ -22,7 +22,7 @@ The raycasting algorithm was based in the work presented here: https://www.cg.tu
 5) Freeglut 3.0
 6) OpenGL >= 3.3
 
-##Libraries and tools required
+## Libraries and tools required
 
 1) GDCM
 
@@ -36,7 +36,7 @@ http://glew.sourceforge.net/
 
 http://freeglut.sourceforge.net/index.php#download
 
-##Usage
+## Usage
 
 executable inputVolume1  inputVolume2 registeredMatrix
 
@@ -48,9 +48,9 @@ registeredMatrix: co-register matrix
 The volumes and the co-register matrix are provided. 
 They are in the folder. The shader folder should be in the same directory of the executable.
 
-##Instructions
+## Instructions
 
-#Navigation
+# Navigation
 
 w: rotate the volume around x axis (clockwise)
 s: rotate the volume around x axis (counter-clockwise)
