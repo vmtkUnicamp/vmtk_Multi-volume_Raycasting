@@ -13,6 +13,8 @@ Running the executable file you should be attentive to the system requirements (
 
 The raycasting algorithm was based in the work presented here: https://www.cg.tuwien.ac.at/courses/Visualisierung/2010-2011/Beispiel1/Moellinger_Ludwig/
 
+The co-register matrix and two [volumes](http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads/volumes.zip), MRI-T1 and MRI-FLAIR, are provided for the test.
+
 ## This code was compiled using the follow specifications:
 
 1) g++ version: 5.3
