@@ -2,10 +2,10 @@
 
 Developers
 
-  Wu Shin-Ting (coordinator)  
-  Raphael Voltoline Ramos  
-  Wallace Souza Loos  
-  José Angel Iván Rubianes Silva  
+  -Wu Shin-Ting (coordinator)  
+  -Raphael Voltoline Ramos  
+  -Wallace Souza Loos  
+  -José Angel Iván Rubianes Silva  
 
 This program is a simplified version of the software 
 available in: http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads.html
