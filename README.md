@@ -50,8 +50,6 @@ They are in the folder. The shader folder should be in the same directory of the
 
 # Instructions
 
-## Navigation
-
 w: rotate the volume around x axis (clockwise)
 s: rotate the volume around x axis (counter-clockwise)
 a: rotate the volume around z axis (clockwise)
@@ -61,17 +59,17 @@ e: rotate the volume around y axis (counter-clockwise)
 
 r: reset the transformation
 
-#Threshold
+### Threshold
 
 +: increase threshold
 -: decrease threshold
 
-#Controling blender
+### Controling blender
 
 b: increase reference volume
 n: increase floating volume
 
-#Sagittal Clipping
+### Sagittal Clipping
 
 o: browse sagittal slices from left to right
 p: browse sagittal slices from right to left
