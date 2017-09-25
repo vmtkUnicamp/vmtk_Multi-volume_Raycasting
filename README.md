@@ -48,9 +48,9 @@ registeredMatrix: co-register matrix
 The volumes and the co-register matrix are provided. 
 They are in the folder. The shader folder should be in the same directory of the executable.
 
-## Instructions
+# Instructions
 
-# Navigation
+## Navigation
 
 w: rotate the volume around x axis (clockwise)
 s: rotate the volume around x axis (counter-clockwise)
