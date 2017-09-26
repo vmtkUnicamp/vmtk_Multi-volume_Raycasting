@@ -4,17 +4,14 @@ static int m_pos_activate=-1;
 
 vmtkRender3D::vmtkRender3D()
 {
-	m_bInitialized = false;
+    m_bInitialized = false;
     m_Threshold.push_back(0.0f);
-	m_blender=0.5f;
+    m_blender=0.5f;
     m_rotationMatrix.identity();
-
     m_idTexture.clear();
     m_enableMPR=false;
     m_stateMPRInput=false;
 }
-
-
 
 void vmtkRender3D::volumeRealDimension(Import::ImgFormat * data, float vrd[]){
     for(int i = 0; i < 3; i++) { vrd[i] = data->dims[i] * data->space[i]; }
@@ -24,17 +21,17 @@ float vmtkRender3D::maximumDimension(float vrd[]){
     return std::max(std::max(vrd[0], vrd[1]), vrd[2]);
 }
 
-void vmtkRender3D::scaleFactors(float vrd[], float maxDim , extraDataVolume &edv){
-    for (int i = 0; i < 3; i++){ edv.scaleFactor[i] = vrd[i] / maxDim;
-    }
-    edv.scaleFactor[3]=1.0;
+vmath::Vector4f vmtkRender3D::scaleFactors(float vrd[], float maxDim)
+{
+    float scaleFactor[4];
+    for (int i = 0; i < 3; i++){ scaleFactor[i] = vrd[i] / maxDim; }
+    scaleFactor[3]=1.0;
+    return vmath::Vector4<float>(scaleFactor);
 }
 
 vmath::Vector4f vmtkRender3D::phyDimension(Import::ImgFormat * data){
     float phyDimensions[4];
-    for (int i = 0; i < 3; i++){ phyDimensions[i] = data->dims[i];
-        std::cout<<"phyDimensions[i]: "<<phyDimensions[i]<<std::endl;
-    }
+    for (int i = 0; i < 3; i++){ phyDimensions[i] = data->dims[i]; }
     phyDimensions[3]=1.0;
     return vmath::Vector4<float>(phyDimensions);
 }
@@ -42,7 +39,6 @@ vmath::Vector4f vmtkRender3D::phyDimension(Import::ImgFormat * data){
 int vmtkRender3D::currentActivateTexture(){
     GLint nn;
     glGetIntegerv(GL_ACTIVE_TEXTURE, &nn);
-//    std::cout<<"current activate texture: "<<nn-GL_TEXTURE0<<std::endl;
     return nn-GL_TEXTURE0;
 }
 
@@ -50,15 +46,14 @@ void vmtkRender3D::setAcquisition(std::vector<Import::ImgFormat*> acqVector)
 {
     float vrd[3];
     float maxDim;
-    m_phyDimensions = new vmath::Vector4f[acqVector.size()];
-    for (int i = 0; i < acqVector.size(); i++) {
-        extraDataVolume edv;
+    m_scaleFactors = new vmath::Vector4f[acqVector.size()];
+    m_phyDimensions = new vmath::Vector4f[acqVector.size()];   
+    for (int i = 0; i < (int) acqVector.size(); i++) {
         m_data.push_back(acqVector[i]);
         volumeRealDimension( m_data[i], vrd );
         maxDim = maximumDimension(vrd);
-        scaleFactors(vrd, maxDim,  edv);
+        m_scaleFactors[i] = scaleFactors(vrd, maxDim);
         m_phyDimensions[i] = phyDimension(m_data[i]);
-        m_extraDataVolume.push_back(edv);
     }
     m_maxSliceLeft =  m_data[0]->dims[0];
 
@@ -143,7 +138,7 @@ void vmtkRender3D::volumeEqualizer(Import::ImgFormat* data, unsigned int *map, u
     for (di=0, iz = 0; iz < data->dims[2]; iz++) {
         for (iy =0; iy < data->dims[1]; iy++) {
           for (ix =0; ix < data->dims[0]; ix++) {
-            intensidade = (int)((reinterpret_cast<unsigned short*>(data->buffer))[iz*data->dims[0]*data->dims[1]+iy*data->dims[0]+ix]);
+            intensidade = (int) ((reinterpret_cast<unsigned short*>(data->buffer))[iz*data->dims[0]*data->dims[1]+iy*data->dims[0]+ix]);
             texbuffer[di++] = (unsigned short)(map[intensidade]);
           }
         }
@@ -173,7 +168,7 @@ void vmtkRender3D::loadVolumesToTextures()
 {
     int threshold = 23;
     m_pos_activate = 0;
-    for (int i = 0; i< m_data.size(); i++){
+    for (int i = 0; i< (int) m_data.size(); i++){
         unsigned short *texbuffer;
         unsigned int *map=0;
         mapEqualizeHistogramVolume(m_data[i],map);
@@ -215,8 +210,7 @@ void vmtkRender3D::texture1DFromTransferFunction(int dim, unsigned char *tf, GLu
 
 void vmtkRender3D::loadTransferFunctionsToTexture()
 {
-    std::cout<<"m_pos_activate: "<<m_pos_activate<<std::endl;
-    for(int i = 0;i <m_data.size();i++){
+    for(int i = 0; i < (int) m_data.size(); i++){
         int dim;
         unsigned char *tf;
         generateTransferFunction(m_data[i],dim,tf);
@@ -259,14 +253,14 @@ void vmtkRender3D::initRenderPlane()
     glBindBuffer(GL_ARRAY_BUFFER, vboRenderPlane);
     glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(VertexData), vertices, GL_STATIC_DRAW);
 
-    GLuint offset = 0;
+    int offset = 0;
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(VertexData), (const void *)offset);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(VertexData), (const void *)(intptr_t)offset);
 
     offset += sizeof(vmath::Vector2f);
 
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(VertexData), (const void *)offset);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(VertexData), (const void *)(intptr_t)offset);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, eboRenderPlane);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLushort), indices, GL_STATIC_DRAW);
@@ -319,16 +313,13 @@ void vmtkRender3D::raycastingMultiVolume()
     glUniform1i(glGetUniformLocation(m_RaytraceShader,"width"),  m_data[0]->dims[0]);
     glUniform1i(glGetUniformLocation(m_RaytraceShader,"height"), m_data[0]->dims[1]);
     glUniform1i(glGetUniformLocation(m_RaytraceShader,"depth"),  m_data[0]->dims[2]);
-
     glUniform1i(glGetUniformLocation(m_RaytraceShader,"steps_mode"), 300);
-
-
 
     /*Volumes*/
     m_pos_activate = 0;
     glUniform1i(glGetUniformLocation(m_RaytraceShader,"nVolumes"), m_data.size());
     /*volumes 3D */
-    for(int i = 0; i<m_data.size(); i++){
+    for(int i = 0; i < (int) m_data.size(); i++){
         glActiveTexture(GL_TEXTURE0+m_pos_activate);
         glBindTexture(GL_TEXTURE_3D, m_idTexture[i]);
         glTexParameteri(GL_TEXTURE_3D,GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -340,14 +331,13 @@ void vmtkRender3D::raycastingMultiVolume()
 
 
     /*Transfer Function*/
-    for(int i = 0; i<m_data.size(); i++){
+    for(int i = 0; i < (int) m_data.size(); i++){
         glActiveTexture(GL_TEXTURE0+m_pos_activate);
         glBindTexture(GL_TEXTURE_1D, m_idTF[i]);
         std::string nameTF = "vTF"+NumberToString(i);
         glUniform1i(glGetUniformLocation(m_RaytraceShader, nameTF.c_str()),m_pos_activate);
         m_pos_activate = currentActivateTexture()+1;
     }
-
 
     glUniform4fv(glGetUniformLocation(m_RaytraceShader,"phyDimensions"), m_data.size(), (const GLfloat*)m_phyDimensions);
 
@@ -357,14 +347,12 @@ void vmtkRender3D::raycastingMultiVolume()
     if(m_stateMPRInput){
         glUniform1i(glGetUniformLocation(m_RaytraceShader,"enableMPR"), m_enableMPR);
         if(m_enableMPR){
-            glUniform4fv(glGetUniformLocation(m_RaytraceShader,"clipping_plane"), 1, m_equationPlane);
+            glUniform4fv(glGetUniformLocation(m_RaytraceShader,"clipping_plane"), 1, m_equationPlaneForMPR);
         }
     }
     else{
         glUniform1i(glGetUniformLocation(m_RaytraceShader,"enableMPR"), false);
     }
-
-
 
     glUniform1f(glGetUniformLocation(m_RaytraceShader,"noise_threshold"), m_Threshold[0]);
     glUniform1f(glGetUniformLocation(m_RaytraceShader,"blending_factor"), m_blender);
@@ -378,8 +366,6 @@ void vmtkRender3D::raycastingMultiVolume()
     glActiveTexture(GL_TEXTURE0+m_pos_activate);
     glBindTexture(GL_TEXTURE_2D, this->m_FrontFBO->getTexture());
     glUniform1i(glGetUniformLocation(m_RaytraceShader,"frontface_fbo"), m_pos_activate);
-//    m_pos_activate = currentActivateTexture()+1;
-
 
     drawPlaneRayTraced();
     glUseProgram(0);
@@ -417,7 +403,7 @@ void vmtkRender3D::itlDrawColorCube(vmath::Matrix4f mvp)
 	GLuint id = glGetUniformLocation(m_ColorShader,"mvp_matrix");
     glUniformMatrix4fv(id, 1, GL_FALSE, mvp);
 
-    glUniform4fv(glGetUniformLocation(m_ColorShader,"scaleFactors"), 1, m_extraDataVolume[0].scaleFactor);
+    glUniform4fv(glGetUniformLocation(m_ColorShader,"scaleFactors"), 1, m_scaleFactors[0]);
 	drawCube();
 	glUseProgram(0);
 }
@@ -577,14 +563,14 @@ void vmtkRender3D::setStateMPRInput(bool stateMPRInput)
 }
 
 void vmtkRender3D::setVectorInvMatrixReg(std::vector<vmath::Matrix4f> imr){
-    m_invRegMatrix = new vmath::Matrix4f[imr.size()];
-    for(int i = 0; i<imr.size();i++){
+    m_invRegMatrix = new vmath::Matrix4f[ (int) imr.size() ];
+    for(int i = 0; i < (int) imr.size(); i++){
         m_invRegMatrix[i] = imr[i];
     }
 }
 
 void vmtkRender3D::setMPR(vmath::Vector4f eqp){
-    m_equationPlane = eqp;
+    m_equationPlaneForMPR = eqp;
 }
 
 void vmtkRender3D::setClipLeftX(float left_x)

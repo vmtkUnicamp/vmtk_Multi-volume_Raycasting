@@ -86,40 +86,48 @@ switch (key) {
     case '+':
         /* Aumenta o limiar */
         threshold += 1;
-        if(threshold<=0){threshold=0;}
+        if(threshold<=0){ threshold = 0; }
+        std::cout<<"set threshold (int): "<<threshold<<std::endl;
         volumeRender.setThreshold(threshold);
         break;
     case '-':
         /* Diminue o limiar */
         threshold -= 1;
-        if(threshold<=0){threshold=0;}
+        if(threshold<=0){ threshold = 0; }
+        std::cout<<"set threshold (int): "<<threshold<<std::endl;
         volumeRender.setThreshold(threshold);
         break;
     case 'b':
     case 'B':
         blender += 0.1;
-		if (blender > 1.0)
+        if (blender > 1.0){
 			blender = 1.0;
+        }
         volumeRender.setBlender(blender);
         break;
     case 'n':
     case 'N':
 		blender -= 0.1;
-		if (blender < 0.0)
+        if (blender < 0.0){
 			blender = 0.0;
+        }
         volumeRender.setBlender(blender);
         break;
 	case 'o':
 	case 'O':
 		slice_x++;
-		if (slice_x > volumeRender.getMaxSliceLeft())
+        if (slice_x > volumeRender.getMaxSliceLeft()){
 			slice_x = volumeRender.getMaxSliceLeft();
+        }
+        volumeRender.setClipLeftX(slice_x);
 		break;
 	case 'p':
 	case 'P':
 		slice_x--;
-		if (slice_x < 0)
+        if (slice_x < 0){
 			slice_x = 0;
+        }
+        volumeRender.setClipLeftX(slice_x);
 		break;
     case '1':
         if(m_mprState){
@@ -134,8 +142,9 @@ switch (key) {
     default:
         return;
     }
-	
-	volumeRender.setClipLeftX(slice_x);
+
+
+
 	volumeRender.setRotation(spin_x,spin_y,spin_z);
 
 
@@ -267,18 +276,18 @@ int main(int argc, char *argv[])
 	glutKeyboardFunc(keyboard);
 
     /** teste popmenu **/
-    bool ivan_menu=false;
-    if(ivan_menu){
-        int men = glutCreateMenu(menu);
-        //add entries to our menu
-        glutAddMenuEntry("Blender Volume 1-2",1);
-        glutAddMenuEntry("Blender Volume 1-3",2);
-        glutAddMenuEntry("Blender Volume 1-4",3);
-        glutAddMenuEntry("Blender Volume 1-5",4);
-        glutAddMenuEntry("Blender Volume 1-6",5);
-        // attach the menu to the right button
-        glutAttachMenu(GLUT_RIGHT_BUTTON);
-    }
+//    bool ivan_menu=false;
+//    if(ivan_menu){
+//        int men = glutCreateMenu(menu);
+//        //add entries to our menu
+//        glutAddMenuEntry("Blender Volume 1-2",1);
+//        glutAddMenuEntry("Blender Volume 1-3",2);
+//        glutAddMenuEntry("Blender Volume 1-4",3);
+//        glutAddMenuEntry("Blender Volume 1-5",4);
+//        glutAddMenuEntry("Blender Volume 1-6",5);
+//        // attach the menu to the right button
+//        glutAttachMenu(GLUT_RIGHT_BUTTON);
+//    }
 	
 	/* Espera por eventos */
 	glutMainLoop();

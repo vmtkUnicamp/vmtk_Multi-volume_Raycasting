@@ -21,14 +21,8 @@ std::string NumberToString ( T Number )
     return ss.str();
 }
 #define STRCAT(A, B) A B
-static int m_idActiveTex;
 class vmtkRender3D
 {
-    struct extraDataVolume {
-        float scaleFactor[4];
-        float phyDimensions[4];
-    };
-
 	public:
 
 	    /**
@@ -139,12 +133,11 @@ class vmtkRender3D
 
         /**
          * @brief scaleFactors
-         * @param [in] vrd: real Dimension of the volume.
-         * @param [in ]maxDim: Maximum dimension of the volume.
-         * @param [in]  edv: addicional information for structure (Scale factors).
+         * @param [in] vrd: eal Dimension of the volume.
+         * @param [in] maxDim: Maximum dimension of the volume.
+         * @return scale factor of the volume.
          */
-        void scaleFactors(float vrd[], float maxDim, extraDataVolume &edv);
-
+        vmath::Vector4f scaleFactors(float vrd[], float maxDim);
 
         /**
          * @brief phyDimension
@@ -169,21 +162,18 @@ class vmtkRender3D
 
         void setVectorInvMatrixReg(std::vector<vmath::Matrix4f> imr);
 
-        void phyDimension(Import::ImgFormat *data, extraDataVolume &edv);
 private:
 
 		int m_maxSliceLeft;
-//		vmath::Matrix4f m_registration_matrix, m_registration_matrix_inv;
-        vmath::Matrix4f *m_invRegMatrix;
-
-		float m_refThreshold, m_blender;
-        std::vector<unsigned int *> m_map;
-        std::vector<float> m_Threshold;
-        std::vector<Import::ImgFormat*> m_data;
-        std::vector<GLuint>m_idTexture, m_idTF;
-
-        vmath::Vector4f m_equationPlane;
-        bool m_enableMPR, m_stateMPRInput;
+        vmath::Matrix4f *m_invRegMatrix;        /**< inverse matrix for register */
+        float m_blender;                        /**< blender for the reference and float volumes. */
+        std::vector<unsigned int *> m_map;      /**< map vector of the volumes */
+        std::vector<float> m_Threshold;         /**< threshold vector for volumes */
+        std::vector<Import::ImgFormat*> m_data; /**< data vector of the volumes. */
+        std::vector<GLuint>m_idTexture, m_idTF; /**< id textures */
+        vmath::Vector4f m_equationPlaneForMPR;  /**< equation plane for multiplanar reformatting */
+        bool m_enableMPR;                       /**< enable multiplanar reformatting  */
+        bool m_stateMPRInput;                   /**< state load equation for multiplanar reformatting */
 
 	    GLuint m_ColorShader;    /**< pre-processing shader to get front and back planes */
 		GLuint m_RaytraceShader; /**< raycast shader */
@@ -243,13 +233,9 @@ private:
 		vmath::Matrix4f m_rotationMatrix; /**< rotationMatrix transformation matrix */
 		vmath::Matrix4f m_scalationMatrix; /**< scalationMatrix transformation matrix */
 		vmath::Matrix4f m_translationMatrix; /**< traslationMatrix transformation matrix */
-		
-		float m_refScaleFactors[4];               /**< scale factor for compensating distortions on the reference texture volume */
-
-        std::vector<extraDataVolume> m_extraDataVolume;
-		float m_floatScaleFactors[4];             /**< scale factor for compensating distortions on the floating texture volume */  
-
+		 
         vmath::Vector4f *m_phyDimensions;       /**< physical dimensions of volumes */
+        vmath::Vector4f *m_scaleFactors;        /**< scale factor for compensating distortions on the textures volumes */
 		
 		vmtkFrameBufferObject *m_FrontFBO;      /**< framebuffer object for front side */
 		vmtkFrameBufferObject *m_BackFBO;       /**< framebuffer object for back side */
@@ -262,20 +248,10 @@ private:
 		*/
 		void createVectorPlanes();
 		
-//		/**
-//		* @brief loads volume to texture.
-//		*/
-//		void loadVolumetoTexture();
-
         /**
          * @brief loads volumes to textures 3D.
          */
         void loadVolumesToTextures();
-
-//		/**
-//		* @brief loads transfer function to texture.
-//		*/
-//		void loadTransferFtoTexture();
 
         /**
          * @brief Loads transfer Functions to textures 1D.
@@ -296,10 +272,6 @@ private:
 		*/
 		void drawCube();
 
-//		/**
-//		* @brief raycasts through the color cube.
-//		*/
-//		void raycasting();
 
         /**
         * @brief raycasts through the color cube.
