@@ -13,8 +13,10 @@ Running the executable file you should be attentive to the system requirements (
 
 The raycasting algorithm was based in the work presented here: https://www.cg.tuwien.ac.at/courses/Visualisierung/2010-2011/Beispiel1/Moellinger_Ludwig/
 
-The co-register matrix, the plane equation (for multiplanar reformatting) and six [volumes](http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads/volumes.zip) : 
-MT1-FLAIR, T1-T2, T1-PET, T1-SPECT/ICTAL abd T1-SPECT/INTERICTAL are provided for the test.
+The co-register matrix, the plane equation (for multiplanar reformatting) and three [volumes](http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads/volumes.zip) : 
+MRI-T1, MRI-FLAIR, and PET are provided for the test.
+
+**Warning: We consider only LPS  (Left, Posterior, Superior) orientation!!!**
 
 ## This code was compiled using the follow specifications:
 
