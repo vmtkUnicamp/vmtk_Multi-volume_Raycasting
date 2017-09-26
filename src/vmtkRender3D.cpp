@@ -360,6 +360,9 @@ void vmtkRender3D::raycastingMultiVolume()
             glUniform4fv(glGetUniformLocation(m_RaytraceShader,"clipping_plane"), 1, m_equationPlane);
         }
     }
+    else{
+        glUniform1i(glGetUniformLocation(m_RaytraceShader,"enableMPR"), false);
+    }
 
 
 
