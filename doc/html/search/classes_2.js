@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['equalize',['Equalize',['../class_equalize.html',1,'']]]
+  ['drawresultfs',['DrawresultFS',['../class_drawresult_f_s.html',1,'']]],
+  ['drawresultvs',['DrawresultVS',['../class_drawresult_v_s.html',1,'']]]
 ];

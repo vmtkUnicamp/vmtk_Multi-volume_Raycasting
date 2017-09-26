@@ -192,8 +192,8 @@ class VMATH_NAMESPACE::Aabb3&lt; T &gt;</h3>
 <li>getting result of intersection with other AABB,</li>
 <li>transforming AABB with 4x4 matrix.</li>
 </ul>
-<p>There are also overloaded couple of operators to shorten common operation. For instance you can use <code>operator&lt;&lt;</code> on AABB to extend it with passed point or other AABB. </p><div class="fragment"><div class="line">Aabb3f aabb;</div><div class="line">aabb &lt;&lt; Vector3f(1, 1, 2) &lt;&lt; Aabb3f(-3,-3,-3, 2, 2, 2);</div></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04013">4013</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p>There are also overloaded couple of operators to shorten common operation. For instance you can use <code>operator&lt;&lt;</code> on AABB to extend it with passed point or other AABB. </p><div class="fragment"><div class="line"><a class="code" href="namespace_v_m_a_t_h___n_a_m_e_s_p_a_c_e.html#aa6851f7f3c9dc951776358e26df7046a">Aabb3f</a> aabb;</div><div class="line">aabb &lt;&lt; <a class="code" href="namespace_v_m_a_t_h___n_a_m_e_s_p_a_c_e.html#aed11690e8cf0d95184525a9e83d68b7d">Vector3f</a>(1, 1, 2) &lt;&lt; <a class="code" href="namespace_v_m_a_t_h___n_a_m_e_s_p_a_c_e.html#aa6851f7f3c9dc951776358e26df7046a">Aabb3f</a>(-3,-3,-3, 2, 2, 2);</div></div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04022">4022</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af93dfca6ab7c846202fe3a292be267e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af93dfca6ab7c846202fe3a292be267e3">&#9670;&nbsp;</a></span>Aabb3() <span class="overload">[1/5]</span></h2>
@@ -221,8 +221,10 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Constructs invalid axes-aligned bounding-box. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">valid()</a> for explanation of invalid bounding-box usage. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04030">4030</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04039">4039</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04040"></a><span class="lineno"> 4040</span>&#160;            : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>(1,1,1), <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>(-1,-1,-1)</div><div class="line"><a name="l04041"></a><span class="lineno"> 4041</span>&#160;        {}</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3a3b73323b1c844f24780a427f3f7855"></a>
@@ -259,8 +261,11 @@ template&lt;typename SrcT &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04039">4039</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04048">4048</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04049"></a><span class="lineno"> 4049</span>&#160;            : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>), <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>)</div><div class="line"><a name="l04050"></a><span class="lineno"> 4050</span>&#160;        {}</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a750749e33d842fa653a0279c7377fd16"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">VMATH_NAMESPACE::Aabb3::point</a></div><div class="ttdeci">Vector3&lt; T &gt; point(size_t i) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04293">vmath.h:4293</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1cfe7e97ce344d0710206ffb78b29235"></a>
@@ -336,8 +341,12 @@ template&lt;typename SrcT &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04054">4054</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04063">4063</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04064"></a><span class="lineno"> 4064</span>&#160;            : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>(<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a>(x0,x1), <a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a>(y0,y1), <a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a>(z0,z1)),</div><div class="line"><a name="l04065"></a><span class="lineno"> 4065</span>&#160;              <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>(<a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a>(x0,x1), <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a>(y0,y1), <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a>(z0,z1))</div><div class="line"><a name="l04066"></a><span class="lineno"> 4066</span>&#160;        {}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a099a855b9c1dd36fb010bd0e367345b6"></a>
@@ -392,8 +401,10 @@ template&lt;typename SrcT &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04066">4066</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04075">4075</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04076"></a><span class="lineno"> 4076</span>&#160;            : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>(x,y,z), <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>(x,y,z)</div><div class="line"><a name="l04077"></a><span class="lineno"> 4077</span>&#160;        {}</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adaeda09e7fcea29c08b171e1d20b5c87"></a>
@@ -430,8 +441,10 @@ template&lt;typename SrcT &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04075">4075</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04084">4084</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04085"></a><span class="lineno"> 4085</span>&#160;            : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>(src.min), <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>(src.max)</div><div class="line"><a name="l04086"></a><span class="lineno"> 4086</span>&#160;        {}</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -461,8 +474,10 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Gets center point of bounding-box. </p><dl class="section return"><dt>Returns</dt><dd>A center point of bounding-box. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04252">4252</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04261">4261</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04262"></a><span class="lineno"> 4262</span>&#160;        { <span class="keywordflow">return</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> + <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>) * 0.5f; }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a15de11cd9fef9290afdc0eb62cfc5c1e"></a>
@@ -499,7 +514,28 @@ template&lt;typename SrcT &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04114">4114</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04123">4123</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l03969">std::max()</a>, and <a class="el" href="vmath_8h_source.html#l03939">std::min()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vmath_8h_source.html#l04161">VMATH_NAMESPACE::Aabb3&lt; T &gt;::extended()</a>, and <a class="el" href="vmath_8h_source.html#l04304">VMATH_NAMESPACE::Aabb3&lt; T &gt;::transformed()</a>.</p>
+<div class="fragment"><div class="line"><a name="l04124"></a><span class="lineno"> 4124</span>&#160;        {</div><div class="line"><a name="l04125"></a><span class="lineno"> 4125</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">valid</a>())</div><div class="line"><a name="l04126"></a><span class="lineno"> 4126</span>&#160;            {</div><div class="line"><a name="l04127"></a><span class="lineno"> 4127</span>&#160;                <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> = <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> = <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>;</div><div class="line"><a name="l04128"></a><span class="lineno"> 4128</span>&#160;            }</div><div class="line"><a name="l04129"></a><span class="lineno"> 4129</span>&#160;            <span class="keywordflow">else</span></div><div class="line"><a name="l04130"></a><span class="lineno"> 4130</span>&#160;            {</div><div class="line"><a name="l04131"></a><span class="lineno"> 4131</span>&#160;                <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> = <a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>, <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>);</div><div class="line"><a name="l04132"></a><span class="lineno"> 4132</span>&#160;                <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> = <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>, <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>);</div><div class="line"><a name="l04133"></a><span class="lineno"> 4133</span>&#160;            }</div><div class="line"><a name="l04134"></a><span class="lineno"> 4134</span>&#160;        }</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a750749e33d842fa653a0279c7377fd16"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">VMATH_NAMESPACE::Aabb3::point</a></div><div class="ttdeci">Vector3&lt; T &gt; point(size_t i) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04293">vmath.h:4293</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a4f8bd805b0342a670760f71d5fac58fc"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">VMATH_NAMESPACE::Aabb3::valid</a></div><div class="ttdeci">bool valid() const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04108">vmath.h:4108</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a15de11cd9fef9290afdc0eb62cfc5c1e_cgraph.png" border="0" usemap="#class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a15de11cd9fef9290afdc0eb62cfc5c1e_cgraph" alt=""/></div>
+<map name="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a15de11cd9fef9290afdc0eb62cfc5c1e_cgraph" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a15de11cd9fef9290afdc0eb62cfc5c1e_cgraph">
+<area shape="rect" id="node2" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="256,5,329,32"/>
+<area shape="rect" id="node4" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9" title="std::min" alt="" coords="258,56,327,83"/>
+<area shape="rect" id="node3" href="namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="377,5,451,32"/>
+<area shape="rect" id="node5" href="namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="379,56,449,83"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -546,7 +582,25 @@ template&lt;typename SrcT &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04132">4132</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04141">4141</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l03969">std::max()</a>, <a class="el" href="vmath_8h_source.html#l04033">VMATH_NAMESPACE::Aabb3&lt; T &gt;::max</a>, <a class="el" href="vmath_8h_source.html#l03939">std::min()</a>, and <a class="el" href="vmath_8h_source.html#l04028">VMATH_NAMESPACE::Aabb3&lt; T &gt;::min</a>.</p>
+<div class="fragment"><div class="line"><a name="l04142"></a><span class="lineno"> 4142</span>&#160;        {</div><div class="line"><a name="l04143"></a><span class="lineno"> 4143</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">valid</a>())</div><div class="line"><a name="l04144"></a><span class="lineno"> 4144</span>&#160;            {</div><div class="line"><a name="l04145"></a><span class="lineno"> 4145</span>&#160;                <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> = box.min;</div><div class="line"><a name="l04146"></a><span class="lineno"> 4146</span>&#160;                <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> = box.max;</div><div class="line"><a name="l04147"></a><span class="lineno"> 4147</span>&#160;            }</div><div class="line"><a name="l04148"></a><span class="lineno"> 4148</span>&#160;            <span class="keywordflow">else</span></div><div class="line"><a name="l04149"></a><span class="lineno"> 4149</span>&#160;            {</div><div class="line"><a name="l04150"></a><span class="lineno"> 4150</span>&#160;                <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> = <a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>, box.min);</div><div class="line"><a name="l04151"></a><span class="lineno"> 4151</span>&#160;                <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> = <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>, box.max);</div><div class="line"><a name="l04152"></a><span class="lineno"> 4152</span>&#160;            }</div><div class="line"><a name="l04153"></a><span class="lineno"> 4153</span>&#160;        }</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a4f8bd805b0342a670760f71d5fac58fc"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">VMATH_NAMESPACE::Aabb3::valid</a></div><div class="ttdeci">bool valid() const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04108">vmath.h:4108</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a8acdce4dc8223420714a5a34827f3c46_cgraph.png" border="0" usemap="#class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a8acdce4dc8223420714a5a34827f3c46_cgraph" alt=""/></div>
+<map name="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a8acdce4dc8223420714a5a34827f3c46_cgraph" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a8acdce4dc8223420714a5a34827f3c46_cgraph">
+<area shape="rect" id="node2" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="256,5,329,32"/>
+<area shape="rect" id="node4" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9" title="std::min" alt="" coords="258,56,327,83"/>
+<area shape="rect" id="node3" href="namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="377,5,451,32"/>
+<area shape="rect" id="node5" href="namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="379,56,449,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -585,13 +639,20 @@ template&lt;typename SrcT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Copy of extended bounding-box </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04152">4152</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-<div class="dynheader">
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04161">4161</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l04123">VMATH_NAMESPACE::Aabb3&lt; T &gt;::extend()</a>.</p>
+<div class="fragment"><div class="line"><a name="l04162"></a><span class="lineno"> 4162</span>&#160;        {</div><div class="line"><a name="l04163"></a><span class="lineno"> 4163</span>&#160;            Aabb3&lt;T&gt; ret(*<span class="keyword">this</span>);</div><div class="line"><a name="l04164"></a><span class="lineno"> 4164</span>&#160;            ret.extend(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>);</div><div class="line"><a name="l04165"></a><span class="lineno"> 4165</span>&#160;            <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l04166"></a><span class="lineno"> 4166</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a750749e33d842fa653a0279c7377fd16"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">VMATH_NAMESPACE::Aabb3::point</a></div><div class="ttdeci">Vector3&lt; T &gt; point(size_t i) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04293">vmath.h:4293</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ad2d34deefcb79415ab50f04cfddcd6b1_cgraph.png" border="0" usemap="#class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ad2d34deefcb79415ab50f04cfddcd6b1_cgraph" alt=""/></div>
 <map name="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ad2d34deefcb79415ab50f04cfddcd6b1_cgraph" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ad2d34deefcb79415ab50f04cfddcd6b1_cgraph">
-<area shape="rect" id="node2" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,5,459,47"/>
+<area shape="rect" id="node2" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,23,459,65"/>
+<area shape="rect" id="node3" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="507,5,580,32"/>
+<area shape="rect" id="node5" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9" title="std::min" alt="" coords="509,56,578,83"/>
+<area shape="rect" id="node4" href="namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="628,5,701,32"/>
+<area shape="rect" id="node6" href="namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="630,56,699,83"/>
 </map>
 </div>
 
@@ -632,13 +693,19 @@ template&lt;typename SrcT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Copy of extended bounding-box </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04165">4165</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-<div class="dynheader">
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04174">4174</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l04123">VMATH_NAMESPACE::Aabb3&lt; T &gt;::extend()</a>.</p>
+<div class="fragment"><div class="line"><a name="l04175"></a><span class="lineno"> 4175</span>&#160;        {</div><div class="line"><a name="l04176"></a><span class="lineno"> 4176</span>&#160;            Aabb3&lt;T&gt; ret(*<span class="keyword">this</span>);</div><div class="line"><a name="l04177"></a><span class="lineno"> 4177</span>&#160;            ret.extend(box);</div><div class="line"><a name="l04178"></a><span class="lineno"> 4178</span>&#160;            <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l04179"></a><span class="lineno"> 4179</span>&#160;        }</div></div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a1fe1ec4be4e1a6003cc7282a37f9f6c0_cgraph.png" border="0" usemap="#class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a1fe1ec4be4e1a6003cc7282a37f9f6c0_cgraph" alt=""/></div>
 <map name="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a1fe1ec4be4e1a6003cc7282a37f9f6c0_cgraph" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a1fe1ec4be4e1a6003cc7282a37f9f6c0_cgraph">
-<area shape="rect" id="node2" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,5,459,47"/>
+<area shape="rect" id="node2" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,23,459,65"/>
+<area shape="rect" id="node3" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="507,5,580,32"/>
+<area shape="rect" id="node5" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9" title="std::min" alt="" coords="509,56,578,83"/>
+<area shape="rect" id="node4" href="namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="628,5,701,32"/>
+<area shape="rect" id="node6" href="namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="630,56,699,83"/>
 </map>
 </div>
 
@@ -670,8 +737,10 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Gets extent of bounding-box. </p><dl class="section return"><dt>Returns</dt><dd>Extent of bounding-box. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04259">4259</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04268">4268</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04269"></a><span class="lineno"> 4269</span>&#160;        { <span class="keywordflow">return</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> - <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>) * 0.5f; }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a43ea02934bc1158b0a96eae518e7dd99"></a>
@@ -710,7 +779,24 @@ template&lt;typename SrcT &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Result of intersection. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">valid()</a> method for more information on invalid bounding-boxes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04232">4232</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04241">4241</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l03969">std::max()</a>, <a class="el" href="vmath_8h_source.html#l04033">VMATH_NAMESPACE::Aabb3&lt; T &gt;::max</a>, <a class="el" href="vmath_8h_source.html#l03939">std::min()</a>, <a class="el" href="vmath_8h_source.html#l04028">VMATH_NAMESPACE::Aabb3&lt; T &gt;::min</a>, <a class="el" href="vmath_8h_source.html#l00636">VMATH_NAMESPACE::Vector3&lt; T &gt;::x</a>, <a class="el" href="vmath_8h_source.html#l00656">VMATH_NAMESPACE::Vector3&lt; T &gt;::y</a>, and <a class="el" href="vmath_8h_source.html#l00674">VMATH_NAMESPACE::Vector3&lt; T &gt;::z</a>.</p>
+<div class="fragment"><div class="line"><a name="l04242"></a><span class="lineno"> 4242</span>&#160;        {</div><div class="line"><a name="l04243"></a><span class="lineno"> 4243</span>&#160;            Aabb3&lt;T&gt; ret;</div><div class="line"><a name="l04244"></a><span class="lineno"> 4244</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.x &lt; other.min.x || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.x &gt; other.max.x)</div><div class="line"><a name="l04245"></a><span class="lineno"> 4245</span>&#160;                <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l04246"></a><span class="lineno"> 4246</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.y &lt; other.min.y || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.y &gt; other.max.y)</div><div class="line"><a name="l04247"></a><span class="lineno"> 4247</span>&#160;                <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l04248"></a><span class="lineno"> 4248</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.z &lt; other.min.z || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.z &gt; other.max.z)</div><div class="line"><a name="l04249"></a><span class="lineno"> 4249</span>&#160;                <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l04250"></a><span class="lineno"> 4250</span>&#160;</div><div class="line"><a name="l04251"></a><span class="lineno"> 4251</span>&#160;            ret.min = <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>, other.min);</div><div class="line"><a name="l04252"></a><span class="lineno"> 4252</span>&#160;            ret.max = <a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a>(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>, other.max);</div><div class="line"><a name="l04253"></a><span class="lineno"> 4253</span>&#160;</div><div class="line"><a name="l04254"></a><span class="lineno"> 4254</span>&#160;            <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l04255"></a><span class="lineno"> 4255</span>&#160;        }</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a43ea02934bc1158b0a96eae518e7dd99_cgraph.png" border="0" usemap="#class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a43ea02934bc1158b0a96eae518e7dd99_cgraph" alt=""/></div>
+<map name="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a43ea02934bc1158b0a96eae518e7dd99_cgraph" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a43ea02934bc1158b0a96eae518e7dd99_cgraph">
+<area shape="rect" id="node2" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="256,5,329,32"/>
+<area shape="rect" id="node4" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9" title="std::min" alt="" coords="258,56,327,83"/>
+<area shape="rect" id="node3" href="namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="377,5,451,32"/>
+<area shape="rect" id="node5" href="namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="379,56,449,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -749,8 +835,13 @@ template&lt;typename SrcT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if point <em>point</em> lies within bounding-box, otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04178">4178</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04187">4187</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l00636">VMATH_NAMESPACE::Vector3&lt; T &gt;::x</a>, <a class="el" href="vmath_8h_source.html#l00656">VMATH_NAMESPACE::Vector3&lt; T &gt;::y</a>, and <a class="el" href="vmath_8h_source.html#l00674">VMATH_NAMESPACE::Vector3&lt; T &gt;::z</a>.</p>
+<div class="fragment"><div class="line"><a name="l04188"></a><span class="lineno"> 4188</span>&#160;        {</div><div class="line"><a name="l04189"></a><span class="lineno"> 4189</span>&#160;            <span class="comment">/*</span></div><div class="line"><a name="l04190"></a><span class="lineno"> 4190</span>&#160;<span class="comment">            for (size_t i = 0; i &lt; 3; i++)</span></div><div class="line"><a name="l04191"></a><span class="lineno"> 4191</span>&#160;<span class="comment">            {</span></div><div class="line"><a name="l04192"></a><span class="lineno"> 4192</span>&#160;<span class="comment">                if (min[i] &gt; point[i] || point[i] &gt; max[i])</span></div><div class="line"><a name="l04193"></a><span class="lineno"> 4193</span>&#160;<span class="comment">                    return false;</span></div><div class="line"><a name="l04194"></a><span class="lineno"> 4194</span>&#160;<span class="comment">            }</span></div><div class="line"><a name="l04195"></a><span class="lineno"> 4195</span>&#160;<span class="comment">            */</span></div><div class="line"><a name="l04196"></a><span class="lineno"> 4196</span>&#160;            <span class="comment">// unrolled loop above</span></div><div class="line"><a name="l04197"></a><span class="lineno"> 4197</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.x &gt; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>.x || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>.x &gt; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.x)</div><div class="line"><a name="l04198"></a><span class="lineno"> 4198</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l04199"></a><span class="lineno"> 4199</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.y &gt; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>.y || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>.y &gt; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.y)</div><div class="line"><a name="l04200"></a><span class="lineno"> 4200</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l04201"></a><span class="lineno"> 4201</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.z &gt; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>.z || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>.z &gt; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.z)</div><div class="line"><a name="l04202"></a><span class="lineno"> 4202</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l04203"></a><span class="lineno"> 4203</span>&#160;</div><div class="line"><a name="l04204"></a><span class="lineno"> 4204</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l04205"></a><span class="lineno"> 4205</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a750749e33d842fa653a0279c7377fd16"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">VMATH_NAMESPACE::Aabb3::point</a></div><div class="ttdeci">Vector3&lt; T &gt; point(size_t i) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04293">vmath.h:4293</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adf7d4ba312ab0e56fda50a9320b578c9"></a>
@@ -788,8 +879,12 @@ template&lt;typename SrcT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if there's intersection between boxes, otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04204">4204</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04213">4213</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l04033">VMATH_NAMESPACE::Aabb3&lt; T &gt;::max</a>, <a class="el" href="vmath_8h_source.html#l04028">VMATH_NAMESPACE::Aabb3&lt; T &gt;::min</a>, <a class="el" href="vmath_8h_source.html#l00636">VMATH_NAMESPACE::Vector3&lt; T &gt;::x</a>, <a class="el" href="vmath_8h_source.html#l00656">VMATH_NAMESPACE::Vector3&lt; T &gt;::y</a>, and <a class="el" href="vmath_8h_source.html#l00674">VMATH_NAMESPACE::Vector3&lt; T &gt;::z</a>.</p>
+<div class="fragment"><div class="line"><a name="l04214"></a><span class="lineno"> 4214</span>&#160;        {</div><div class="line"><a name="l04215"></a><span class="lineno"> 4215</span>&#160;            <span class="comment">/*</span></div><div class="line"><a name="l04216"></a><span class="lineno"> 4216</span>&#160;<span class="comment">            for (size_t i = 0; i &lt; 3; i++)</span></div><div class="line"><a name="l04217"></a><span class="lineno"> 4217</span>&#160;<span class="comment">            {</span></div><div class="line"><a name="l04218"></a><span class="lineno"> 4218</span>&#160;<span class="comment">                if (max[i] &lt; box.min[i] || min[i] &gt; box.max[i])</span></div><div class="line"><a name="l04219"></a><span class="lineno"> 4219</span>&#160;<span class="comment">                    return false;</span></div><div class="line"><a name="l04220"></a><span class="lineno"> 4220</span>&#160;<span class="comment">            }</span></div><div class="line"><a name="l04221"></a><span class="lineno"> 4221</span>&#160;<span class="comment">            */</span></div><div class="line"><a name="l04222"></a><span class="lineno"> 4222</span>&#160;            <span class="comment">// unrolled loop above</span></div><div class="line"><a name="l04223"></a><span class="lineno"> 4223</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.x &lt; box.min.x || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.x &gt; box.max.x)</div><div class="line"><a name="l04224"></a><span class="lineno"> 4224</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l04225"></a><span class="lineno"> 4225</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.y &lt; box.min.y || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.y &gt; box.max.y)</div><div class="line"><a name="l04226"></a><span class="lineno"> 4226</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l04227"></a><span class="lineno"> 4227</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.z &lt; box.min.z || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.z &gt; box.max.z)</div><div class="line"><a name="l04228"></a><span class="lineno"> 4228</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l04229"></a><span class="lineno"> 4229</span>&#160;</div><div class="line"><a name="l04230"></a><span class="lineno"> 4230</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l04231"></a><span class="lineno"> 4231</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a43927fdc1e518ca59ae45af2e897d9e9"></a>
@@ -818,8 +913,10 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Makes this bounding-box invalid. So calling <a class="el" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">valid()</a> gets false. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a4f8bd805b0342a670760f71d5fac58fc">valid()</a> method for more info on usage of invalid bounding-boxes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04106">4106</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04115">4115</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04116"></a><span class="lineno"> 4116</span>&#160;        { <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> = Vector3&lt;T&gt;(1,1,1); <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> = Vector3&lt;T&gt;(-1,-1,-1); }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adafe6eaa8dfd8cb08d9f3e4b5139a9d4"></a>
@@ -857,8 +954,9 @@ template&lt;typename RhsT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Resulting bouding-box representing the intersection. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04395">4395</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04404">4404</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04405"></a><span class="lineno"> 4405</span>&#160;        {</div><div class="line"><a name="l04406"></a><span class="lineno"> 4406</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a43ea02934bc1158b0a96eae518e7dd99">intersection</a>(rhs);</div><div class="line"><a name="l04407"></a><span class="lineno"> 4407</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a43ea02934bc1158b0a96eae518e7dd99"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a43ea02934bc1158b0a96eae518e7dd99">VMATH_NAMESPACE::Aabb3::intersection</a></div><div class="ttdeci">Aabb3&lt; T &gt; intersection(const Aabb3&lt; SrcT &gt; &amp;other) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04241">vmath.h:4241</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aad184562646cad0dd5fb7b7fc9c6c298"></a>
@@ -896,8 +994,12 @@ template&lt;typename RhsT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if <em>rhs</em> and this bounding-boxes are not equal, otherwise false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04327">4327</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04336">4336</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l04033">VMATH_NAMESPACE::Aabb3&lt; T &gt;::max</a>, and <a class="el" href="vmath_8h_source.html#l04028">VMATH_NAMESPACE::Aabb3&lt; T &gt;::min</a>.</p>
+<div class="fragment"><div class="line"><a name="l04337"></a><span class="lineno"> 4337</span>&#160;        {</div><div class="line"><a name="l04338"></a><span class="lineno"> 4338</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> != rhs.min || <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> != rhs.max;</div><div class="line"><a name="l04339"></a><span class="lineno"> 4339</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a72da17e90329c6c53ec34e6a6983c644"></a>
@@ -933,8 +1035,9 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Transformed bounding-box </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04337">4337</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04346">4346</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04347"></a><span class="lineno"> 4347</span>&#160;        {</div><div class="line"><a name="l04348"></a><span class="lineno"> 4348</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ab0c08fb2a6a8e780d8c90c8ff0106881">transformed</a>(rhs);</div><div class="line"><a name="l04349"></a><span class="lineno"> 4349</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_ab0c08fb2a6a8e780d8c90c8ff0106881"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ab0c08fb2a6a8e780d8c90c8ff0106881">VMATH_NAMESPACE::Aabb3::transformed</a></div><div class="ttdeci">Aabb3&lt; T &gt; transformed(const Matrix4&lt; T &gt; &amp;t) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04304">vmath.h:4304</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1adc3cbaa338106bac21f6348b75dda2"></a>
@@ -970,8 +1073,9 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04347">4347</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04356">4356</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04357"></a><span class="lineno"> 4357</span>&#160;        {</div><div class="line"><a name="l04358"></a><span class="lineno"> 4358</span>&#160;            *<span class="keyword">this</span> = <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ab0c08fb2a6a8e780d8c90c8ff0106881">transformed</a>(rhs);</div><div class="line"><a name="l04359"></a><span class="lineno"> 4359</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l04360"></a><span class="lineno"> 4360</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_ab0c08fb2a6a8e780d8c90c8ff0106881"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ab0c08fb2a6a8e780d8c90c8ff0106881">VMATH_NAMESPACE::Aabb3::transformed</a></div><div class="ttdeci">Aabb3&lt; T &gt; transformed(const Matrix4&lt; T &gt; &amp;t) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04304">vmath.h:4304</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2a23293c9d817628037639f2de491848"></a>
@@ -1009,8 +1113,9 @@ template&lt;typename SrcT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04360">4360</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04369">4369</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04370"></a><span class="lineno"> 4370</span>&#160;        {</div><div class="line"><a name="l04371"></a><span class="lineno"> 4371</span>&#160;            <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e">extend</a>(rhs);</div><div class="line"><a name="l04372"></a><span class="lineno"> 4372</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l04373"></a><span class="lineno"> 4373</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a15de11cd9fef9290afdc0eb62cfc5c1e"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e">VMATH_NAMESPACE::Aabb3::extend</a></div><div class="ttdeci">void extend(const Vector3&lt; SrcT &gt; &amp;point)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04123">vmath.h:4123</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1d13fb18cfe75e28fea451f5908f6d09"></a>
@@ -1048,8 +1153,9 @@ template&lt;typename SrcT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04372">4372</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04381">4381</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04382"></a><span class="lineno"> 4382</span>&#160;        {</div><div class="line"><a name="l04383"></a><span class="lineno"> 4383</span>&#160;            <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e">extend</a>(rhs);</div><div class="line"><a name="l04384"></a><span class="lineno"> 4384</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l04385"></a><span class="lineno"> 4385</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a15de11cd9fef9290afdc0eb62cfc5c1e"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e">VMATH_NAMESPACE::Aabb3::extend</a></div><div class="ttdeci">void extend(const Vector3&lt; SrcT &gt; &amp;point)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04123">vmath.h:4123</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adc710e3ca7a2bb8cff88dedf839c5890"></a>
@@ -1087,8 +1193,12 @@ template&lt;typename SrcT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>refenrence to this </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04085">4085</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04094">4094</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l04033">VMATH_NAMESPACE::Aabb3&lt; T &gt;::max</a>, and <a class="el" href="vmath_8h_source.html#l04028">VMATH_NAMESPACE::Aabb3&lt; T &gt;::min</a>.</p>
+<div class="fragment"><div class="line"><a name="l04095"></a><span class="lineno"> 4095</span>&#160;        {</div><div class="line"><a name="l04096"></a><span class="lineno"> 4096</span>&#160;            <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> = rhs.min;</div><div class="line"><a name="l04097"></a><span class="lineno"> 4097</span>&#160;            <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> = rhs.max;</div><div class="line"><a name="l04098"></a><span class="lineno"> 4098</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l04099"></a><span class="lineno"> 4099</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5904621e63e181a5dfcce788fe22a347"></a>
@@ -1126,8 +1236,12 @@ template&lt;typename RhsT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if <em>rhs</em> and this bounding-boxes are equal, otherwise false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04316">4316</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04325">4325</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l04033">VMATH_NAMESPACE::Aabb3&lt; T &gt;::max</a>, and <a class="el" href="vmath_8h_source.html#l04028">VMATH_NAMESPACE::Aabb3&lt; T &gt;::min</a>.</p>
+<div class="fragment"><div class="line"><a name="l04326"></a><span class="lineno"> 4326</span>&#160;        {</div><div class="line"><a name="l04327"></a><span class="lineno"> 4327</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a> == rhs.min &amp;&amp; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> == rhs.max;</div><div class="line"><a name="l04328"></a><span class="lineno"> 4328</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a006ebda9b0b2d7fd66ec67bcb47ba266"></a>
@@ -1165,8 +1279,9 @@ template&lt;typename RhsT &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A resulting bounding-box representing union </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04384">4384</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04393">4393</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04394"></a><span class="lineno"> 4394</span>&#160;        {</div><div class="line"><a name="l04395"></a><span class="lineno"> 4395</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ad2d34deefcb79415ab50f04cfddcd6b1">extended</a>(rhs);</div><div class="line"><a name="l04396"></a><span class="lineno"> 4396</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_ad2d34deefcb79415ab50f04cfddcd6b1"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ad2d34deefcb79415ab50f04cfddcd6b1">VMATH_NAMESPACE::Aabb3::extended</a></div><div class="ttdeci">Aabb3&lt; T &gt; extended(const Vector3&lt; SrcT &gt; &amp;point) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04161">vmath.h:4161</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a750749e33d842fa653a0279c7377fd16"></a>
@@ -1213,8 +1328,12 @@ template&lt;typename T&gt; </div>
 </ol>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04284">4284</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04293">4293</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l00636">VMATH_NAMESPACE::Vector3&lt; T &gt;::x</a>, <a class="el" href="vmath_8h_source.html#l00656">VMATH_NAMESPACE::Vector3&lt; T &gt;::y</a>, and <a class="el" href="vmath_8h_source.html#l00674">VMATH_NAMESPACE::Vector3&lt; T &gt;::z</a>.</p>
+<div class="fragment"><div class="line"><a name="l04294"></a><span class="lineno"> 4294</span>&#160;        {</div><div class="line"><a name="l04295"></a><span class="lineno"> 4295</span>&#160;            assert(i &lt; 8);</div><div class="line"><a name="l04296"></a><span class="lineno"> 4296</span>&#160;            <span class="keywordflow">return</span> Vector3&lt;T&gt;(i &amp; 1 ? <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.x : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.x, i &amp; 2 ? <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.y : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.y, i &amp; 4 ? <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.z : <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.z);</div><div class="line"><a name="l04297"></a><span class="lineno"> 4297</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5466e615eee86536d865ee4a13d8b71b"></a>
@@ -1243,7 +1362,19 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Gets diagonal size of bounding-box </p><dl class="section return"><dt>Returns</dt><dd>Sizes for particular dimensions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04266">4266</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04275">4275</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l03959">std::min()</a>.</p>
+<div class="fragment"><div class="line"><a name="l04276"></a><span class="lineno"> 4276</span>&#160;        { <span class="keywordflow">return</span> <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a> - <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>; }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a5466e615eee86536d865ee4a13d8b71b_cgraph.png" border="0" usemap="#class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a5466e615eee86536d865ee4a13d8b71b_cgraph" alt=""/></div>
+<map name="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a5466e615eee86536d865ee4a13d8b71b_cgraph" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_a5466e615eee86536d865ee4a13d8b71b_cgraph">
+<area shape="rect" id="node2" href="namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="256,13,325,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1280,13 +1411,20 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Transformed bounding-box </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04295">4295</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-<div class="dynheader">
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04304">4304</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l04123">VMATH_NAMESPACE::Aabb3&lt; T &gt;::extend()</a>.</p>
+<div class="fragment"><div class="line"><a name="l04305"></a><span class="lineno"> 4305</span>&#160;        {</div><div class="line"><a name="l04306"></a><span class="lineno"> 4306</span>&#160;            Aabb3&lt;T&gt; ret;</div><div class="line"><a name="l04307"></a><span class="lineno"> 4307</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 8; i++)</div><div class="line"><a name="l04308"></a><span class="lineno"> 4308</span>&#160;            {</div><div class="line"><a name="l04309"></a><span class="lineno"> 4309</span>&#160;                <span class="keyword">const</span> Vector4&lt;T&gt; p(<a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">point</a>(i), 1);</div><div class="line"><a name="l04310"></a><span class="lineno"> 4310</span>&#160;                ret.extend((t * p).xyz());</div><div class="line"><a name="l04311"></a><span class="lineno"> 4311</span>&#160;            }</div><div class="line"><a name="l04312"></a><span class="lineno"> 4312</span>&#160;</div><div class="line"><a name="l04313"></a><span class="lineno"> 4313</span>&#160;            <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l04314"></a><span class="lineno"> 4314</span>&#160;        }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a750749e33d842fa653a0279c7377fd16"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a750749e33d842fa653a0279c7377fd16">VMATH_NAMESPACE::Aabb3::point</a></div><div class="ttdeci">Vector3&lt; T &gt; point(size_t i) const</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04293">vmath.h:4293</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ab0c08fb2a6a8e780d8c90c8ff0106881_cgraph.png" border="0" usemap="#class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ab0c08fb2a6a8e780d8c90c8ff0106881_cgraph" alt=""/></div>
 <map name="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ab0c08fb2a6a8e780d8c90c8ff0106881_cgraph" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_ab0c08fb2a6a8e780d8c90c8ff0106881_cgraph">
-<area shape="rect" id="node2" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,5,459,47"/>
+<area shape="rect" id="node2" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,23,459,65"/>
+<area shape="rect" id="node3" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="507,5,580,32"/>
+<area shape="rect" id="node5" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9" title="std::min" alt="" coords="509,56,578,83"/>
+<area shape="rect" id="node4" href="namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="628,5,701,32"/>
+<area shape="rect" id="node6" href="namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="630,56,699,83"/>
 </map>
 </div>
 
@@ -1318,8 +1456,12 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Checks if bounding-box is valid. Valid bounding-box has non-negative size. If an invalid bounding-box is extended by point or another bounding-box, the target bounding box becomes valid and contains solely the source point or bounding-box respectively. </p><dl class="section return"><dt>Returns</dt><dd>True if box is valid, otherwise false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04099">4099</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04108">4108</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
 
+<p class="reference">References <a class="el" href="vmath_8h_source.html#l00636">VMATH_NAMESPACE::Vector3&lt; T &gt;::x</a>, <a class="el" href="vmath_8h_source.html#l00656">VMATH_NAMESPACE::Vector3&lt; T &gt;::y</a>, and <a class="el" href="vmath_8h_source.html#l00674">VMATH_NAMESPACE::Vector3&lt; T &gt;::z</a>.</p>
+<div class="fragment"><div class="line"><a name="l04109"></a><span class="lineno"> 4109</span>&#160;        { <span class="keywordflow">return</span> <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.x &lt;= <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.x &amp;&amp; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.y &lt;= <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.y &amp;&amp; <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">min</a>.z &lt;= <a class="code" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">max</a>.z; }</div><div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a37ba3de561976df5bc2b13706d981747"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a37ba3de561976df5bc2b13706d981747">VMATH_NAMESPACE::Aabb3::max</a></div><div class="ttdeci">Vector3&lt; T &gt; max</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04033">vmath.h:4033</a></div></div>
+<div class="ttc" id="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3_html_a5d86644e16498198473b7b4300ed5f41"><div class="ttname"><a href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a5d86644e16498198473b7b4300ed5f41">VMATH_NAMESPACE::Aabb3::min</a></div><div class="ttdeci">Vector3&lt; T &gt; min</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l04028">vmath.h:4028</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
@@ -1367,8 +1509,8 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to output stream <em>lhs</em> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04406">4406</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04415">4415</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l04416"></a><span class="lineno"> 4416</span>&#160;        {</div><div class="line"><a name="l04417"></a><span class="lineno"> 4417</span>&#160;            lhs &lt;&lt; rhs.min &lt;&lt; <span class="stringliteral">&quot; x &quot;</span> &lt;&lt; rhs.max;</div><div class="line"><a name="l04418"></a><span class="lineno"> 4418</span>&#160;            <span class="keywordflow">return</span> lhs;</div><div class="line"><a name="l04419"></a><span class="lineno"> 4419</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1387,7 +1529,9 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Position of Max corner of bounding box </p>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04024">4024</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04033">4033</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vmath_8h_source.html#l04141">VMATH_NAMESPACE::Aabb3&lt; T &gt;::extend()</a>, <a class="el" href="vmath_8h_source.html#l04241">VMATH_NAMESPACE::Aabb3&lt; T &gt;::intersection()</a>, <a class="el" href="vmath_8h_source.html#l04213">VMATH_NAMESPACE::Aabb3&lt; T &gt;::intersects()</a>, <a class="el" href="vmath_8h_source.html#l04336">VMATH_NAMESPACE::Aabb3&lt; T &gt;::operator!=()</a>, <a class="el" href="vmath_8h_source.html#l04094">VMATH_NAMESPACE::Aabb3&lt; T &gt;::operator=()</a>, and <a class="el" href="vmath_8h_source.html#l04325">VMATH_NAMESPACE::Aabb3&lt; T &gt;::operator==()</a>.</p>
 
 </div>
 </div>
@@ -1406,20 +1550,22 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 <p>Position of Min corner of bounding box. </p>
 
-<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04019">4019</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmath_8h_source.html#l04028">4028</a> of file <a class="el" href="vmath_8h_source.html">vmath.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vmath_8h_source.html#l04141">VMATH_NAMESPACE::Aabb3&lt; T &gt;::extend()</a>, <a class="el" href="vmath_8h_source.html#l04241">VMATH_NAMESPACE::Aabb3&lt; T &gt;::intersection()</a>, <a class="el" href="vmath_8h_source.html#l04213">VMATH_NAMESPACE::Aabb3&lt; T &gt;::intersects()</a>, <a class="el" href="vmath_8h_source.html#l04336">VMATH_NAMESPACE::Aabb3&lt; T &gt;::operator!=()</a>, <a class="el" href="vmath_8h_source.html#l04094">VMATH_NAMESPACE::Aabb3&lt; T &gt;::operator=()</a>, and <a class="el" href="vmath_8h_source.html#l04325">VMATH_NAMESPACE::Aabb3&lt; T &gt;::operator==()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="vmath_8h_source.html">vmath.h</a></li>
+<li>C:/vmtk_Multi-volume_Raycasting/include/<a class="el" href="vmath_8h_source.html">vmath.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>VMATH_NAMESPACE</b></li><li class="navelem"><a class="el" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html">Aabb3</a></li>
-    <li class="footer">Generated on Fri May 5 2017 18:17:40 for VMTK by
+    <li class="navelem"><a class="el" href="namespace_v_m_a_t_h___n_a_m_e_s_p_a_c_e.html">VMATH_NAMESPACE</a></li><li class="navelem"><a class="el" href="class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html">Aabb3</a></li>
+    <li class="footer">Generated on Tue Sep 26 2017 20:53:50 for VMTK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

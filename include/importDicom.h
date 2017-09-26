@@ -68,7 +68,7 @@ class Import {
   ~Import() {}; ///< Destructor
 
 /**
-* @brief load the volume
+* @brief loads the volume
 * @param [in] filename: filename of the volume.
 * @param [out] imgformat: volume data
 */

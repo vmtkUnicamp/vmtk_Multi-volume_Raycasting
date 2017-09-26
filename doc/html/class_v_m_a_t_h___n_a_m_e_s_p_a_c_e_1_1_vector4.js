@@ -5,6 +5,7 @@ var class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4 =
     [ "Vector4", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4.html#a8e321585b8606ea9e8e7375ae22bd733", null ],
     [ "Vector4", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4.html#a32bf600634fdfadd27f95b05b82c9808", null ],
     [ "Vector4", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4.html#a75ef01a349e3e48262356fefabb7c114", null ],
+    [ "Vector4", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4.html#aebc4c7f12e1214dcc3c57ebf415ad9a3", null ],
     [ "Vector4", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4.html#ade90421ff9c1886b7b5c87235aa4cc18", null ],
     [ "Vector4", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4.html#ac99c92eee302c68090f15dddd277566a", null ],
     [ "Vector4", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector4.html#a163a67fc40c95c6d0eecfbd5784cf9af", null ],

@@ -6,7 +6,12 @@ var class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3 =
     [ "Matrix3", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a65f1cc7c66139e572ed62e0329125b45", null ],
     [ "at", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a75bf509176328a5665224268ba0493aa", null ],
     [ "at", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#aff817c3f6a9953fbc497f3a3124d4e26", null ],
+    [ "createRotationAroundAxis", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#ad8fce81c9e605d19b349fb321325c557", null ],
     [ "det", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a6a567707e0aefcf068a4ee189cf5aefd", null ],
+    [ "fromColumnMajorArray", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a96c5aee0c91bb2b1421aaeb43e02d9f2", null ],
+    [ "fromOde", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a43dcc404560794438cc609d6f19ac07f", null ],
+    [ "fromRowMajorArray", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a7c5e5bd911ae0e95236955073948b2ff", null ],
+    [ "getEulerAngles", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#ad6ba74cf15728100333eeb5884d4f81f", null ],
     [ "identity", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a28672b87f3732b5a4a71db0d7e3498de", null ],
     [ "inverse", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a9e395138cf435759ca01e6c2d93abfd2", null ],
     [ "lerp", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a63b1a9f12ea9a5249c414f1321059f6d", null ],
@@ -30,6 +35,7 @@ var class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3 =
     [ "toString", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a210b0a0224004cd8b728bacfa1f5913b", null ],
     [ "transpose", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a493f31041f801b06eaafe48ce9f5f068", null ],
     [ "vectorProductMatrix", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a51eff47da4b3b24ceae80b729155b4c8", null ],
+    [ "vectorProductMatrix", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#af99ed25df9cbd07b1ef5a2b04e25bf3c", null ],
     [ "operator<<", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a281742a1b77b4a4bf76ac03f7b75ee74", null ],
     [ "data", "class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#ac19a2dc665a0d52473f043f6030f583e", null ]
 ];

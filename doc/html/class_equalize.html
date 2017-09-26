@@ -87,19 +87,108 @@ $(document).ready(function(){initNavTree('class_equalize.html','');});
 <div class="title">Equalize Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="equalize_8h_source.html">equalize.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a756f5bc362673579023481dc35576bb1"><td class="memItemLeft" align="right" valign="top"><a id="a756f5bc362673579023481dc35576bb1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EqualizeHistogram</b> (int dimx, int dimy, int dimz, unsigned short *volume, int nbitsalloc, unsigned int umax, unsigned int **histogram)</td></tr>
-<tr class="separator:a756f5bc362673579023481dc35576bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00285092695ba785b7e6db307d01b70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equalize.html#aa00285092695ba785b7e6db307d01b70">EqualizeHistogram</a> (int dimx, int dimy, int dimz, unsigned short *volume, int nbitsalloc, unsigned int umax, unsigned short **histogram)</td></tr>
+<tr class="memdesc:aa00285092695ba785b7e6db307d01b70"><td class="mdescLeft">&#160;</td><td class="mdescRight">EqualizeHistogram constructor.  <a href="#aa00285092695ba785b7e6db307d01b70">More...</a><br /></td></tr>
+<tr class="separator:aa00285092695ba785b7e6db307d01b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="equalize_8h_source.html#l00024">24</a> of file <a class="el" href="equalize_8h_source.html">equalize.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="equalize_8h_source.html">equalize.h</a></li>
-<li>src/<a class="el" href="equalize_8cpp_source.html">equalize.cpp</a></li>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa00285092695ba785b7e6db307d01b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00285092695ba785b7e6db307d01b70">&#9670;&nbsp;</a></span>EqualizeHistogram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Equalize::EqualizeHistogram </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dimx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dimy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dimz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>volume</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbitsalloc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>umax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short **&#160;</td>
+          <td class="paramname"><em>histogram</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EqualizeHistogram constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">(dimx,dimy,dimz)</td><td>dimension of the volume. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">volume</td><td>volume data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nbitsalloc</td><td>number of allocated bits for the volume. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">umax</td><td>maximum intensity of the volume. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">histogram</td><td>histogram equalized of the volume. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="equalize_8cpp_source.html#l00027">27</a> of file <a class="el" href="equalize_8cpp_source.html">equalize.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vmtk_render3_d_8cpp_source.html#l00130">vmtkRender3D::mapEqualizeHistogramVolume()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// Computa o histograma do &lt;volume&gt;: </span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">// frequencia de ocorrência de cada intensidade</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> L = pow(2,nbitsalloc);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">int</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">int</span>[L];</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">int</span> *cdf = <span class="keyword">new</span> <span class="keywordtype">int</span>[L];</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// Initializa os vetores</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  memset(tmp, 0x00, L*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// Determina a frequencia de ocorrencia de cada intensidade</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">int</span> intensidade, iz, iy, ix; </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">for</span> (iz = 0; iz &lt; dimz; iz++) {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> (iy =0; iy &lt; dimy; iy++) {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">for</span> (ix =0; ix &lt; dimx; ix++) {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    intensidade = (int)(volume[iz*dimx*dimy+iy*dimx+ix]);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    tmp[intensidade]++;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      }</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">int</span> volSize = dimx*dimy*dimz;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_distribui%C3%A7%C3%A3o_acumulada</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  cdf[0] = tmp[0];</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">int</span> cdfmin = -1;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (cdf[0]) cdfmin = cdf[0];</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">for</span>(i = 1; i &lt; L; i++) {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    cdf[i] = cdf[i-1] + tmp[i];</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (cdfmin == -1 &amp;&amp; cdf[i]) cdfmin = cdf[i];</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">delete</span> [] tmp;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Mapeamento de intensidades</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  *histogram = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>[umax];</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  memset(*histogram, 0x00, umax*<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>));</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">for</span> (i=0; i&lt;(int) umax; i++) {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    (*histogram)[i] = (<span class="keywordtype">unsigned</span> short)(((1.0*(cdf[i]-cdfmin))/(volSize-cdfmin))*(L-1));</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">delete</span> [] cdf;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_equalize_aa00285092695ba785b7e6db307d01b70_icgraph.png" border="0" usemap="#class_equalize_aa00285092695ba785b7e6db307d01b70_icgraph" alt=""/></div>
+<map name="class_equalize_aa00285092695ba785b7e6db307d01b70_icgraph" id="class_equalize_aa00285092695ba785b7e6db307d01b70_icgraph">
+<area shape="rect" id="node2" href="classvmtk_render3_d.html#a1a53dedd487a6e732897ebb39eab9629" title="mapEqualizeHistogramVolume " alt="" coords="243,5,432,47"/>
+<area shape="rect" id="node3" href="classvmtk_render3_d.html#a8467df0323c3b3a20d0afe81c077c1cb" title="loads volumes to textures 3D. " alt="" coords="480,5,669,47"/>
+<area shape="rect" id="node4" href="classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="717,13,879,39"/>
+<area shape="rect" id="node5" href="main__glsl__dvr_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="initialize context OpenGL " alt="" coords="927,13,965,39"/>
+<area shape="rect" id="node6" href="main__glsl__dvr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1013,13,1064,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/vmtk_Multi-volume_Raycasting/include/<a class="el" href="equalize_8h_source.html">equalize.h</a></li>
+<li>C:/vmtk_Multi-volume_Raycasting/src/<a class="el" href="equalize_8cpp_source.html">equalize.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -107,7 +196,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>EqualizeHistogram</b>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_equalize.html">Equalize</a></li>
-    <li class="footer">Generated on Fri May 5 2017 18:17:40 for VMTK by
+    <li class="footer">Generated on Tue Sep 26 2017 20:53:49 for VMTK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

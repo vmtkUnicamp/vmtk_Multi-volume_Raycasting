@@ -1,4 +1,4 @@
 var class_equalize =
 [
-    [ "EqualizeHistogram", "class_equalize.html#a756f5bc362673579023481dc35576bb1", null ]
+    [ "EqualizeHistogram", "class_equalize.html#aa00285092695ba785b7e6db307d01b70", null ]
 ];

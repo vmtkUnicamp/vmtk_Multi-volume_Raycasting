@@ -2,6 +2,5 @@
 <area shape="rect" id="node2" href="$classvmtk_frame_buffer_object.html#a9296cd5e60f6ae54e431c7aee9ed7640" title="binds the FBO to the framebuffer target. " alt="" coords="255,5,412,47"/>
 <area shape="rect" id="node3" href="$classvmtk_render3_d.html#af2030e272c892a2017c4eac50df48dd8" title="draws a unit cube to get the front and the back depth maps of the volume cube, after updating the cli..." alt="" coords="227,71,440,98"/>
 <area shape="rect" id="node5" href="$classvmtk_frame_buffer_object.html#a8b46591238467a61ce5875ce38981010" title="releases the FBO from the framebuffer target. " alt="" coords="255,123,412,164"/>
-<area shape="rect" id="node6" href="$classvmtk_frame_buffer_object.html#aa4749cf5c14cf67f3eeca2bca444f802" title="gets the texture bound to the FBO. " alt="" coords="255,188,412,229"/>
-<area shape="rect" id="node4" href="$classvmtk_render3_d.html#a49dd05aac23bcbc3f480ffb361c8d116" title="initializes the geometry of a cube to be rendered for getting back and front depth maps..." alt="" coords="488,71,679,98"/>
+<area shape="rect" id="node4" href="$classvmtk_render3_d.html#a8d9ed283b0900f1f44a3bfc84ee87554" title="draws a cube. " alt="" coords="488,71,659,98"/>
 </map>

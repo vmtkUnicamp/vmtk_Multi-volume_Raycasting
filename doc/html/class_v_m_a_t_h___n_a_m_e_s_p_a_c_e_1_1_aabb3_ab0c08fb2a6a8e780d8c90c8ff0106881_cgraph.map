@@ -1,3 +1,7 @@
 <map id="VMATH_NAMESPACE::Aabb3::transformed" name="VMATH_NAMESPACE::Aabb3::transformed">
-<area shape="rect" id="node2" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,5,459,47"/>
+<area shape="rect" id="node2" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e" title="VMATH_NAMESPACE::Aabb3\l::extend" alt="" coords="256,23,459,65"/>
+<area shape="rect" id="node3" href="$namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="507,5,580,32"/>
+<area shape="rect" id="node5" href="$namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9" title="std::min" alt="" coords="509,56,578,83"/>
+<area shape="rect" id="node4" href="$namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="628,5,701,32"/>
+<area shape="rect" id="node6" href="$namespacestd.html#a192f9abc6c152652915b783f01e22cc5" title="std::min" alt="" coords="630,56,699,83"/>
 </map>

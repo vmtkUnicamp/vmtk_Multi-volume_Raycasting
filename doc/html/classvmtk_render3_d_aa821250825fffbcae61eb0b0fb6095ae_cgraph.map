@@ -1,0 +1,7 @@
+<map id="vmtkRender3D::generateTransferFunction" name="vmtkRender3D::generateTransferFunction">
+<area shape="rect" id="node2" href="$class_transfer_function.html#aedd41176a370d30f5ac6c7916fbc6fdb" title="TransferFunction::GetGray\lScaleTF" alt="" coords="264,104,439,145"/>
+<area shape="rect" id="node3" href="$class_transfer_function.html#a4a62ca8f169b67ad42dc72181a19a163" title="TransferFunction::GetGray\lScaleTFC" alt="" coords="487,5,661,47"/>
+<area shape="rect" id="node4" href="$class_transfer_function.html#ab70d1e101f222795dbea3cb0e0572e45" title="TransferFunction::GetGray\lScaleTFE" alt="" coords="487,71,661,112"/>
+<area shape="rect" id="node5" href="$class_transfer_function.html#ab0a01e3f1ccd2eb4a39e302d60e8b4ff" title="Estimate linear transfer function from image char data values. " alt="" coords="487,136,661,177"/>
+<area shape="rect" id="node6" href="$class_transfer_function.html#a9f92aaf5170577030d059faf1bc4ea6c" title="TransferFunction::GetGray\lScaleTFS" alt="" coords="487,201,661,243"/>
+</map>

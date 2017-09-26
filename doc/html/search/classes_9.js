@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['transferfunction',['TransferFunction',['../class_transfer_function.html',1,'']]]
+  ['shaders',['Shaders',['../class_shaders.html',1,'']]]
 ];

@@ -1,0 +1,51 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$class_import.html#ac569d4aefe2177270c2bfc19ec8a210f" title="Destructor. " alt="" coords="143,156,285,183"/>
+<area shape="rect" id="node11" href="$main__glsl__dvr_8cpp.html#a3b1bd44be8c95df1aea406a6be6e2553" title="render the volume " alt="" coords="144,428,284,455"/>
+<area shape="rect" id="node21" href="$main__glsl__dvr_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="initialize context OpenGL " alt="" coords="195,591,233,618"/>
+<area shape="rect" id="node30" href="$main__glsl__dvr_8cpp.html#aef7ba2f69afb2d954545f64c7fe24b14" title="keyboard callback function " alt="" coords="177,718,251,744"/>
+<area shape="rect" id="node35" href="$classvmtk_render3_d.html#abff89587c97076379d7d17636eaf75f8" title="setEnableMPR " alt="" coords="387,870,589,896"/>
+<area shape="rect" id="node38" href="$classvmtk_render3_d.html#a548dc7dea6b0ac50c4be255bf7b0fbef" title="reads the co&#45;register matrix. " alt="" coords="127,819,301,846"/>
+<area shape="rect" id="node39" href="$classvmtk_render3_d.html#aa19d82316efdc6bb5f097b404c78f93f" title="readPlane " alt="" coords="128,870,300,896"/>
+<area shape="rect" id="node40" href="$main__glsl__dvr_8cpp.html#acc1ffe65e6869931318610cae7210078" title="reshape" alt="" coords="180,920,248,947"/>
+<area shape="rect" id="node42" href="$classvmtk_render3_d.html#a79c82f05f3f67c3a85fc020c5af3a27e" title="sets the volumes to be registered. " alt="" coords="116,971,312,998"/>
+<area shape="rect" id="node48" href="$classvmtk_render3_d.html#a8e819670b69e6caa8aede12046861a26" title="setMPR " alt="" coords="133,1022,295,1048"/>
+<area shape="rect" id="node49" href="$classvmtk_render3_d.html#a3b5b892861a7fd171fc64e087c76aedc" title="setStateMPRInput " alt="" coords="104,1072,324,1099"/>
+<area shape="rect" id="node50" href="$classvmtk_render3_d.html#aa5cefb79d975fc64e3e2a0dcfcc15795" title="setVectorInvMatrixReg " alt="" coords="121,1124,307,1165"/>
+<area shape="rect" id="node3" href="$class_import.html#a7222d265e17fa6ff12cf0af074d3d959" title="Import::ImportDirectory" alt="" coords="411,131,565,158"/>
+<area shape="rect" id="node9" href="$class_import.html#a8b8e2968e70c43d886e8fba400e82d62" title="Import::ImportFile" alt="" coords="427,182,549,208"/>
+<area shape="rect" id="node10" href="$class_import.html#a667135169ab5e528362d25c529303ec6" title="reorient the volume to LPS. " alt="" coords="397,65,579,106"/>
+<area shape="rect" id="node4" href="$class_import.html#a5feee9e02d7a4633d8ed2a5a6f998641" title="Import::sortFunc" alt="" coords="690,47,807,74"/>
+<area shape="rect" id="node5" href="$class_import.html#a1bd3d2e85e30da0a1995a401ba33abe0" title="Import::ValidateMediaStorage\lIsImage" alt="" coords="652,149,845,190"/>
+<area shape="rect" id="node6" href="$class_import.html#a1769687e0a1c489df7fc41f8ae89c918" title="Import::ProcessOneFile" alt="" coords="669,215,828,242"/>
+<area shape="rect" id="node7" href="$class_import.html#a72d2858a4380315fd3c5d3d8b919ff58" title="Import::ReadPixelData" alt="" coords="924,43,1076,70"/>
+<area shape="rect" id="node8" href="$class_import.html#af9a6ced9377fba7b29180534f8716b6a" title="Import::realloc_mem" alt="" coords="679,98,819,124"/>
+<area shape="rect" id="node12" href="$classvmtk_render3_d.html#ad056c457a6bd2511350aa152790909e1" title="renders the data with the specified redering mode. " alt="" coords="413,331,563,358"/>
+<area shape="rect" id="node13" href="$classvmtk_render3_d.html#a5b6aa3d2dd874d2ef7326851aee7dc77" title="renders the color cube in the fbos. " alt="" coords="662,266,835,292"/>
+<area shape="rect" id="node17" href="$classvmtk_render3_d.html#ae3c43e897c22dd8b2c860ed21fc05a3b" title="raycasts through the color cube. " alt="" coords="661,324,836,365"/>
+<area shape="rect" id="node14" href="$classvmtk_frame_buffer_object.html#a9296cd5e60f6ae54e431c7aee9ed7640" title="binds the FBO to the framebuffer target. " alt="" coords="921,141,1079,182"/>
+<area shape="rect" id="node15" href="$classvmtk_render3_d.html#af2030e272c892a2017c4eac50df48dd8" title="draws a unit cube to get the front and the back depth maps of the volume cube, after updating the cli..." alt="" coords="893,207,1107,234"/>
+<area shape="rect" id="node16" href="$classvmtk_frame_buffer_object.html#a8b46591238467a61ce5875ce38981010" title="releases the FBO from the framebuffer target. " alt="" coords="921,258,1079,300"/>
+<area shape="rect" id="node18" href="$vmtk_render3_d_8h.html#a58616307a1a06454f0c411535e66a55b" title="NumberToString" alt="" coords="943,390,1057,416"/>
+<area shape="rect" id="node19" href="$classvmtk_render3_d.html#a34b19f108958ed5e6bc1da5f82d2af9e" title="currentActivateTexture " alt="" coords="900,441,1100,482"/>
+<area shape="rect" id="node20" href="$classvmtk_frame_buffer_object.html#aa4749cf5c14cf67f3eeca2bca444f802" title="gets the texture bound to the FBO. " alt="" coords="921,324,1079,365"/>
+<area shape="rect" id="node22" href="$classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="407,515,569,542"/>
+<area shape="rect" id="node23" href="$class_shaders.html#a96a3b16cdf138be8efaf061f38cd203e" title="Shaders::carregueShaders" alt="" coords="661,520,837,547"/>
+<area shape="rect" id="node24" href="$classvmtk_render3_d.html#a8467df0323c3b3a20d0afe81c077c1cb" title="loads volumes to textures 3D. " alt="" coords="654,389,843,430"/>
+<area shape="rect" id="node25" href="$classvmtk_render3_d.html#acd36a6d8a3b752803c083543b69142ee" title="Loads transfer Functions to textures 1D. " alt="" coords="657,454,841,496"/>
+<area shape="rect" id="node26" href="$classvmtk_render3_d.html#a1090a6d728f9795031f3c2b471c7d6fd" title="defines the position and texture coordinates of the four vertices of a plane. " alt="" coords="655,572,843,613"/>
+<area shape="rect" id="node27" href="$classvmtk_render3_d.html#a4d3413f8cf979aa80a5d59d21e04b793" title="creates vertex arrays and their buffer data. " alt="" coords="653,638,844,664"/>
+<area shape="rect" id="node28" href="$classvmtk_render3_d.html#a49dd05aac23bcbc3f480ffb361c8d116" title="initializes the geometry of a cube to be rendered for getting back and front depth maps..." alt="" coords="653,764,844,791"/>
+<area shape="rect" id="node29" href="$classvmtk_render3_d.html#ab153a1d3b4b7cce30104fb2d2ad1d8a3" title="initializes the plane to be input into the graphics pipeline " alt="" coords="663,689,835,730"/>
+<area shape="rect" id="node31" href="$classvmtk_render3_d.html#a05cd9159bb0806d314bad60ee1e9ff1c" title="get acquisition of the volumes. " alt="" coords="390,819,586,846"/>
+<area shape="rect" id="node32" href="$classvmtk_render3_d.html#a87ef8b4f7b14b280ffb7bec0c6e6671e" title="gets the maximum number of the slices from the axis X. " alt="" coords="385,566,591,592"/>
+<area shape="rect" id="node33" href="$classvmtk_render3_d.html#a677d2c452b6056e41de6f013702e393b" title="sets the blender factor. " alt="" coords="400,616,576,643"/>
+<area shape="rect" id="node34" href="$classvmtk_render3_d.html#ace0a11146ebf8c055cce26918ad855bf" title="sets the clipping plane. " alt="" coords="397,768,579,795"/>
+<area shape="rect" id="node36" href="$classvmtk_render3_d.html#a78f18c8ee0d8a4099be0c5d78edf4d5d" title="sets the rotation matrix. " alt="" coords="398,667,578,694"/>
+<area shape="rect" id="node37" href="$classvmtk_render3_d.html#a7fcfeafb59be7a6553089b0ff08a3347" title="sets the threshold. " alt="" coords="394,718,582,744"/>
+<area shape="rect" id="node41" href="$classvmtk_render3_d.html#a4b4e1e400e42ff346fbf6d98d9657d03" title="resizes the dimensions of the display. " alt="" coords="413,920,563,947"/>
+<area shape="rect" id="node43" href="$classvmtk_render3_d.html#af3531e63304b3b2d90f0e432dd291f45" title="volumeRealDimension " alt="" coords="398,1073,578,1114"/>
+<area shape="rect" id="node44" href="$classvmtk_render3_d.html#a1b6067fa51922880352616411408bee0" title="maximumDimension " alt="" coords="372,1139,604,1166"/>
+<area shape="rect" id="node46" href="$classvmtk_render3_d.html#a843fce5f7476efe6e58423e9ce74af9f" title="scaleFactors " alt="" coords="393,971,583,998"/>
+<area shape="rect" id="node47" href="$classvmtk_render3_d.html#aeee799ae33fa4bc3fb10eb2e3854bcc5" title="phyDimension " alt="" coords="390,1022,586,1048"/>
+<area shape="rect" id="node45" href="$namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="712,1139,785,1166"/>
+</map>

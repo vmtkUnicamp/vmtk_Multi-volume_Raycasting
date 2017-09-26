@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quaternion',['Quaternion',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_quaternion.html',1,'VMATH_NAMESPACE']]]
+  ['positioiscolourfs',['PositioIsColourFS',['../class_positio_is_colour_f_s.html',1,'']]],
+  ['positioiscolourvs',['PositioIsColourVS',['../class_positio_is_colour_v_s.html',1,'']]]
 ];

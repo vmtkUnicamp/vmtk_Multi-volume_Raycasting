@@ -1,0 +1,8 @@
+<map id="vmtkRender3D::setAcquisition" name="vmtkRender3D::setAcquisition">
+<area shape="rect" id="node2" href="$classvmtk_render3_d.html#a1b6067fa51922880352616411408bee0" title="maximumDimension " alt="" coords="249,5,481,32"/>
+<area shape="rect" id="node5" href="$classvmtk_render3_d.html#aeee799ae33fa4bc3fb10eb2e3854bcc5" title="phyDimension " alt="" coords="267,56,463,83"/>
+<area shape="rect" id="node6" href="$classvmtk_render3_d.html#a843fce5f7476efe6e58423e9ce74af9f" title="scaleFactors " alt="" coords="271,107,460,133"/>
+<area shape="rect" id="node7" href="$classvmtk_render3_d.html#af3531e63304b3b2d90f0e432dd291f45" title="volumeRealDimension " alt="" coords="275,158,455,199"/>
+<area shape="rect" id="node3" href="$namespacestd.html#a7679b41567b94bc12fa748b0b5daa655" title="std::max" alt="" coords="529,5,603,32"/>
+<area shape="rect" id="node4" href="$namespacestd.html#a752d4810907758a172a5855bfd21a901" title="std::max" alt="" coords="651,5,724,32"/>
+</map>

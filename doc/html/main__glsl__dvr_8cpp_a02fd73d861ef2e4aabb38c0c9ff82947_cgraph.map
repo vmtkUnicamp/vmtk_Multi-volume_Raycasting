@@ -1,0 +1,25 @@
+<map id="init" name="init">
+<area shape="rect" id="node2" href="$classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="92,413,253,440"/>
+<area shape="rect" id="node3" href="$class_shaders.html#a96a3b16cdf138be8efaf061f38cd203e" title="Shaders::carregueShaders" alt="" coords="309,81,485,108"/>
+<area shape="rect" id="node7" href="$classvmtk_render3_d.html#a8467df0323c3b3a20d0afe81c077c1cb" title="loads volumes to textures 3D. " alt="" coords="302,275,491,317"/>
+<area shape="rect" id="node13" href="$classvmtk_render3_d.html#acd36a6d8a3b752803c083543b69142ee" title="Loads transfer Functions to textures 1D. " alt="" coords="305,341,489,382"/>
+<area shape="rect" id="node21" href="$classvmtk_render3_d.html#a1090a6d728f9795031f3c2b471c7d6fd" title="defines the position and texture coordinates of the four vertices of a plane. " alt="" coords="303,406,491,447"/>
+<area shape="rect" id="node22" href="$classvmtk_render3_d.html#a4d3413f8cf979aa80a5d59d21e04b793" title="creates vertex arrays and their buffer data. " alt="" coords="301,472,492,499"/>
+<area shape="rect" id="node23" href="$classvmtk_render3_d.html#a49dd05aac23bcbc3f480ffb361c8d116" title="initializes the geometry of a cube to be rendered for getting back and front depth maps..." alt="" coords="301,523,492,549"/>
+<area shape="rect" id="node24" href="$classvmtk_render3_d.html#ab153a1d3b4b7cce30104fb2d2ad1d8a3" title="initializes the plane to be input into the graphics pipeline " alt="" coords="311,574,483,615"/>
+<area shape="rect" id="node4" href="$class_shaders.html#a6f28628f46eb66809a3fe22740ec9983" title="textFileRead " alt="" coords="570,5,721,32"/>
+<area shape="rect" id="node5" href="$class_shaders.html#a15b89e6debdc2a1d59860947d20b8638" title="printShaderInfoLog " alt="" coords="553,56,738,83"/>
+<area shape="rect" id="node6" href="$class_shaders.html#a9e93bc134814082811ed7e94a880123a" title="printProgramInfoLog " alt="" coords="549,107,742,133"/>
+<area shape="rect" id="node8" href="$classvmtk_render3_d.html#a1a53dedd487a6e732897ebb39eab9629" title="mapEqualizeHistogramVolume " alt="" coords="551,158,740,199"/>
+<area shape="rect" id="node10" href="$classvmtk_render3_d.html#a5b4a1c3843551cd2b36ff19a9e5ba930" title="volumeEqualizer " alt="" coords="541,224,749,251"/>
+<area shape="rect" id="node11" href="$classvmtk_render3_d.html#a34b19f108958ed5e6bc1da5f82d2af9e" title="currentActivateTexture " alt="" coords="545,341,745,382"/>
+<area shape="rect" id="node12" href="$classvmtk_render3_d.html#a525d330f200db2c9637615a0f01bcd1a" title="texture3DFromVolume " alt="" coords="545,275,745,317"/>
+<area shape="rect" id="node9" href="$class_equalize.html#aa00285092695ba785b7e6db307d01b70" title="EqualizeHistogram constructor. " alt="" coords="799,165,988,192"/>
+<area shape="rect" id="node14" href="$classvmtk_render3_d.html#aa821250825fffbcae61eb0b0fb6095ae" title="generateTransferFunction " alt="" coords="540,406,751,447"/>
+<area shape="rect" id="node20" href="$classvmtk_render3_d.html#aa4296f824c13b6d3669945ebbda0c0bc" title="texture1DFromTransferFunction " alt="" coords="545,471,745,513"/>
+<area shape="rect" id="node15" href="$class_transfer_function.html#aedd41176a370d30f5ac6c7916fbc6fdb" title="TransferFunction::GetGray\lScaleTF" alt="" coords="806,406,981,447"/>
+<area shape="rect" id="node16" href="$class_transfer_function.html#ab70d1e101f222795dbea3cb0e0572e45" title="TransferFunction::GetGray\lScaleTFE" alt="" coords="1036,307,1211,349"/>
+<area shape="rect" id="node17" href="$class_transfer_function.html#ab0a01e3f1ccd2eb4a39e302d60e8b4ff" title="Estimate linear transfer function from image char data values. " alt="" coords="1036,373,1211,414"/>
+<area shape="rect" id="node18" href="$class_transfer_function.html#a9f92aaf5170577030d059faf1bc4ea6c" title="TransferFunction::GetGray\lScaleTFS" alt="" coords="1036,438,1211,479"/>
+<area shape="rect" id="node19" href="$class_transfer_function.html#a4a62ca8f169b67ad42dc72181a19a163" title="TransferFunction::GetGray\lScaleTFC" alt="" coords="1036,503,1211,545"/>
+</map>

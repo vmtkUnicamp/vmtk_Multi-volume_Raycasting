@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['data',['data',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#ac19a2dc665a0d52473f043f6030f583e',1,'VMATH_NAMESPACE::Matrix3::data()'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix4.html#a77f29e82f1bda7ee07e8fd289fff29df',1,'VMATH_NAMESPACE::Matrix4::data()']]],
-  ['depth',['depth',['../class_g_l_s_l_1_1_cast_register_f_s.html#a10c9c6c2b5ba6f47720e6415bae88907',1,'GLSL::CastRegisterFS']]]
+  ['clipping_5fplane',['clipping_plane',['../castregister__with__planar__clipping_8frag.html#a4f484722ace398aa4a5a57ebf9649421',1,'clipping_plane():&#160;castregister_with_planar_clipping.frag'],['../raytrace__with__planar__clipping_8frag.html#a4f484722ace398aa4a5a57ebf9649421',1,'clipping_plane():&#160;raytrace_with_planar_clipping.frag']]],
+  ['color',['Color',['../drawresult_8frag.html#a0dd91fdeefe3160adede3150fe2909c9',1,'Color():&#160;drawresult.frag'],['../position__is__color_8frag.html#a0dd91fdeefe3160adede3150fe2909c9',1,'Color():&#160;position_is_color.frag'],['../drawresult_8vert.html#ade2938e9fcf4dda069a306689243d1a5',1,'color():&#160;drawresult.vert'],['../position__is__color_8vert.html#ade2938e9fcf4dda069a306689243d1a5',1,'color():&#160;position_is_color.vert']]]
 ];

@@ -1,7 +1,25 @@
 var searchData=
 [
-  ['equalize',['Equalize',['../class_equalize.html',1,'']]],
-  ['extend',['extend',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a15de11cd9fef9290afdc0eb62cfc5c1e',1,'VMATH_NAMESPACE::Aabb3::extend(const Vector3&lt; SrcT &gt; &amp;point)'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a8acdce4dc8223420714a5a34827f3c46',1,'VMATH_NAMESPACE::Aabb3::extend(const Aabb3&lt; SrcT &gt; &amp;box)']]],
-  ['extended',['extended',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ad2d34deefcb79415ab50f04cfddcd6b1',1,'VMATH_NAMESPACE::Aabb3::extended(const Vector3&lt; SrcT &gt; &amp;point) const'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#a1fe1ec4be4e1a6003cc7282a37f9f6c0',1,'VMATH_NAMESPACE::Aabb3::extended(const Aabb3&lt; SrcT &gt; &amp;box) const']]],
-  ['extent',['extent',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_aabb3.html#ab6c17597c9c388ef1987e532748d9ea8',1,'VMATH_NAMESPACE::Aabb3']]]
+  ['data',['data',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#ac19a2dc665a0d52473f043f6030f583e',1,'VMATH_NAMESPACE::Matrix3::data()'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix4.html#a77f29e82f1bda7ee07e8fd289fff29df',1,'VMATH_NAMESPACE::Matrix4::data()']]],
+  ['deg2rad',['DEG2RAD',['../vmath_8h.html#a2b4f9c3a8b58ecc8e9a6cda26417ba00',1,'vmath.h']]],
+  ['depth',['Depth',['../classvmtk_frame_buffer_object.html#a01b9acdb85115da03428f89ba5cb2bd7a544248f6159175208963c5d200fcbb54',1,'vmtkFrameBufferObject::Depth()'],['../castregister__with__planar__clipping_8frag.html#a6a3e885cc058d7e0f3f9d933a23d0d37',1,'depth():&#160;castregister_with_planar_clipping.frag'],['../raytrace__with__planar__clipping_8frag.html#a6a3e885cc058d7e0f3f9d933a23d0d37',1,'depth():&#160;raytrace_with_planar_clipping.frag']]],
+  ['depthstencil',['DepthStencil',['../classvmtk_frame_buffer_object.html#a01b9acdb85115da03428f89ba5cb2bd7a8ab43f4fce5ee8ff753ebef882f5175e',1,'vmtkFrameBufferObject']]],
+  ['depthtexture',['depthTexture',['../classvmtk_frame_buffer_object.html#aea918c98d47143de8d54b79c69fae620',1,'vmtkFrameBufferObject']]],
+  ['det',['det',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix3.html#a6a567707e0aefcf068a4ee189cf5aefd',1,'VMATH_NAMESPACE::Matrix3::det()'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix4.html#a86ba62526a9ecfaeadbd16aaa3362b19',1,'VMATH_NAMESPACE::Matrix4::det()']]],
+  ['dicomimage',['DICOMImage',['../class_import.html#ac569d4aefe2177270c2bfc19ec8a210f',1,'Import']]],
+  ['dims',['dims',['../struct_import_1_1_img_format.html#aaaaf2d3b709c6794e605cd0f667717a2',1,'Import::ImgFormat']]],
+  ['dir_5f68267d1309a1af8e8297ef4c3efbcdba_2ejs',['dir_68267d1309a1af8e8297ef4c3efbcdba.js',['../dir__68267d1309a1af8e8297ef4c3efbcdba_8js.html',1,'']]],
+  ['dir_5f95c752037a97b41030102703686a0a90_2ejs',['dir_95c752037a97b41030102703686a0a90.js',['../dir__95c752037a97b41030102703686a0a90_8js.html',1,'']]],
+  ['dir_5fd44c64559bbebec7f509842c48db8b23_2ejs',['dir_d44c64559bbebec7f509842c48db8b23.js',['../dir__d44c64559bbebec7f509842c48db8b23_8js.html',1,'']]],
+  ['dircos',['dircos',['../struct_import_1_1_img_format.html#a4e69762691a998396bed4ac4a4e379b4',1,'Import::ImgFormat']]],
+  ['distance',['distance',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector3.html#a4c34da5e6312f1299e3b4951b3b1c78d',1,'VMATH_NAMESPACE::Vector3::distance(const Vector3&lt; T &gt; v) const'],['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector3.html#ad86a7fe6f929678f2efe72785852782c',1,'VMATH_NAMESPACE::Vector3::distance(Vector3&lt; T &gt; v1, Vector3&lt; T &gt; v2)']]],
+  ['dotproduct',['dotProduct',['../class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector3.html#a6da083e64348c7e39d08cb6b68c09117',1,'VMATH_NAMESPACE::Vector3']]],
+  ['drawcube',['drawCube',['../classvmtk_render3_d.html#a8d9ed283b0900f1f44a3bfc84ee87554',1,'vmtkRender3D']]],
+  ['drawplaneraytraced',['drawPlaneRayTraced',['../classvmtk_render3_d.html#a59c8ba8c93db9787452aab3183c75f7a',1,'vmtkRender3D']]],
+  ['drawproxygeometry',['drawProxyGeometry',['../main__glsl__dvr_8cpp.html#a3b1bd44be8c95df1aea406a6be6e2553',1,'main_glsl_dvr.cpp']]],
+  ['drawresult_2efrag',['drawresult.frag',['../drawresult_8frag.html',1,'']]],
+  ['drawresult_2evert',['drawresult.vert',['../drawresult_8vert.html',1,'']]],
+  ['drawresultfs',['DrawresultFS',['../class_drawresult_f_s.html',1,'']]],
+  ['drawresultvs',['DrawresultVS',['../class_drawresult_v_s.html',1,'']]],
+  ['dynsections_2ejs',['dynsections.js',['../dynsections_8js.html',1,'']]]
 ];

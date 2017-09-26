@@ -82,30 +82,586 @@ $(document).ready(function(){initNavTree('class_transfer_function.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_transfer_function-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TransferFunction Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="transfer_function_8h_source.html">transferFunction.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aedd41176a370d30f5ac6c7916fbc6fdb"><td class="memItemLeft" align="right" valign="top"><a id="aedd41176a370d30f5ac6c7916fbc6fdb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>GetGrayScaleTF</b> (int tag, int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
+<tr class="memitem:aedd41176a370d30f5ac6c7916fbc6fdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#aedd41176a370d30f5ac6c7916fbc6fdb">GetGrayScaleTF</a> (int tag, int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
 <tr class="separator:aedd41176a370d30f5ac6c7916fbc6fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c9adecc61441a6c91408c98e09733e8"><td class="memItemLeft" align="right" valign="top"><a id="a8c9adecc61441a6c91408c98e09733e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>GetGrayScaleTF</b> (int tag, int min, int max, int *elemSize, unsigned char **ptr, unsigned short nbtsalloc)</td></tr>
+<tr class="memitem:a8c9adecc61441a6c91408c98e09733e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#a8c9adecc61441a6c91408c98e09733e8">GetGrayScaleTF</a> (int tag, int min, int max, int *elemSize, unsigned char **ptr, unsigned short nbtsalloc)</td></tr>
 <tr class="separator:a8c9adecc61441a6c91408c98e09733e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32bc53040c0badc5901d4352dea47df3"><td class="memItemLeft" align="right" valign="top"><a id="a32bc53040c0badc5901d4352dea47df3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>GetRGBTF</b> (int tag, int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
+<tr class="memitem:a32bc53040c0badc5901d4352dea47df3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#a32bc53040c0badc5901d4352dea47df3">GetRGBTF</a> (int tag, int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
 <tr class="separator:a32bc53040c0badc5901d4352dea47df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab70d1e101f222795dbea3cb0e0572e45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#ab70d1e101f222795dbea3cb0e0572e45">GetGrayScaleTFE</a> (int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
+<tr class="separator:ab70d1e101f222795dbea3cb0e0572e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0a01e3f1ccd2eb4a39e302d60e8b4ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#ab0a01e3f1ccd2eb4a39e302d60e8b4ff">GetGrayScaleTFL</a> (int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
+<tr class="memdesc:ab0a01e3f1ccd2eb4a39e302d60e8b4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate linear transfer function from image char data values.  <a href="#ab0a01e3f1ccd2eb4a39e302d60e8b4ff">More...</a><br /></td></tr>
+<tr class="separator:ab0a01e3f1ccd2eb4a39e302d60e8b4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f92aaf5170577030d059faf1bc4ea6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#a9f92aaf5170577030d059faf1bc4ea6c">GetGrayScaleTFS</a> (int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
+<tr class="separator:a9f92aaf5170577030d059faf1bc4ea6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a62ca8f169b67ad42dc72181a19a163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#a4a62ca8f169b67ad42dc72181a19a163">GetGrayScaleTFC</a> (int min, int max, int *elemSize, unsigned char **ptr)</td></tr>
+<tr class="separator:a4a62ca8f169b67ad42dc72181a19a163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a436f66e961bc67933c2e93b0bbf2ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transfer_function.html#a4a436f66e961bc67933c2e93b0bbf2ab">GetGrayScaleTFD</a> (int min, int max, int *elemSize, unsigned char **ptr, unsigned short nbitsalloc)</td></tr>
+<tr class="separator:a4a436f66e961bc67933c2e93b0bbf2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="transfer_function_8h_source.html#l00028">28</a> of file <a class="el" href="transfer_function_8h_source.html">transferFunction.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="transfer_function_8h_source.html">transferFunction.h</a></li>
-<li>src/<a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a></li>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aedd41176a370d30f5ac6c7916fbc6fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd41176a370d30f5ac6c7916fbc6fdb">&#9670;&nbsp;</a></span>GetGrayScaleTF() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetGrayScaleTF </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00113">113</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="transfer_function_8cpp_source.html#l00077">GetGrayScaleTFC()</a>, <a class="el" href="transfer_function_8cpp_source.html#l00037">GetGrayScaleTFE()</a>, <a class="el" href="transfer_function_8cpp_source.html#l00051">GetGrayScaleTFL()</a>, and <a class="el" href="transfer_function_8cpp_source.html#l00064">GetGrayScaleTFS()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vmtk_render3_d_8cpp_source.html#l00196">vmtkRender3D::generateTransferFunction()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                      {</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; <span class="keywordflow">switch</span> (tag) {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; <span class="keywordflow">case</span> 0:</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   <a class="code" href="class_transfer_function.html#ab70d1e101f222795dbea3cb0e0572e45">GetGrayScaleTFE</a> (<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>, <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>, elemSize, ptr);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   <span class="keywordflow">break</span>;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; <span class="keywordflow">case</span> 1:</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;   <a class="code" href="class_transfer_function.html#ab0a01e3f1ccd2eb4a39e302d60e8b4ff">GetGrayScaleTFL</a> (<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>, <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>, elemSize, ptr);</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;   <span class="keywordflow">break</span>;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; <span class="keywordflow">case</span> 2:</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;   <a class="code" href="class_transfer_function.html#a9f92aaf5170577030d059faf1bc4ea6c">GetGrayScaleTFS</a> (<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>, <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>, elemSize, ptr);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;   <span class="keywordflow">break</span>;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; <span class="keywordflow">case</span> 3:</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;   <a class="code" href="class_transfer_function.html#a4a62ca8f169b67ad42dc72181a19a163">GetGrayScaleTFC</a> (<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>, <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>, elemSize, ptr);</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;   <span class="keywordflow">break</span>;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; }</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="class_transfer_function_html_a9f92aaf5170577030d059faf1bc4ea6c"><div class="ttname"><a href="class_transfer_function.html#a9f92aaf5170577030d059faf1bc4ea6c">TransferFunction::GetGrayScaleTFS</a></div><div class="ttdeci">void GetGrayScaleTFS(int min, int max, int *elemSize, unsigned char **ptr)</div><div class="ttdef"><b>Definition:</b> <a href="transfer_function_8cpp_source.html#l00064">transferFunction.cpp:64</a></div></div>
+<div class="ttc" id="class_transfer_function_html_ab0a01e3f1ccd2eb4a39e302d60e8b4ff"><div class="ttname"><a href="class_transfer_function.html#ab0a01e3f1ccd2eb4a39e302d60e8b4ff">TransferFunction::GetGrayScaleTFL</a></div><div class="ttdeci">void GetGrayScaleTFL(int min, int max, int *elemSize, unsigned char **ptr)</div><div class="ttdoc">Estimate linear transfer function from image char data values. </div><div class="ttdef"><b>Definition:</b> <a href="transfer_function_8cpp_source.html#l00051">transferFunction.cpp:51</a></div></div>
+<div class="ttc" id="class_transfer_function_html_a4a62ca8f169b67ad42dc72181a19a163"><div class="ttname"><a href="class_transfer_function.html#a4a62ca8f169b67ad42dc72181a19a163">TransferFunction::GetGrayScaleTFC</a></div><div class="ttdeci">void GetGrayScaleTFC(int min, int max, int *elemSize, unsigned char **ptr)</div><div class="ttdef"><b>Definition:</b> <a href="transfer_function_8cpp_source.html#l00077">transferFunction.cpp:77</a></div></div>
+<div class="ttc" id="class_transfer_function_html_ab70d1e101f222795dbea3cb0e0572e45"><div class="ttname"><a href="class_transfer_function.html#ab70d1e101f222795dbea3cb0e0572e45">TransferFunction::GetGrayScaleTFE</a></div><div class="ttdeci">void GetGrayScaleTFE(int min, int max, int *elemSize, unsigned char **ptr)</div><div class="ttdef"><b>Definition:</b> <a href="transfer_function_8cpp_source.html#l00037">transferFunction.cpp:37</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_cgraph.png" border="0" usemap="#class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_cgraph" alt=""/></div>
+<map name="class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_cgraph" id="class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_cgraph">
+<area shape="rect" id="node2" href="class_transfer_function.html#a4a62ca8f169b67ad42dc72181a19a163" title="TransferFunction::GetGray\lScaleTFC" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node3" href="class_transfer_function.html#ab70d1e101f222795dbea3cb0e0572e45" title="TransferFunction::GetGray\lScaleTFE" alt="" coords="228,71,403,112"/>
+<area shape="rect" id="node4" href="class_transfer_function.html#ab0a01e3f1ccd2eb4a39e302d60e8b4ff" title="Estimate linear transfer function from image char data values. " alt="" coords="228,136,403,177"/>
+<area shape="rect" id="node5" href="class_transfer_function.html#a9f92aaf5170577030d059faf1bc4ea6c" title="TransferFunction::GetGray\lScaleTFS" alt="" coords="228,201,403,243"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_icgraph.png" border="0" usemap="#class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_icgraph" alt=""/></div>
+<map name="class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_icgraph" id="class_transfer_function_aedd41176a370d30f5ac6c7916fbc6fdb_icgraph">
+<area shape="rect" id="node2" href="classvmtk_render3_d.html#aa821250825fffbcae61eb0b0fb6095ae" title="generateTransferFunction " alt="" coords="228,5,439,47"/>
+<area shape="rect" id="node3" href="classvmtk_render3_d.html#acd36a6d8a3b752803c083543b69142ee" title="Loads transfer Functions to textures 1D. " alt="" coords="487,5,671,47"/>
+<area shape="rect" id="node4" href="classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="719,13,880,39"/>
+<area shape="rect" id="node5" href="main__glsl__dvr_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="initialize context OpenGL " alt="" coords="928,13,967,39"/>
+<area shape="rect" id="node6" href="main__glsl__dvr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1015,13,1065,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c9adecc61441a6c91408c98e09733e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c9adecc61441a6c91408c98e09733e8">&#9670;&nbsp;</a></span>GetGrayScaleTF() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetGrayScaleTF </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>nbtsalloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00132">132</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="transfer_function_8cpp_source.html#l00092">GetGrayScaleTFD()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                                                 {</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; <span class="keywordflow">switch</span> (tag) {</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; <span class="keywordflow">case</span> 4:</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;   <a class="code" href="class_transfer_function.html#a4a436f66e961bc67933c2e93b0bbf2ab">GetGrayScaleTFD</a> (<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>, <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>, elemSize, ptr, nbitsalloc);</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;   <span class="keywordflow">break</span>;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; }</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="class_transfer_function_html_a4a436f66e961bc67933c2e93b0bbf2ab"><div class="ttname"><a href="class_transfer_function.html#a4a436f66e961bc67933c2e93b0bbf2ab">TransferFunction::GetGrayScaleTFD</a></div><div class="ttdeci">void GetGrayScaleTFD(int min, int max, int *elemSize, unsigned char **ptr, unsigned short nbitsalloc)</div><div class="ttdef"><b>Definition:</b> <a href="transfer_function_8cpp_source.html#l00092">transferFunction.cpp:92</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_a8c9adecc61441a6c91408c98e09733e8_cgraph.png" border="0" usemap="#class_transfer_function_a8c9adecc61441a6c91408c98e09733e8_cgraph" alt=""/></div>
+<map name="class_transfer_function_a8c9adecc61441a6c91408c98e09733e8_cgraph" id="class_transfer_function_a8c9adecc61441a6c91408c98e09733e8_cgraph">
+<area shape="rect" id="node2" href="class_transfer_function.html#a4a436f66e961bc67933c2e93b0bbf2ab" title="TransferFunction::GetGray\lScaleTFD" alt="" coords="228,5,403,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a62ca8f169b67ad42dc72181a19a163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a62ca8f169b67ad42dc72181a19a163">&#9670;&nbsp;</a></span>GetGrayScaleTFC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetGrayScaleTFC </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00077">77</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="transfer_function_8cpp_source.html#l00032">CUB</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="transfer_function_8cpp_source.html#l00113">GetGrayScaleTF()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                                            {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">double</span> aux;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  *elemSize = <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>+2;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  *ptr = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[*elemSize];</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  aux = 1./(<a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-min+1);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  (*ptr)[0] = 0;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1 ; i &lt; *elemSize; i++) </div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    (*ptr)[i] = (<span class="keywordtype">unsigned</span> char)(<a class="code" href="transfer_function_8cpp.html#a46a9695b0f30378a53d18234db988b5b">CUB</a>(i*aux)*255);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="transfer_function_8cpp_html_a46a9695b0f30378a53d18234db988b5b"><div class="ttname"><a href="transfer_function_8cpp.html#a46a9695b0f30378a53d18234db988b5b">CUB</a></div><div class="ttdeci">#define CUB(a)</div><div class="ttdef"><b>Definition:</b> <a href="transfer_function_8cpp_source.html#l00032">transferFunction.cpp:32</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_a4a62ca8f169b67ad42dc72181a19a163_icgraph.png" border="0" usemap="#class_transfer_function_a4a62ca8f169b67ad42dc72181a19a163_icgraph" alt=""/></div>
+<map name="class_transfer_function_a4a62ca8f169b67ad42dc72181a19a163_icgraph" id="class_transfer_function_a4a62ca8f169b67ad42dc72181a19a163_icgraph">
+<area shape="rect" id="node2" href="class_transfer_function.html#aedd41176a370d30f5ac6c7916fbc6fdb" title="TransferFunction::GetGray\lScaleTF" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node3" href="classvmtk_render3_d.html#aa821250825fffbcae61eb0b0fb6095ae" title="generateTransferFunction " alt="" coords="451,5,661,47"/>
+<area shape="rect" id="node4" href="classvmtk_render3_d.html#acd36a6d8a3b752803c083543b69142ee" title="Loads transfer Functions to textures 1D. " alt="" coords="709,5,893,47"/>
+<area shape="rect" id="node5" href="classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="941,13,1103,39"/>
+<area shape="rect" id="node6" href="main__glsl__dvr_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="initialize context OpenGL " alt="" coords="1151,13,1189,39"/>
+<area shape="rect" id="node7" href="main__glsl__dvr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1237,13,1288,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a436f66e961bc67933c2e93b0bbf2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a436f66e961bc67933c2e93b0bbf2ab">&#9670;&nbsp;</a></span>GetGrayScaleTFD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetGrayScaleTFD </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>nbitsalloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00092">92</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="transfer_function_8cpp_source.html#l00132">GetGrayScaleTF()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                                                                                       {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">double</span> aux;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">int</span> node1, node2;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  *elemSize = 256;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  *ptr = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[*elemSize];</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  aux = (1.*pow(2,8))/pow(2,nbitsalloc);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  node1 = (int)(<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>*aux);</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  node2 = (int)(<a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>*aux);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; node1; i++) </div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    (*ptr)[i] = 0;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = node1 ; i &lt; node2; i++)</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    (*ptr)[i] = (<span class="keywordtype">unsigned</span> char)((1.0*(i-node1))/(node2-node1)*255);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = node2; i &lt; *elemSize; i++)</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    (*ptr)[i] = 0;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_a4a436f66e961bc67933c2e93b0bbf2ab_icgraph.png" border="0" usemap="#class_transfer_function_a4a436f66e961bc67933c2e93b0bbf2ab_icgraph" alt=""/></div>
+<map name="class_transfer_function_a4a436f66e961bc67933c2e93b0bbf2ab_icgraph" id="class_transfer_function_a4a436f66e961bc67933c2e93b0bbf2ab_icgraph">
+<area shape="rect" id="node2" href="class_transfer_function.html#a8c9adecc61441a6c91408c98e09733e8" title="TransferFunction::GetGray\lScaleTF" alt="" coords="228,5,403,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab70d1e101f222795dbea3cb0e0572e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70d1e101f222795dbea3cb0e0572e45">&#9670;&nbsp;</a></span>GetGrayScaleTFE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetGrayScaleTFE </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Estimate logarithmic transfer function from image char data values entry 0 is reserved to background intensity 0 </p>
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00037">37</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="transfer_function_8cpp_source.html#l00113">GetGrayScaleTF()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                                                            {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">double</span> aux;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  *elemSize = <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>+2;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  *ptr = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[*elemSize];</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  aux = 1./(<a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-min+1)*9;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  (*ptr)[0] = 0;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1 ; i &lt; *elemSize; i++) </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    (*ptr)[i] = (<span class="keywordtype">unsigned</span> char)(log(i*aux+1.)*255);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_ab70d1e101f222795dbea3cb0e0572e45_icgraph.png" border="0" usemap="#class_transfer_function_ab70d1e101f222795dbea3cb0e0572e45_icgraph" alt=""/></div>
+<map name="class_transfer_function_ab70d1e101f222795dbea3cb0e0572e45_icgraph" id="class_transfer_function_ab70d1e101f222795dbea3cb0e0572e45_icgraph">
+<area shape="rect" id="node2" href="class_transfer_function.html#aedd41176a370d30f5ac6c7916fbc6fdb" title="TransferFunction::GetGray\lScaleTF" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node3" href="classvmtk_render3_d.html#aa821250825fffbcae61eb0b0fb6095ae" title="generateTransferFunction " alt="" coords="451,5,661,47"/>
+<area shape="rect" id="node4" href="classvmtk_render3_d.html#acd36a6d8a3b752803c083543b69142ee" title="Loads transfer Functions to textures 1D. " alt="" coords="709,5,893,47"/>
+<area shape="rect" id="node5" href="classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="941,13,1103,39"/>
+<area shape="rect" id="node6" href="main__glsl__dvr_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="initialize context OpenGL " alt="" coords="1151,13,1189,39"/>
+<area shape="rect" id="node7" href="main__glsl__dvr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1237,13,1288,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab0a01e3f1ccd2eb4a39e302d60e8b4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0a01e3f1ccd2eb4a39e302d60e8b4ff">&#9670;&nbsp;</a></span>GetGrayScaleTFL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetGrayScaleTFL </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estimate linear transfer function from image char data values. </p>
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00051">51</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="transfer_function_8cpp_source.html#l00113">GetGrayScaleTF()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                                            {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">double</span> aux;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  *elemSize = <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>+2;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  *ptr = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[*elemSize];</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  aux = 1./(<a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-min+1);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  (*ptr)[0] = 0;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1 ; i &lt; *elemSize; i++) </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    (*ptr)[i] = (<span class="keywordtype">unsigned</span> char)(i*aux*255);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_ab0a01e3f1ccd2eb4a39e302d60e8b4ff_icgraph.png" border="0" usemap="#class_transfer_function_ab0a01e3f1ccd2eb4a39e302d60e8b4ff_icgraph" alt=""/></div>
+<map name="class_transfer_function_ab0a01e3f1ccd2eb4a39e302d60e8b4ff_icgraph" id="class_transfer_function_ab0a01e3f1ccd2eb4a39e302d60e8b4ff_icgraph">
+<area shape="rect" id="node2" href="class_transfer_function.html#aedd41176a370d30f5ac6c7916fbc6fdb" title="TransferFunction::GetGray\lScaleTF" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node3" href="classvmtk_render3_d.html#aa821250825fffbcae61eb0b0fb6095ae" title="generateTransferFunction " alt="" coords="451,5,661,47"/>
+<area shape="rect" id="node4" href="classvmtk_render3_d.html#acd36a6d8a3b752803c083543b69142ee" title="Loads transfer Functions to textures 1D. " alt="" coords="709,5,893,47"/>
+<area shape="rect" id="node5" href="classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="941,13,1103,39"/>
+<area shape="rect" id="node6" href="main__glsl__dvr_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="initialize context OpenGL " alt="" coords="1151,13,1189,39"/>
+<area shape="rect" id="node7" href="main__glsl__dvr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1237,13,1288,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f92aaf5170577030d059faf1bc4ea6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f92aaf5170577030d059faf1bc4ea6c">&#9670;&nbsp;</a></span>GetGrayScaleTFS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetGrayScaleTFS </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00064">64</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="transfer_function_8cpp_source.html#l00029">SQR</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="transfer_function_8cpp_source.html#l00113">GetGrayScaleTF()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                                                            {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">double</span> aux;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  *elemSize = <a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-<a class="code" href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">min</a>+2;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  *ptr = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[*elemSize];</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  aux = 1./(<a class="code" href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">max</a>-min+1);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  (*ptr)[0] = 0;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1 ; i &lt; *elemSize; i++) </div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    (*ptr)[i] = (<span class="keywordtype">unsigned</span> char)(<a class="code" href="transfer_function_8cpp.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(i*aux)*255);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div><div class="ttc" id="namespacestd_html_a7679b41567b94bc12fa748b0b5daa655"><div class="ttname"><a href="namespacestd.html#a7679b41567b94bc12fa748b0b5daa655">std::max</a></div><div class="ttdeci">VEC2&lt; T &gt; max(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03969">vmath.h:3969</a></div></div>
+<div class="ttc" id="transfer_function_8cpp_html_ad41630f833e920c1ffa34722f45a8e77"><div class="ttname"><a href="transfer_function_8cpp.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a></div><div class="ttdeci">#define SQR(a)</div><div class="ttdef"><b>Definition:</b> <a href="transfer_function_8cpp_source.html#l00029">transferFunction.cpp:29</a></div></div>
+<div class="ttc" id="namespacestd_html_a5bc79ab9c43616e8db014ae7e5770fc9"><div class="ttname"><a href="namespacestd.html#a5bc79ab9c43616e8db014ae7e5770fc9">std::min</a></div><div class="ttdeci">VEC2&lt; T &gt; min(const VEC2&lt; T &gt; &amp;a, const VEC2&lt; T &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="vmath_8h_source.html#l03939">vmath.h:3939</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transfer_function_a9f92aaf5170577030d059faf1bc4ea6c_icgraph.png" border="0" usemap="#class_transfer_function_a9f92aaf5170577030d059faf1bc4ea6c_icgraph" alt=""/></div>
+<map name="class_transfer_function_a9f92aaf5170577030d059faf1bc4ea6c_icgraph" id="class_transfer_function_a9f92aaf5170577030d059faf1bc4ea6c_icgraph">
+<area shape="rect" id="node2" href="class_transfer_function.html#aedd41176a370d30f5ac6c7916fbc6fdb" title="TransferFunction::GetGray\lScaleTF" alt="" coords="228,5,403,47"/>
+<area shape="rect" id="node3" href="classvmtk_render3_d.html#aa821250825fffbcae61eb0b0fb6095ae" title="generateTransferFunction " alt="" coords="451,5,661,47"/>
+<area shape="rect" id="node4" href="classvmtk_render3_d.html#acd36a6d8a3b752803c083543b69142ee" title="Loads transfer Functions to textures 1D. " alt="" coords="709,5,893,47"/>
+<area shape="rect" id="node5" href="classvmtk_render3_d.html#a8a5c89a28f5be7e8a2b1ce131540d81c" title="initializes 3D volume rendering. " alt="" coords="941,13,1103,39"/>
+<area shape="rect" id="node6" href="main__glsl__dvr_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="initialize context OpenGL " alt="" coords="1151,13,1189,39"/>
+<area shape="rect" id="node7" href="main__glsl__dvr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1237,13,1288,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32bc53040c0badc5901d4352dea47df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32bc53040c0badc5901d4352dea47df3">&#9670;&nbsp;</a></span>GetRGBTF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferFunction::GetRGBTF </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elemSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="transfer_function_8cpp_source.html#l00142">142</a> of file <a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                      {</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="comment">// Variavel tag reservado para extensoes futuras</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> tabelaCor [] = {</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    0, 0, 0,</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    51, 0, 0,</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    102, 0, 0,</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    153, 0, 0,</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    204, 0, 0,</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    255, 0 , 0,</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    255, 51, 0,</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    255, 102, 0,</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    255, 153, 0,</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    255, 204, 0,</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    255, 255, 0,</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    204, 255, 0,</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    153, 255, 0,</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    102, 255, 0,</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    51, 255, 0,</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    0, 255, 0,</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    0, 255, 51,</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    0, 255, 102,</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    0, 255, 153,</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    0, 255, 204,</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    0, 255, 255,</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    0, 204, 255,</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    0, 153, 255,</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    0, 102, 255,</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    0, 51, 255,</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    0, 0, 255,</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    51, 0, 255,</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    102, 0, 255,</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    153, 0, 255,</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    204, 0, 255,</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    255, 0, 255,</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    255, 51, 255,</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    255, 102, 255,</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    255, 153, 255,</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    255, 204, 244,</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    255, 255, 255</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  };</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  *elemSize = <span class="keyword">sizeof</span>(tabelaCor);</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  *ptr = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[*elemSize];</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  memcpy (*ptr, tabelaCor, *elemSize);</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/vmtk_Multi-volume_Raycasting/include/<a class="el" href="transfer_function_8h_source.html">transferFunction.h</a></li>
+<li>C:/vmtk_Multi-volume_Raycasting/src/<a class="el" href="transfer_function_8cpp_source.html">transferFunction.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -113,7 +669,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>GetRGBTF</b> (int tag
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_transfer_function.html">TransferFunction</a></li>
-    <li class="footer">Generated on Fri May 5 2017 18:17:40 for VMTK by
+    <li class="footer">Generated on Tue Sep 26 2017 20:53:49 for VMTK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

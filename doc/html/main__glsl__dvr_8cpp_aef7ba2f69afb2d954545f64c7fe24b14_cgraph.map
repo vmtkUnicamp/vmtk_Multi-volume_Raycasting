@@ -1,0 +1,10 @@
+<map id="keyboard" name="keyboard">
+<area shape="rect" id="node2" href="$classvmtk_render3_d.html#a05cd9159bb0806d314bad60ee1e9ff1c" title="get acquisition of the volumes. " alt="" coords="133,5,329,32"/>
+<area shape="rect" id="node3" href="$classvmtk_render3_d.html#a87ef8b4f7b14b280ffb7bec0c6e6671e" title="gets the maximum number of the slices from the axis X. " alt="" coords="128,56,335,83"/>
+<area shape="rect" id="node4" href="$classvmtk_render3_d.html#a677d2c452b6056e41de6f013702e393b" title="sets the blender factor. " alt="" coords="143,107,319,133"/>
+<area shape="rect" id="node5" href="$classvmtk_render3_d.html#ace0a11146ebf8c055cce26918ad855bf" title="sets the clipping plane. " alt="" coords="140,157,323,184"/>
+<area shape="rect" id="node7" href="$classvmtk_render3_d.html#abff89587c97076379d7d17636eaf75f8" title="setEnableMPR " alt="" coords="131,208,332,235"/>
+<area shape="rect" id="node8" href="$classvmtk_render3_d.html#a78f18c8ee0d8a4099be0c5d78edf4d5d" title="sets the rotation matrix. " alt="" coords="141,259,321,285"/>
+<area shape="rect" id="node9" href="$classvmtk_render3_d.html#a7fcfeafb59be7a6553089b0ff08a3347" title="sets the threshold. " alt="" coords="137,309,325,336"/>
+<area shape="rect" id="node6" href="$classvmtk_render3_d.html#a49dd05aac23bcbc3f480ffb361c8d116" title="initializes the geometry of a cube to be rendered for getting back and front depth maps..." alt="" coords="383,157,573,184"/>
+</map>

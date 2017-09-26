@@ -1,4 +1,5 @@
 <map id="VMATH_NAMESPACE::Vector3::normalize" name="VMATH_NAMESPACE::Vector3::normalize">
-<area shape="rect" id="node2" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector3.html#a7534eff339a7337194d96897da2674d7" title="VMATH_NAMESPACE::Vector3\l::crossProduct" alt="" coords="264,5,475,47"/>
-<area shape="rect" id="node3" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix4.html#a803d2534a9f596f3a0376c07d39d4dca" title="VMATH_NAMESPACE::Matrix4\l::createLookAt" alt="" coords="523,35,731,76"/>
+<area shape="rect" id="node2" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_matrix4.html#a803d2534a9f596f3a0376c07d39d4dca" title="VMATH_NAMESPACE::Matrix4\l::createLookAt" alt="" coords="265,5,473,47"/>
+<area shape="rect" id="node3" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector3.html#a8a9a9151c9e4eecc3bdfc8d540e96462" title="VMATH_NAMESPACE::Vector3\l::vectorNormal" alt="" coords="264,71,475,112"/>
+<area shape="rect" id="node4" href="$class_v_m_a_t_h___n_a_m_e_s_p_a_c_e_1_1_vector3.html#a10a1425456e56fd5ea675856969d07d4" title="VMATH_NAMESPACE::Vector3\l::vectorNormalFromThreePoints" alt="" coords="264,136,475,177"/>
 </map>

@@ -1,0 +1,10 @@
+<map id="Import::DICOMImage" name="Import::DICOMImage">
+<area shape="rect" id="node2" href="$class_import.html#a7222d265e17fa6ff12cf0af074d3d959" title="Import::ImportDirectory" alt="" coords="209,90,364,117"/>
+<area shape="rect" id="node8" href="$class_import.html#a8b8e2968e70c43d886e8fba400e82d62" title="Import::ImportFile" alt="" coords="225,145,348,171"/>
+<area shape="rect" id="node9" href="$class_import.html#a667135169ab5e528362d25c529303ec6" title="reorient the volume to LPS. " alt="" coords="196,196,377,237"/>
+<area shape="rect" id="node3" href="$class_import.html#a5feee9e02d7a4633d8ed2a5a6f998641" title="Import::sortFunc" alt="" coords="463,35,581,62"/>
+<area shape="rect" id="node4" href="$class_import.html#a1bd3d2e85e30da0a1995a401ba33abe0" title="Import::ValidateMediaStorage\lIsImage" alt="" coords="425,137,619,179"/>
+<area shape="rect" id="node5" href="$class_import.html#a1769687e0a1c489df7fc41f8ae89c918" title="Import::ProcessOneFile" alt="" coords="443,203,601,230"/>
+<area shape="rect" id="node6" href="$class_import.html#a72d2858a4380315fd3c5d3d8b919ff58" title="Import::ReadPixelData" alt="" coords="667,94,819,121"/>
+<area shape="rect" id="node7" href="$class_import.html#af9a6ced9377fba7b29180534f8716b6a" title="Import::realloc_mem" alt="" coords="452,86,592,113"/>
+</map>

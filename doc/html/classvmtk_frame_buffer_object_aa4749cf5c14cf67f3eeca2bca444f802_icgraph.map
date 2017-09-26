@@ -1,4 +1,6 @@
 <map id="vmtkFrameBufferObject::getTexture" name="vmtkFrameBufferObject::getTexture">
-<area shape="rect" id="node2" href="$classvmtk_render3_d.html#a5b6aa3d2dd874d2ef7326851aee7dc77" title="renders the color cube in the fbos. " alt="" coords="211,13,384,39"/>
-<area shape="rect" id="node3" href="$classvmtk_render3_d.html#ad056c457a6bd2511350aa152790909e1" title="renders the data with the specified redering mode. " alt="" coords="432,13,583,39"/>
+<area shape="rect" id="node2" href="$classvmtk_render3_d.html#ae3c43e897c22dd8b2c860ed21fc05a3b" title="raycasts through the color cube. " alt="" coords="211,5,385,47"/>
+<area shape="rect" id="node3" href="$classvmtk_render3_d.html#ad056c457a6bd2511350aa152790909e1" title="renders the data with the specified redering mode. " alt="" coords="433,13,584,39"/>
+<area shape="rect" id="node4" href="$main__glsl__dvr_8cpp.html#a3b1bd44be8c95df1aea406a6be6e2553" title="render the volume " alt="" coords="632,13,772,39"/>
+<area shape="rect" id="node5" href="$main__glsl__dvr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="820,13,871,39"/>
 </map>
