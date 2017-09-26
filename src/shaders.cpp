@@ -57,9 +57,7 @@ char *Shaders::textFileRead(const char *fn) {
 
 int Shaders::printOglError(char *file, int line)
 {
-    //
     // Returns 1 if an OpenGL error occurred, 0 otherwise.
-    //
     GLenum glErr;
     int    retCode = 0;
  

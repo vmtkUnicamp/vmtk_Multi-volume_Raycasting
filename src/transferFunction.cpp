@@ -112,7 +112,6 @@ void TransferFunction::GetGrayScaleTFD (int min, int max, int *elemSize, unsigne
 
 void TransferFunction::GetGrayScaleTF (int tag, int min, int max, 
   int *elemSize, unsigned char **ptr) {
-//  double aux;
 
  switch (tag) {
  case 0:
@@ -132,7 +131,6 @@ void TransferFunction::GetGrayScaleTF (int tag, int min, int max,
 
 void TransferFunction::GetGrayScaleTF (int tag, int min, int max, 
   int *elemSize, unsigned char **ptr, unsigned short nbitsalloc) {
-//  double aux;
 
  switch (tag) {
  case 4:

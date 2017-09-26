@@ -216,9 +216,9 @@ class vmtkRender3D
 
 private:
 
-		int m_maxSliceLeft;
-        vmath::Matrix4f *m_invRegMatrix;        /**< inverse matrix for register */
+        int m_maxSliceLeft;                     /**< dimension volume for X-axis */
         float m_blender;                        /**< blender for the reference and float volumes. */
+        vmath::Matrix4f *m_invRegMatrix;        /**< inverse matrix array for register */
         std::vector<unsigned short *> m_map;      /**< map vector of the volumes */
         std::vector<float> m_Threshold;         /**< threshold vector for volumes */
         std::vector<Import::ImgFormat*> m_data; /**< data vector of the volumes. */
@@ -230,15 +230,15 @@ private:
 	    GLuint m_ColorShader;    /**< pre-processing shader to get front and back planes */
 		GLuint m_RaytraceShader; /**< raycast shader */
 	
-		GLuint vaosCube,             /**< drawCube: vertex array object */
-			vboCube,                 /**< drawCube: data buffer */
-			eboCube,                 /**< drawCube: element array buffer */
-			vaosRenderPlane,
-			vboRenderPlane,
-			eboRenderPlane,
-			vaosResultPlane,      /**< render: vertex array object */
-			vboResultPlane,          /**< render: data buffer */
-            eboResultPlane;          /**< render: element array buffer */
+        GLuint vaosCube,            /**< drawCube: vertex array object */
+            vboCube,                /**< drawCube: data buffer */
+            eboCube,                /**< drawCube: element array buffer */
+            vaosRenderPlane,        /**< RenderPlane: vertex array object */
+            vboRenderPlane,         /**< RenderPlane: data buffer */
+            eboRenderPlane,         /**< RenderPlane: element array buffer */
+            vaosResultPlane,        /**< renderResult: vertex array object */
+            vboResultPlane,         /**< renderResult: data buffer */
+            eboResultPlane;         /**< renderResult: element array buffer */
 			
 		/**
 		 * @struct VertexDataCube
@@ -319,11 +319,11 @@ private:
 		 * @brief initializes the plane to be input into the graphics pipeline
 		 */
 		void initRenderPlane();
-		/**
+
+        /**
 		* @brief draws a cube.
 		*/
 		void drawCube();
-
 
         /**
         * @brief raycasts through the color cube.

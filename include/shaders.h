@@ -41,9 +41,31 @@ class Shaders {
   GLuint carregueShaders(const char *vertexFileName, const char *fragmentFileName);
 
  private:
+  /**
+   * @brief textFileRead
+   * @param [in] fn: file name.
+   * @return text string of file loaded.
+   */
   char *textFileRead(const char *fn);
+
+  /**
+   * @brief printOglError
+   * @param [in] file: text string of file loaded.
+   * @param [in] line: line of text.
+   * @return Returns 1 if an OpenGL error occurred, 0 otherwise.
+   */
   int printOglError(char *file, int line);
+
+  /**
+   * @brief printShaderInfoLog
+   * @param [in] obj: specifies the shader object to be queried.
+   */
   void printShaderInfoLog(GLuint obj);
+
+  /**
+   * @brief printProgramInfoLog
+   * @param [in] obj: specifies the program object to be queried.
+   */
   void printProgramInfoLog(GLuint obj);
 
 };
