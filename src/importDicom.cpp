@@ -126,7 +126,7 @@ bool Import::LPS_ReorientImageVolume(ImgFormat *volData)
         case 16:
             for (idz = 0; idz < volData->dims[2]; idz++) {
                 for (idy = 0; idy < volData->dims[1]; idy++) {
-                    for (ix=0,idx = volData->dims[0]-1; ix < idx; idx=idx--,ix=ix++) {
+                    for (ix=0,idx = volData->dims[0]-1; ix < idx; idx--,ix++) {
                         ///Swap the elements
                         memcpy (tmp,
                                 &(volData->buffer[2*(idz * volData->dims[0] *
@@ -416,7 +416,7 @@ bool Import::ReadPixelData(const gdcm::Image &image, const gdcm::DataSet &ds,
     char *tmpbuf8;
     unsigned short *tmpbuf16;
 
-    switch (stype) {
+    switch ((int) stype) {
     case 0:  // UINT8
     case 1:  // INT8
         tmpbuf8 = new char[*len];
@@ -652,7 +652,7 @@ int Import::ProcessOneFile( std::string const & filename,
     std::cout << "PhotometricInterpretation: " << pi << std::endl;
 
     // Get Rescale Slope (<0x0028,0x1053>)
-    float slope, intercept;
+//    float slope, intercept;
 
     if(ds.FindDataElement(gdcm::Tag(0x0028, 0x1053)) ) {
         const gdcm::DataElement& slope_ptr=
@@ -694,7 +694,7 @@ bool Import::ValidateMediaStorageIsImage (std::string const & filename,
         return 0;
     }
     const gdcm::File &file = reader.GetFile();
-    const gdcm::DataSet &ds = file.GetDataSet();
+//    const gdcm::DataSet &ds = file.GetDataSet();
 
     gdcm::MediaStorage ms;
     ms.SetFromFile(file);
@@ -726,7 +726,7 @@ bool Import::ValidateMediaStorageIsImage (std::string const & filename,
 int Import::ImportFile(std::string &filename, const gdcm::Defs &defs,
                        ImgFormat *volData) {
     std::cout << "A file is processed ..." << std::endl;
-    unsigned int len;
+//    unsigned int len;
     std::string series_desc_str=""; // empty string
     std::string patient_name_str=""; // empty string
     std::string patient_code_str=""; // empty string
@@ -746,10 +746,10 @@ int Import::ImportFile(std::string &filename, const gdcm::Defs &defs,
             const gdcm::DataSet &ds = file.GetDataSet();
             // Read Series Instance UID
             gdcm::Tag att(0x0020,0x000e);    // Series Instance UID
-            const gdcm::DataElement& series_value= ds.GetDataElement( att );
+//            const gdcm::DataElement& series_value= ds.GetDataElement( att );
             if( ds.FindDataElement(att) ) {
-                const gdcm::ByteValue *bv = series_value.GetByteValue();
-                len = 0;
+//                const gdcm::ByteValue *bv = series_value.GetByteValue();
+//                len = 0;
                 // Get Series Description
                 if( ds.FindDataElement(gdcm::Tag(0x0008,0x103e)) ) {
                     const gdcm::DataElement& series_desc =
@@ -824,37 +824,70 @@ char *Import::realloc_mem(const gdcm::PixelFormat::ScalarType & stype,
     unsigned short *tmpbuf16;
     char *tmpbuf8;
 
-    switch (stype) {
+//    switch ((int)stype) {
+//    case 0:  // UINT8
+//    case 1:  // INT8
+//        tmpbuf8 = new char[new_len];
+//        std::memmove(tmpbuf8, buf, old_len);
+//        delete[] buf;
+//        return tmpbuf8;
+//        break;
+//    case 2:  // UINT12
+//        break;
+//    case 3:  // INT12
+//        break;
+//    case 4:  // UINT16
+//    case 5:  // INT16
+//        tmpbuf16 = new unsigned short[new_len / 2];
+//        std::memmove(reinterpret_cast<char *>(tmpbuf16), buf, old_len);
+//        delete[] buf;
+//        return reinterpret_cast<char *>(tmpbuf16);
+//        break;
+//    case 6:  // UINT32
+//        break;
+//    case 7: // INT32
+//        break;
+//    case 8: // FLOAT16
+//        break;
+//    case 9: // FLOAT32
+//        break;
+//    case 10: // FLOAT64
+//        break;
+//    case 11: // UNKONOWN
+//        break;
+//    }
+
+    switch ( (int) stype) {
     case 0:  // UINT8
     case 1:  // INT8
         tmpbuf8 = new char[new_len];
         std::memmove(tmpbuf8, buf, old_len);
         delete[] buf;
         return tmpbuf8;
-        break;
     case 2:  // UINT12
-        break;
+        return 0;
     case 3:  // INT12
-        break;
+        return 0;
     case 4:  // UINT16
     case 5:  // INT16
         tmpbuf16 = new unsigned short[new_len / 2];
         std::memmove(reinterpret_cast<char *>(tmpbuf16), buf, old_len);
         delete[] buf;
         return reinterpret_cast<char *>(tmpbuf16);
-        break;
     case 6:  // UINT32
-        break;
+        return 0;
     case 7: // INT32
-        break;
+        return 0;
     case 8: // FLOAT16
-        break;
+        return 0;
     case 9: // FLOAT32
-        break;
+        return 0;
     case 10: // FLOAT64
-        break;
+        return 0;
     case 11: // UNKONOWN
-        break;
+        return 0;
+    default:
+        return 0;
     }
 }
 

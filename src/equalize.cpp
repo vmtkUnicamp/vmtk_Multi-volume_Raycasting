@@ -69,7 +69,7 @@ void Equalize::EqualizeHistogram (int dimx, int dimy, int dimz,
   *histogram = new unsigned short[umax];
   memset(*histogram, 0x00, umax*sizeof(unsigned short));
 
-  for (i=0; i<umax; i++) {
+  for (i=0; i<(int) umax; i++) {
     (*histogram)[i] = (unsigned short)(((1.0*(cdf[i]-cdfmin))/(volSize-cdfmin))*(L-1));
   }
   delete [] cdf;
