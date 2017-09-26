@@ -8,7 +8,7 @@ Developers
   - José Angel Iván Rubianes Silva  
 
 This program is a simplified version of the software 
-available in: http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads.html
+available in: http://www.dca.fee.unicamp.br/projects/mtk/wu_loos_voltoline_rubianes/downloads.html.
 Running the executable file you should be attentive to the system requirements (programmable GPU with >=1GB graphics memory and supports OpenGL-GLSL >= 3.3)	
 
 The raycasting algorithm was based in the work presented here: https://www.cg.tuwien.ac.at/courses/Visualisierung/2010-2011/Beispiel1/Moellinger_Ludwig/
