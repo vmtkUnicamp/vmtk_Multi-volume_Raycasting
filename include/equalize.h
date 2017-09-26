@@ -23,6 +23,14 @@
 
 class Equalize {
  public:
+	/**
+	* @brief EqualizeHistogram constructor
+	* @param[in] (dimx, dimy, dimz): dimension of the volume.
+	* @param[in] volume: volume data.
+	* @param[in] nbitsalloc: number of allocated bits for the volume.
+	* @param[in] umax: maximum intensity of the volume.
+	* @param [out] histogram: histogram equalized of the volume.
+	*/
   void EqualizeHistogram (int dimx, int dimy, int dimz, unsigned short *volume,
         int nbitsalloc, unsigned int umax, unsigned short **histogram);
 };

@@ -46,16 +46,16 @@ class Import {
  public:
   typedef struct ImgFormat
   {
-    unsigned short dims[3];  // dims[0]: nrows; dims[1]: ncols; dims[2]: nplanes
-    double space[3];       // space[0]: width; space[1]: height; space[2]: depth
-    double origin[3];        // Origin
-    double dircos[3][3];     // basis vectors with respect to LPS
-    unsigned short samples;  // Samples per pixel
-    unsigned short nbitsalloc;  // Bits allocated
-    unsigned short nbitsstored; // Bits stored
-    unsigned short nhighbit;    // High bit
-    float slope;                //Rescale slope
-    float intercept;            //Rescale intercept
+    unsigned short dims[3];  ///< dims[0]: nrows; dims[1]: ncols; dims[2]: nplanes
+    double space[3];       ///< space[0]: width; space[1]: height; space[2]: depth
+    double origin[3];        ///< origin
+    double dircos[3][3];     ///< basis vectors with respect to LPS
+    unsigned short samples;  ///< samples per pixel
+    unsigned short nbitsalloc;  ///< bits allocated
+    unsigned short nbitsstored; ///< bits stored
+    unsigned short nhighbit;    ///< high bit
+    float slope;                ///< rescale slope
+    float intercept;            ///< rescale intercept
     unsigned int length;
     char *buffer;
     int umin, umax;
@@ -73,6 +73,11 @@ class Import {
     Private Methods
     ===========================================================*/
  private:
+/**
+* @brief reorients the volumes to LPS.
+* @param [in] volData: volume data.
+* @return true when the reorientation is made
+*/
   bool LPS_ReorientImageVolume (ImgFormat *volData);
   bool ReadPixelData(const gdcm::Image &image, const gdcm::DataSet &ds,
              const gdcm::PixelFormat::ScalarType & stype,
@@ -90,8 +95,20 @@ class Import {
               ImgFormat *volData);
   bool ValidateMediaStorageIsImage (std::string const & filename,
                     gdcm::Defs const & defs );
+/**
+* @brief import DICOM file.
+* @param [in] filename: name of the file.
+* @param [in] defs: 
+* @param [out] volData: volume data.
+*/
   int ImportFile(std::string &filename, const gdcm::Defs &defs,
          ImgFormat *volData);
+/**
+* @brief import DICOM directory.
+* @param [in] filename: name of the directory.
+* @param [in] defs: 
+* @param [out] volData: volume data.
+*/
   int ImportDirectory(std::string &filename, const gdcm::Defs &defs,
           ImgFormat *imgformat);
   static bool sortFunc(gdcm::DataSet const &ds1, gdcm::DataSet const &ds2);

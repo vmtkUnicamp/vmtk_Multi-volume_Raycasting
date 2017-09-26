@@ -22,7 +22,6 @@
 #include <string.h>
 #include "equalize.h"
 
-// Sugestão de leitura:
 //http://en.wikipedia.org/wiki/Histogram_equalization
 
 void Equalize::EqualizeHistogram (int dimx, int dimy, int dimz, 
@@ -52,7 +51,6 @@ void Equalize::EqualizeHistogram (int dimx, int dimy, int dimz,
 
   int volSize = dimx*dimy*dimz;
 
-  // Determina a funcao de distribuicao acumulada
   // https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_distribui%C3%A7%C3%A3o_acumulada
   cdf[0] = tmp[0];
   int cdfmin = -1;

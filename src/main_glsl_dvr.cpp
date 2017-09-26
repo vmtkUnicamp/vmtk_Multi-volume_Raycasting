@@ -29,21 +29,26 @@
 
 using namespace std;
 
-static vmtkRender3D volumeRender;
-static GLfloat spin_x=0.0, spin_y=0.0, spin_z=0.0;
-static GLuint VIEWPORT_WIDTH=900, VIEWPORT_HEIGHT=900;
-static int threshold = 23;
-static float blender=0.5f;
-static int slice_x = 0;
-static int window;
-static int value = 0;
-static bool m_mprPreState = false;
-static bool m_mprState = false;
+static vmtkRender3D volumeRender; ///< instance of the class vmtkRender3D for rendering the volume
+static GLfloat spin_x=0.0, spin_y=0.0, spin_z=0.0; ///< parameters for rotating the volume
+static GLuint VIEWPORT_WIDTH=900, VIEWPORT_HEIGHT=900; ///< size of view the viewport
+static int threshold = 23; ///< initial threshold
+static float blender=0.5f; ///< initial blender
+static int slice_x = 0; ///< initial slice x
+static int window; ///< holds the name of the window created
+static bool m_mprPreState = false; ///< checks if the plane equation for multiplanar reformatting was provided
+static bool m_mprState = false; ///< checks if the plane equation for multiplanar reformatting is correct
+
+/**
+* @brief initialize 
+*/
 void init()
 {
     volumeRender.initialize(VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
 }
-
+/**
+* @brief keyboard callback function 
+*/
 void keyboard(unsigned char key, int x, int y)
 {
 
@@ -173,8 +178,6 @@ void menu(int num){
   if(num == 0){
     glutDestroyWindow(window);
     exit(0);
-  }else{
-    value = num;
   }
   glutPostRedisplay();
  }
@@ -278,20 +281,6 @@ int main(int argc, char *argv[])
 	glutDisplayFunc(drawProxyGeometry);
 	glutKeyboardFunc(keyboard);
 
-    /** teste popmenu **/
-//    bool ivan_menu=false;
-//    if(ivan_menu){
-//        int men = glutCreateMenu(menu);
-//        //add entries to our menu
-//        glutAddMenuEntry("Blender Volume 1-2",1);
-//        glutAddMenuEntry("Blender Volume 1-3",2);
-//        glutAddMenuEntry("Blender Volume 1-4",3);
-//        glutAddMenuEntry("Blender Volume 1-5",4);
-//        glutAddMenuEntry("Blender Volume 1-6",5);
-//        // attach the menu to the right button
-//        glutAttachMenu(GLUT_RIGHT_BUTTON);
-//    }
-	
 	/* Espera por eventos */
 	glutMainLoop();
 	
