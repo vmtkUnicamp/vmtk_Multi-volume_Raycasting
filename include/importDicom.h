@@ -67,6 +67,11 @@ class Import {
   Import() {};  ///< Constructor
   ~Import() {}; ///< Destructor
 
+/**
+* @brief load the volume
+* @param [in] filename: filename of the volume.
+* @param [out] imgformat: volume data
+*/
   int DICOMImage (std::string &filename, ImgFormat *imgformat);
 
   /*==========================================================
@@ -74,7 +79,7 @@ class Import {
     ===========================================================*/
  private:
 /**
-* @brief reorients the volumes to LPS.
+* @brief reorient the volume to LPS.
 * @param [in] volData: volume data.
 * @return true when the reorientation is made
 */
@@ -95,20 +100,10 @@ class Import {
               ImgFormat *volData);
   bool ValidateMediaStorageIsImage (std::string const & filename,
                     gdcm::Defs const & defs );
-/**
-* @brief import DICOM file.
-* @param [in] filename: name of the file.
-* @param [in] defs: 
-* @param [out] volData: volume data.
-*/
+
   int ImportFile(std::string &filename, const gdcm::Defs &defs,
          ImgFormat *volData);
-/**
-* @brief import DICOM directory.
-* @param [in] filename: name of the directory.
-* @param [in] defs: 
-* @param [out] volData: volume data.
-*/
+
   int ImportDirectory(std::string &filename, const gdcm::Defs &defs,
           ImgFormat *imgformat);
   static bool sortFunc(gdcm::DataSet const &ds1, gdcm::DataSet const &ds2);

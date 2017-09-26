@@ -40,7 +40,7 @@ static bool m_mprPreState = false; ///< checks if the plane equation for multipl
 static bool m_mprState = false; ///< checks if the plane equation for multiplanar reformatting is correct
 
 /**
-* @brief initialize 
+* @brief initialize context OpenGL
 */
 void init()
 {
@@ -55,61 +55,52 @@ void keyboard(unsigned char key, int x, int y)
 switch (key) {
     case 'w':
     case 'W':
-        /* incrementa +5.0 no ângulo de rotação em torno do eixo x */
         spin_x += 5.0;
         volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 's':
     case 'S':
-        /* incrementa +5.0 no ângulo de rotação em torno do eixo x */
         spin_x -= 5.0;
         volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'q':
     case 'Q':
-        /* incrementa +5.0 no ângulo de rotação em torno do eixo y */
         spin_y += 5.0;
         volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'e':
     case 'E':
-        /* incrementa +5.0 no ângulo de rotação em torno do eixo y */
         spin_y -= 5.0;
         volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'a':
     case 'A':
-        /* incrementa +5.0 no ângulo de rotação em torno do eixo z */
         spin_z += 5.0;
         volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'd':
     case 'D':
-        /* incrementa +5.0 no ângulo de rotação em torno do eixo z */
         spin_z -= 5.0;
         volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'r':
-    case 'R':
-        /* Reseta */
+    case 'R': ///<< reset
         spin_x = spin_y = spin_z = 0.0;
         volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
-    case '+':
-        /* Aumenta o limiar */
+    case '+': ///<< increase threshold
         threshold += 1;
         if(threshold<=0){ threshold = 0; }
         if(threshold>=volumeRender.getAcquisition(0)->umax-1){ threshold = volumeRender.getAcquisition(0)->umax-1; }
         volumeRender.setThreshold(threshold);
         break;
-    case '-':
-        /* Diminue o limiar */
+    case '-': ///<< decrease threshold
         threshold -= 1;
         if(threshold<=0){ threshold = 0;}
         volumeRender.setThreshold(threshold);
         break;
     case 'b':
-    case 'B':
+    case 'B': ///<< blender
         blender += 0.1;
         if (blender > 1.0){
 			blender = 1.0;
@@ -154,10 +145,6 @@ switch (key) {
         return;
     }
 
-
-
-	
-  /* Gera o evento "Display" */
   glutPostRedisplay();
 }
 
@@ -166,6 +153,9 @@ void reshape(int w, int h)
 	volumeRender.resize(w, h);
 }
 
+/**
+* @brief render the volume
+*/
 void drawProxyGeometry()
 {
 	volumeRender.render();
@@ -223,31 +213,30 @@ int main(int argc, char *argv[])
     data = new Import::ImgFormat[nVolumes];
     path = new string[nVolumes];
 
-    //reading volumes
     std::vector<Import::ImgFormat*> acqVector;
     for(int i = 0; i< nVolumes; i++){
         path[i] = argv[i+1];
         data[i].umax = -pow(2,30);
         data[i].umin = pow(2,30);
-        if (!load.DICOMImage (path[i], &data[i])) {
+        if (!load.DICOMImage (path[i], &data[i])) {///<<reading volumes
           std::cout << path[i] << "Cannot be imported!" << std::endl;
           return 0;
         }
         acqVector.push_back(&data[i]);
     }
-    volumeRender.setAcquisition(acqVector);
+    volumeRender.setAcquisition(acqVector);///<<setting volumes acquisitions
 
     std::vector<vmath::Matrix4f> vectorInvMatrixReg;
     for(int i = 0; i< nMatrices; i++){
         vmath::Matrix4f imrv;
-        if(!volumeRender.readMatrix(argv[i+1+nVolumes] ,imrv)){ return 0; }
+        if(!volumeRender.readMatrix(argv[i+1+nVolumes] ,imrv)){ return 0; }///<< reading coregister matrices
         vectorInvMatrixReg.push_back(imrv);
     }
     volumeRender.setVectorInvMatrixReg(vectorInvMatrixReg);
 
     vmath::Vector4f eqp;
     if(m_mprPreState){
-        if(!volumeRender.readPlane(argv[1+nVolumes+nMatrices], eqp) ){
+        if(!volumeRender.readPlane(argv[1+nVolumes+nMatrices], eqp) ){///<< reading plane equation for multiplanar reformatting
             m_mprState=false; return 0;
         }
         m_mprState=true;
@@ -259,29 +248,22 @@ int main(int argc, char *argv[])
     }
     volumeRender.setStateMPRInput(m_mprState);
 
-
-
-
-	/* Initializa OpenGL */
-	glutInit(&argc, argv);
+	glutInit(&argc, argv);///<< initialize OpenGL
 	glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
 	  
-	/* Seta contexto GL */
-    window = glutCreateWindow("VMTK-SPS");
+    window = glutCreateWindow("VMTK-SPS");///<< set OpenGL context
 	std::cout << "OpenGL version supported by this platform: " << glGetString(GL_VERSION) << std::endl;
 	
-	glewInit();	
-	init();
+	glewInit();///<< initialize Glew
+	init();///<< initialize context parameters
 	
-	/* Configura a janela */
-	glutPositionWindow(10, 10);
+	glutPositionWindow(10, 10);///<< intialize window position
 	glutReshapeWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
 	
 	glutReshapeFunc(reshape);
 	glutDisplayFunc(drawProxyGeometry);
 	glutKeyboardFunc(keyboard);
 
-	/* Espera por eventos */
 	glutMainLoop();
 	
 	return 0;
