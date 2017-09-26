@@ -24,7 +24,7 @@
 class Equalize {
  public:
   void EqualizeHistogram (int dimx, int dimy, int dimz, unsigned short *volume,
-	    int nbitsalloc, unsigned int umax, unsigned int **histogram);
+        int nbitsalloc, unsigned int umax, unsigned short **histogram);
 };
 #endif
 

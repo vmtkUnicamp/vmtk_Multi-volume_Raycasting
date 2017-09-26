@@ -52,49 +52,55 @@ switch (key) {
     case 'W':
         /* incrementa +5.0 no ângulo de rotação em torno do eixo x */
         spin_x += 5.0;
+        volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 's':
     case 'S':
         /* incrementa +5.0 no ângulo de rotação em torno do eixo x */
         spin_x -= 5.0;
+        volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'q':
     case 'Q':
         /* incrementa +5.0 no ângulo de rotação em torno do eixo y */
         spin_y += 5.0;
+        volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'e':
     case 'E':
         /* incrementa +5.0 no ângulo de rotação em torno do eixo y */
         spin_y -= 5.0;
+        volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'a':
     case 'A':
         /* incrementa +5.0 no ângulo de rotação em torno do eixo z */
         spin_z += 5.0;
+        volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'd':
     case 'D':
         /* incrementa +5.0 no ângulo de rotação em torno do eixo z */
         spin_z -= 5.0;
+        volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case 'r':
     case 'R':
         /* Reseta */
         spin_x = spin_y = spin_z = 0.0;
+        volumeRender.setRotation(spin_x,spin_y,spin_z);
         break;
     case '+':
         /* Aumenta o limiar */
         threshold += 1;
         if(threshold<=0){ threshold = 0; }
-        std::cout<<"set threshold (int): "<<threshold<<std::endl;
+        if(threshold>=volumeRender.getAcquisition(0)->umax-1){ threshold = volumeRender.getAcquisition(0)->umax-1; }
         volumeRender.setThreshold(threshold);
         break;
     case '-':
         /* Diminue o limiar */
         threshold -= 1;
-        if(threshold<=0){ threshold = 0; }
-        std::cout<<"set threshold (int): "<<threshold<<std::endl;
+        if(threshold<=0){ threshold = 0;}
         volumeRender.setThreshold(threshold);
         break;
     case 'b':
@@ -143,9 +149,6 @@ switch (key) {
         return;
     }
 
-
-
-	volumeRender.setRotation(spin_x,spin_y,spin_z);
 
 
 	

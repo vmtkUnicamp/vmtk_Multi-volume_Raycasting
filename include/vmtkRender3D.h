@@ -30,22 +30,21 @@ class vmtkRender3D
 		*/
 		vmtkRender3D();
 
-//		/**
-//		 * @brief sets the volumes to be registered
-//		 * @param[in] volume 1 (reference)
-//		 * @param[in] volume 2 (float)
-//		 */
-//		void setAcquisition(Import::ImgFormat *acq1, Import::ImgFormat *acq2);
-
-
         /**
-         * @brief sets the volumes to be registered
-         * @param[in] acqVector: vector of the volumes (first is reference)
+         * @brief sets the volumes to be registered.
+         * @param[in] acqVector: vector of the volumes.
          */
         void setAcquisition(std::vector<Import::ImgFormat*> acqVector);
 
+        /**
+         * @brief get acquisition of the volumes.
+         * @param [in] id: vector index of the volume.
+         * @return volume informations for index selected.
+         */
+        Import::ImgFormat *getAcquisition(int id);
+
 		/**
-		* @brief initializes 3D volume rendering
+        * @brief initializes 3D volume rendering.
 		*/
 		void initialize(int width, int height);
 		/**
@@ -54,34 +53,34 @@ class vmtkRender3D
 		void render();
 		/**
 		* @brief renders the color cube in the fbos.
-		* @param[in] modelview matrix
+        * @param[in] mvp: modelview matrix.
 		*/
 		void preRender(vmath::Matrix4f mvp);
 		/**
-		 * @brief resizes the dimensions of the display
-		 * @param[in] w width of image
-		 * @param[in] h height of image
+         * @brief resizes the dimensions of the display.
+         * @param[in] w: width of image.
+         * @param[in] h: height of image.
 		 */
 		void resize(int width, int height);
 		/**
 		* @brief sets the rotation matrix.
-		* @param[in] rotation matrix
+        * @param[in] rotation matrix.
 		*/
         void setRotation(float ax, float ay, float az);
 		/**
 		* @brief sets the threshold.
-		* @param[in]  threshold
+        * @param[in]  threshold.
 		*/
         void setThreshold(int threshold);
 		/**
 		* @brief sets the blender factor.
-		* @param[in]  blender factor
+        * @param [in] blender factor.
 		*/
         void setBlender(float blender);
 		/**
 		* @brief draws a unit cube to get the front and the back depth maps of the volume cube,
 		* after updating the clipping plane values.
-		* @param[in]  mvp projection*modelview matrix
+        * @param [in] mvp: projection*modelview matrix.
 		*/
         void itlDrawColorCube(vmath::Matrix4f mvp);
 		
@@ -89,12 +88,11 @@ class vmtkRender3D
 		* @brief initializes the geometry of a cube to be rendered for getting back and front depth maps.
 		*/
 		void initDrawCube();
-		
 
         /**
          * @brief reads the co-register matrix.
          * @param [in] s: co-register matrix file name.
-         * @param [in] invRM: inverse matrix.
+         * @param [out] invRM: inverse matrix.
          * @return
          */
         bool readMatrix(const char *s, vmath::Matrix4f& invRM);
@@ -102,7 +100,7 @@ class vmtkRender3D
         /**
          * @brief readPlane
          * @param [in] s: string file name.
-         * @param [in] eqp: Equation of the plane for multiplanar reformation.
+         * @param [out] eqp: Equation of the plane for multiplanar reformation.
          * @return
          */
         bool readPlane(const char *s, vmath::Vector4f &eqp);
@@ -117,10 +115,11 @@ class vmtkRender3D
 		* @brief gets the maximum number of the slices from the axis X.
 		*/
 		int getMaxSliceLeft();
+
         /**
          * @brief volumeRealDimension
          * @param [in] data: volume information's.
-         * @param [in] vrd: real Dimension of the volume.
+         * @param [out] vrd: real Dimension of the volume.
          */
         void volumeRealDimension(Import::ImgFormat *data, float vrd[]);
 
@@ -146,20 +145,73 @@ class vmtkRender3D
          */
         vmath::Vector4f phyDimension(Import::ImgFormat *data);
 
-
+        /**
+         * @brief currentActivateTexture
+         * @return number of the current texture activated.
+         */
         int currentActivateTexture();
 
-        void mapEqualizeHistogramVolume(Import::ImgFormat *data, unsigned int *&map);
-        void volumeEqualizer(Import::ImgFormat *data, unsigned int *map, unsigned short *&texbuffer);
-        void texture3DFromVolume(Import::ImgFormat *data, unsigned short *texbuffer, GLuint &refTexture);
+        /**
+         * @brief mapEqualizeHistogramVolume
+         * @param [in] data: volume information's.
+         * @param [out] map: histogram equalization mapping of the volume.
+         */
+        void mapEqualizeHistogramVolume(Import::ImgFormat *data, unsigned short *&map);
+
+        /**
+         * @brief volumeEqualizer
+         * @param [in] data: volume information's.
+         * @param [in] map: histogram equalization mapping of the volume.
+         * @param [out] texbuffer: buffer of the volume equalizer.
+         */
+        void volumeEqualizer(Import::ImgFormat *data, unsigned short *map, unsigned short *&texbuffer);
+
+        /**
+         * @brief texture3DFromVolume
+         * @param [in] data: volume information's.
+         * @param [in] texbuffer: buffer of the volume equalizer.
+         * @param [out] idTexture: id volume texture (texture name).
+         */
+        void texture3DFromVolume(Import::ImgFormat *data, unsigned short *texbuffer, GLuint &idTexture);
+
+        /**
+         * @brief generateTransferFunction
+         * @param [in] data: volume information's.
+         * @param [in] texbuffer: buffer of the volume equalizer.
+         * @param [out] tf: buffer transfer function.
+         */
         void generateTransferFunction(Import::ImgFormat *data, int &dim, unsigned char *&tf);
+
+        /**
+         * @brief texture1DFromTransferFunction
+         * @param [in] dim: dimension transfer fucntion mapping.
+         * @param [in] tf: buffer transfer function.
+         * @param [out] idTF: id transfer function texture (texture name).
+         */
         void texture1DFromTransferFunction(int dim, unsigned char *tf, GLuint &idTF);
 
-
+        /**
+         * @brief setMPR
+         * @param [in] eqp: equation plane for multiplanar reformatting.
+         */
         void setMPR(vmath::Vector4f eqp);
+
+        /**
+         * @brief setEnableMPR
+         * @param [in] enableMPR: enable MPR from keys interaction's, if equation file exist.
+         */
         void setEnableMPR(bool enableMPR);
+
+        /**
+         * @brief setStateMPRInput
+         * @param [in] stateMPRInput: file input status for MPR.
+         */
         void setStateMPRInput(bool stateMPRInput);
 
+        /**
+         * @brief setVectorInvMatrixReg
+         * @param [in] imr: vector of the inverse matrix register.
+         */
         void setVectorInvMatrixReg(std::vector<vmath::Matrix4f> imr);
 
 private:
@@ -167,7 +219,7 @@ private:
 		int m_maxSliceLeft;
         vmath::Matrix4f *m_invRegMatrix;        /**< inverse matrix for register */
         float m_blender;                        /**< blender for the reference and float volumes. */
-        std::vector<unsigned int *> m_map;      /**< map vector of the volumes */
+        std::vector<unsigned short *> m_map;      /**< map vector of the volumes */
         std::vector<float> m_Threshold;         /**< threshold vector for volumes */
         std::vector<Import::ImgFormat*> m_data; /**< data vector of the volumes. */
         std::vector<GLuint>m_idTexture, m_idTF; /**< id textures */

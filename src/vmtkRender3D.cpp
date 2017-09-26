@@ -59,6 +59,14 @@ void vmtkRender3D::setAcquisition(std::vector<Import::ImgFormat*> acqVector)
 
 }
 
+Import::ImgFormat *vmtkRender3D::getAcquisition(int id){
+    if(id > (int) m_data.size()-1){
+        std::cerr<<"Id out range."<<std::endl;
+        return NULL;
+    }
+    return m_data[id];
+}
+
 void vmtkRender3D::setRotation(float ax, float ay, float az)
 {
     m_rotationMatrix = m_rotationMatrix.createRotationAroundAxis(ax,ay,az);
@@ -119,7 +127,7 @@ void vmtkRender3D::createVectorPlanes()
 }
 
 
-void vmtkRender3D::mapEqualizeHistogramVolume(Import::ImgFormat* data, unsigned int * &map){
+void vmtkRender3D::mapEqualizeHistogramVolume(Import::ImgFormat* data, unsigned short * &map){
     Equalize eq;
     // Equaliza o histograma para aumentar a escala dinamica das intensidades
     // como uma forma de contornar a perda de resolucao durante normalizacao
@@ -129,7 +137,7 @@ void vmtkRender3D::mapEqualizeHistogramVolume(Import::ImgFormat* data, unsigned 
                         data->nbitsalloc, data->umax, &map);
 }
 
-void vmtkRender3D::volumeEqualizer(Import::ImgFormat* data, unsigned int *map, unsigned short * &texbuffer){
+void vmtkRender3D::volumeEqualizer(Import::ImgFormat* data, unsigned short *map, unsigned short * &texbuffer){
     int intensidade, di, iz, iy, ix, volSize;
     volSize = data->dims[0]*data->dims[1]*data->dims[2];
     texbuffer = new unsigned short[volSize];
@@ -170,7 +178,7 @@ void vmtkRender3D::loadVolumesToTextures()
     m_pos_activate = 0;
     for (int i = 0; i< (int) m_data.size(); i++){
         unsigned short *texbuffer;
-        unsigned int *map=0;
+        unsigned short *map;
         mapEqualizeHistogramVolume(m_data[i],map);
         m_map.push_back(map);
         volumeEqualizer(m_data[i],m_map[i],texbuffer);
@@ -179,8 +187,8 @@ void vmtkRender3D::loadVolumesToTextures()
         m_pos_activate = currentActivateTexture()+1;
         texture3DFromVolume(m_data[i],texbuffer,idTexture);
         m_idTexture.push_back(idTexture);
-        delete [] texbuffer;
-        delete [] map;
+//        delete [] texbuffer;
+//        delete [] map;
     }
     m_Threshold[0] = m_map[0][(unsigned short)(threshold)] / (pow(2, m_data[0]->nbitsalloc) - 1);
 }

@@ -1,4 +1,4 @@
-/*  
+/*
  *  equaliza.cpp: equaliza o histograma para aumentar a escala dinamica 
  *                das intensidades
  *
@@ -27,7 +27,7 @@
 
 void Equalize::EqualizeHistogram (int dimx, int dimy, int dimz, 
             unsigned short *volume, int nbitsalloc, 
-            unsigned int umax, unsigned int **histogram) 
+            unsigned int umax, unsigned short **histogram)
 {
   // Computa o histograma do <volume>: 
   // frequencia de ocorrência de cada intensidade
@@ -66,11 +66,11 @@ void Equalize::EqualizeHistogram (int dimx, int dimy, int dimz,
   delete [] tmp;
 
   // Mapeamento de intensidades
-  *histogram = new unsigned int[umax];
-  memset(*histogram, 0x00, umax*sizeof(unsigned int));
+  *histogram = new unsigned short[umax];
+  memset(*histogram, 0x00, umax*sizeof(unsigned short));
 
   for (i=0; i<umax; i++) {
-    (*histogram)[i] = (unsigned int)(((1.0*(cdf[i]-cdfmin))/(volSize-cdfmin))*(L-1));
+    (*histogram)[i] = (unsigned short)(((1.0*(cdf[i]-cdfmin))/(volSize-cdfmin))*(L-1));
   }
   delete [] cdf;
 }
