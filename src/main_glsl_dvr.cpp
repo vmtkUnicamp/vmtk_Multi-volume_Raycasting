@@ -37,6 +37,7 @@ static float blender=0.5f;
 static int slice_x = 0;
 static int window;
 static int value = 0;
+static bool m_mprPreState = false;
 static bool m_mprState = false;
 void init()
 {
@@ -194,7 +195,7 @@ int main(int argc, char *argv[])
         std::cout << "Numbers of volumes for register: " << nVolumes <<std::endl;
         std::cout << "Numbers of matrices for register: " << nMatrices <<std::endl;
         std::cout << "With equation plane for multiplanar reformation." << std::endl;
-        m_mprState = true;
+        m_mprPreState = true;
     }
     else{
         nVolumes = (nParameters+1)/2;
@@ -202,7 +203,7 @@ int main(int argc, char *argv[])
         std::cout << "Numbers of volumes for register: " << nVolumes <<std::endl;
         std::cout << "Numbers of matrices for register: " << nMatrices <<std::endl;
         std::cout << "Without equation plane for multiplanar reformation." << std::endl;
-        m_mprState = false;
+        m_mprPreState = false;
     }
     data = new Import::ImgFormat[nVolumes];
     path = new string[nVolumes];
@@ -230,10 +231,21 @@ int main(int argc, char *argv[])
     volumeRender.setVectorInvMatrixReg(vectorInvMatrixReg);
 
     vmath::Vector4f eqp;
-    if(m_mprState){
-        if(!volumeRender.readPlane(argv[1+nVolumes+nMatrices], eqp) ){ return 0; }
-        volumeRender.setMPR(eqp);
+    if(m_mprPreState){
+        if(!volumeRender.readPlane(argv[1+nVolumes+nMatrices], eqp) ){
+            m_mprState=false; return 0;
+        }
+        m_mprState=true;
+        volumeRender.setEnableMPR(false);
+        volumeRender.setMPR(eqp);      
     }
+    else{
+        m_mprState=false;
+    }
+    volumeRender.setStateMPRInput(m_mprState);
+
+
+
 
 	/* Initializa OpenGL */
 	glutInit(&argc, argv);

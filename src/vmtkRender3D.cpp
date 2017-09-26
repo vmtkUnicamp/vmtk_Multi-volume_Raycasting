@@ -11,6 +11,7 @@ vmtkRender3D::vmtkRender3D()
 
     m_idTexture.clear();
     m_enableMPR=false;
+    m_stateMPRInput=false;
 }
 
 
@@ -353,11 +354,12 @@ void vmtkRender3D::raycastingMultiVolume()
     //register matrix
     glUniformMatrix4fv(glGetUniformLocation(m_RaytraceShader,"inv_registration_matrix"), m_data.size()-1, GL_TRUE , (const GLfloat*) m_invRegMatrix);
 
-    glUniform1i(glGetUniformLocation(m_RaytraceShader,"enableMPR"), m_enableMPR);
-    if(m_enableMPR){
-        glUniform4fv(glGetUniformLocation(m_RaytraceShader,"clipping_plane"), 1, m_equationPlane);
+    if(m_stateMPRInput){
+        glUniform1i(glGetUniformLocation(m_RaytraceShader,"enableMPR"), m_enableMPR);
+        if(m_enableMPR){
+            glUniform4fv(glGetUniformLocation(m_RaytraceShader,"clipping_plane"), 1, m_equationPlane);
+        }
     }
-
 
 
 
@@ -564,6 +566,11 @@ bool vmtkRender3D::readPlane(const char *s,vmath::Vector4f& eqp)
 
 void vmtkRender3D::setEnableMPR(bool enableMPR){
     m_enableMPR = enableMPR;
+}
+
+void vmtkRender3D::setStateMPRInput(bool stateMPRInput)
+{
+    m_stateMPRInput=stateMPRInput;
 }
 
 void vmtkRender3D::setVectorInvMatrixReg(std::vector<vmath::Matrix4f> imr){

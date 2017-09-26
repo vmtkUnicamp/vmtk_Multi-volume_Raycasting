@@ -165,6 +165,7 @@ class vmtkRender3D
 
         void setMPR(vmath::Vector4f eqp);
         void setEnableMPR(bool enableMPR);
+        void setStateMPRInput(bool stateMPRInput);
 
         void setVectorInvMatrixReg(std::vector<vmath::Matrix4f> imr);
 
@@ -182,7 +183,7 @@ private:
         std::vector<GLuint>m_idTexture, m_idTF;
 
         vmath::Vector4f m_equationPlane;
-        bool m_enableMPR;
+        bool m_enableMPR, m_stateMPRInput;
 
 	    GLuint m_ColorShader;    /**< pre-processing shader to get front and back planes */
 		GLuint m_RaytraceShader; /**< raycast shader */
@@ -195,7 +196,7 @@ private:
 			eboRenderPlane,
 			vaosResultPlane,      /**< render: vertex array object */
 			vboResultPlane,          /**< render: data buffer */
-			eboResultPlane;          /**< render: element array buffer */;
+            eboResultPlane;          /**< render: element array buffer */
 			
 		/**
 		 * @struct VertexDataCube
